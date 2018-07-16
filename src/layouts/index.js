@@ -8,7 +8,7 @@ import './index.css'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | AIS Novations" />
-    <Navbar />
+    {/*<Navbar />*/}
     <div>{children()}</div>
   </div>
 )

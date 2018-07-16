@@ -81,7 +81,7 @@ class IndexPage extends Component {
           image: Image1,
           title: 'Dedicated team',
           text:
-            'Save up to 50% in labour costs, meet dealines and deliver better solutions with us',
+            'Save up to 50% in labour costs, meet deadlines and deliver better solutions with us',
         },
         {
           image: Image2,
@@ -93,7 +93,7 @@ class IndexPage extends Component {
           image: Image3,
           title: 'Maintenance and Support',
           text:
-            'We will ensure availability and reliability of all your online resorces. We will keep your business online 24/7',
+            'We will ensure availability and reliability of all your online resources. We will keep your business online 24/7',
         },
       ],
       clientsData: {
