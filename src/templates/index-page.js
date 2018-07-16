@@ -1,42 +1,34 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 
+import TopHomePage from '../blocks/HomePage/Top';
+import TopCards from '../blocks/HomePage/TopCards';
+
 export const IndexPageTemplate = ({
-  image,
   title,
-  heading,
-  description,
-  intro,
-  main,
-  testimonials,
-  fullImage,
-  pricing,
+  promo,
+  cards
 }) => (
-  <section className="section section--gradient">
-    This is just index page. Leave it be. Sosi hui pidor
-  </section>
-)
+  <Fragment>
+    <TopHomePage title={promo.title} description={promo.description}/>
+    <TopCards {...cards}/>
+  </Fragment>
+);
 
 IndexPageTemplate.propTypes = {
 };
 
 const IndexPage = ({ data }) => {
-  //const { frontmatter } = data.markdownRemark;
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <IndexPageTemplate
-      // image={frontmatter.image}
-      // title={frontmatter.title}
-      // heading={frontmatter.heading}
-      // description={frontmatter.description}
-      // intro={frontmatter.intro}
-      // main={frontmatter.main}
-      // testimonials={frontmatter.testimonials}
-      // fullImage={frontmatter.full_image}
-      // pricing={frontmatter.pricing}
+       title={frontmatter.title}
+       promo={frontmatter.promo}
+       cards={frontmatter.cards}
     />
   )
-}
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -53,47 +45,14 @@ export const indexPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image
-        heading
-        description
-        intro {
-          blurbs {
-            image
-            text
-          }
-          heading
+        promo {
+          title
           description
         }
-        main {
-          heading
-          description
-          image1 {
-            alt
-            image
-          }
-          image2 {
-            alt
-            image
-          }
-          image3 {
-            alt
-            image
-          }
-        }
-        testimonials {
-          author
-          quote
-        }
-        full_image
-        pricing {
-          heading
-          description
-          plans {
-            description
-            items
-            plan
-            price
-          }
+        cards {
+          title
+          text
+          image
         }
       }
     }

@@ -1,27 +1,26 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import style from './style';
 
-const TopHomePage = () => (
-  <div>
+const TopHomePage = ({title, description}) => (
+  <Fragment>
     <div className="home-page">
       <div className="home-page__content">
         <div className="home-page__title">
           <h1>
-            For the beautiful web
+            {title}
           </h1>
         </div>
         <div className="home-page__description">
-          <h1>
-            We are a team of professionals dedicated to creating fast, beautiful
-            and reliable web applications
-          </h1>
+          <p>
+            {description}
+          </p>
         </div>
       </div>
     </div>
     <style jsx>
       {style}
     </style>
-  </div>
+  </Fragment>
 );
 
 export default TopHomePage;
