@@ -11,7 +11,7 @@ export const IndexPageTemplate = ({
 }) => (
   <Fragment>
     <TopHomePage title={promo.title} description={promo.description}/>
-    <TopCards {...cards}/>
+    <TopCards cards={cards}/>
   </Fragment>
 );
 
