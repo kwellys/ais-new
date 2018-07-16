@@ -1,4 +1,5 @@
 ---
-templateKey: 'index-page'
-title: Our Coffee
+templateKey: index-page
+title: Our Coffeee
 ---
+
