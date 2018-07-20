@@ -112,5 +112,26 @@ getInTouchData:
   description: Leave you email address to schedule an individual free consultation
   image: /img/group2-3-.svg
   title: Lets get in touch
+referencesData:
+  slides:
+    - description: VP Business Intelligence and Analytics at AppLift
+      image: /img/maskgroup.png
+      text: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur.
+      title: Usi Blum
+    - description: VP Business Intelligence and Analytics at AppLift
+      image: /img/maskgroup.png
+      text: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur.
+      title: Usi Blum
+  title: References
 ---
 
