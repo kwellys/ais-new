@@ -59,7 +59,7 @@ const Experience = ({ descr, inverted }) => {
           </div>
           <div className="exp__list">
             {descr.pointList.map(point => (
-              <ListItem key={point.title} text={point.title} />
+              <ListItem key={point} text={point} />
             ))}
           </div>
           <ViewCase href={descr.href} />

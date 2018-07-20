@@ -30,6 +30,7 @@ servicesData:
         - NodeJS
         - MongoDB
         - Docker
+      isMobileOpen: true
       title: Back-end Development
     - description: Engaging interaction with state of the art frameworks
       image: /img/extraservice2.png

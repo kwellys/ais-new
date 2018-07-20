@@ -10,13 +10,17 @@ const settings = {
   slidesPerView: 5,
   containerModifierClass: 'swiper-container-cubs-',
   followFinger: false,
+  allowTouchMove: false,
   spaceBetween: 50,
+  loop: true,
   breakpoints: {
     650: {
+      followFinger: true,
       slidesPerView: 3,
       spaceBetween: 20,
     },
     380: {
+      followFinger: true,
       slidesPerView: 2,
     },
   },

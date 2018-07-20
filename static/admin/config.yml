@@ -69,6 +69,29 @@ collections:
                 name: image
                 widget: image
                 default: 'null'
+          - label: 'Services We Provide'
+            name: servicesData
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: 'Services'
+                name: servicesArr
+                widget: list
+                fields:
+                  - label: 'Service Title'
+                    name: title
+                    widget: string
+                  - label: 'Service Description'
+                    name: description
+                    widget: text
+                  - label: Technologies
+                    name: technologies
+                    widget: list
+                  - label: Icon
+                    name: image
+                    widget: image
           - label: 'Our Clients'
             name: clientsData
             widget: object
@@ -83,6 +106,33 @@ collections:
                   - label: Client Logo
                     name: image
                     widget: image
+          - label: 'Our experience'
+            name: expirienceData
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Experience
+                name: expirienceArray
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
+                  - label: 'Link (must lead to exact relative location of service)'
+                    name: href
+                    widget: string
+                  - label: 'Reverse direction'
+                    name: inverted
+                    widget: boolean
+                    default: true
+                  - label: 'Experiences'
+                    name: pointList
+                    widget: list
       - file: src/pages/about/index.md
         label: About
         name: about
