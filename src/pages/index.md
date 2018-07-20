@@ -61,5 +61,52 @@ clientsData:
     - image: /img/meitan.png
     - image: /img/qreports.png
   title: Our clients
+expirienceData:
+  expirienceArray:
+    - href: /
+      image: /img/exp1.png
+      inverted: false
+      pointList:
+        - ERP and CRM systems
+        - Corporate portals
+        - Data analytics and visualization
+        - Integration
+      title: Business solutions
+    - href: /
+      image: /img/exp2.png
+      inverted: true
+      pointList:
+        - Beautiful web stores
+        - Backoffice integration
+        - Warehouse automation
+        - Integration with payment and shipping systems
+      title: E-commerce
+    - href: /
+      image: /img/exp3.png
+      inverted: false
+      pointList:
+        - Decentralized web applications
+        - Corporate polls and voting ICO
+        - ICO and Token emmission
+        - Decentralized platform
+      title: Blockchain
+    - href: /
+      image: /img/exp4.png
+      inverted: true
+      pointList:
+        - Booking platform
+        - Website from hotel website
+        - PMS integration
+        - Custom PMS solutions
+      title: Booking and event platforms
+    - image: /img/exp5.png
+      inverted: false
+      pointList:
+        - Banking applications
+        - Online payment processing
+        - Digital assets managment
+        - Trading portals
+      title: Fin tech
+  title: Our experience
 ---
 
