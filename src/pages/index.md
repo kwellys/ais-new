@@ -25,28 +25,28 @@ cards:
 servicesData:
   servicesArr:
     - description: Rocket fast backend with lastest technologies
-      image: /img/service1.png
+      image: /img/extraservice1.png
       technologies:
         - NodeJS
         - MongoDB
         - Docker
       title: Back-end Development
     - description: Engaging interaction with state of the art frameworks
-      image: /img/service2.png
+      image: /img/extraservice2.png
       technologies:
         - VueJS
         - React
         - HTML5
       title: Front-end Development
     - description: Beautiful web design with illustrations and animation
-      image: /img/service3.png
+      image: /img/extraservice4.png
       technologies:
         - Web design
         - Illustrations
         - UI/UX
       title: Design
     - description: Rigorous manual and automated testing
-      image: /img/service1.png
+      image: /img/extraservice3.png
       technologies:
         - Functional testing
         - Perfomance testing
@@ -55,9 +55,11 @@ servicesData:
   title: Services we provide
 clientsData:
   client:
-    - image: /img/service1.png
-    - image: /img/service2.png
-    - image: /img/service3.png
+    - image: /img/group-1.png
+    - image: /img/group-2.png
+    - image: /img/group-3.png
+    - image: /img/meitan.png
+    - image: /img/qreports.png
   title: Our clients
 ---
 
