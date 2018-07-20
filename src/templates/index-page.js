@@ -6,11 +6,43 @@ import TopCards from 'blocks/HomePage/TopCards';
 import ServicesBlock from 'blocks/HomePage/ServicesBlock';
 import OurClients from 'blocks/HomePage/OurClients';
 import OurExperience from 'blocks/HomePage/OurExperience';
+import GetInTouch from 'blocks/HomePage/GetInTouch';
+import TechnologiesWeUse from 'blocks/HomePage/TechnologiesWeUse';
+import References from 'blocks/HomePage/References';
+import OurAdvantages from 'blocks/HomePage/OurAdvantages';
+
+import {tecnologyImage1,
+  tecnologyImage10,
+  tecnologyImage11,
+  tecnologyImage2,
+  tecnologyImage3,
+  tecnologyImage4,
+  tecnologyImage5,
+  tecnologyImage6,
+  tecnologyImage7,
+  tecnologyImage8,
+  tecnologyImage9} from 'utils/images';
 
 export class IndexPageTemplate extends Component {
   state = {
-    servicesData: this.props.servicesData
+    showPopUp: false,
+    servicesData: this.props.servicesData,
+    technologiesWeUseData: {
+      title: 'TECHNOLOGIES WE USE',
+      logoAspNet: tecnologyImage1,
+      logoNodeJS: tecnologyImage6,
+      logoMongo: tecnologyImage4,
+      logoMySql: tecnologyImage5,
+      logoPHP: tecnologyImage7,
+      logoReact: tecnologyImage8,
+      logoAngular: tecnologyImage11,
+      logoGit: tecnologyImage2,
+      logoSass: tecnologyImage10,
+      logoHTML: tecnologyImage3,
+      logoVue: tecnologyImage9,
+    }
   };
+
   handleMobileService = (index) => {
     const { servicesData } = this.state;
     const servData = servicesData.servicesArr.map((serv, indexS) => {
@@ -25,8 +57,12 @@ export class IndexPageTemplate extends Component {
     this.setState({ servicesData: { title: servicesData.title, servicesArr: [...servData] } });
   };
 
+  switchPopUp = () => {
+    this.setState(prev => ({ showPopUp: !prev.showPopUp }));
+  };
+
   render () {
-    const { title, promo, cards, clientsData, expirienceData } = this.props;
+    const { title, promo, cards, clientsData, expirienceData, getInTouchData, referencesData, ourAdvantachesData } = this.props;
     return (
       <Fragment>
         <TopHomePage title={promo.title} description={promo.description}/>
@@ -34,7 +70,10 @@ export class IndexPageTemplate extends Component {
         <ServicesBlock servicesData={this.state.servicesData} onClick={this.handleMobileService} />
         <OurClients clientsData={clientsData} />
         <OurExperience expirience={expirienceData} />
-
+        <GetInTouch getInTouchData={getInTouchData} onClick={this.switchPopUp} />
+        <TechnologiesWeUse technologiesWeUseData={this.state.technologiesWeUseData} />
+        <References referencesData={referencesData} />
+        <OurAdvantages ourAdvantachesData={ourAdvantachesData}/>
       </Fragment>
     )
   }
@@ -45,7 +84,6 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log(frontmatter);
   return (
     <IndexPageTemplate
       title={frontmatter.title}
@@ -54,6 +92,9 @@ const IndexPage = ({ data }) => {
       servicesData={frontmatter.servicesData}
       clientsData={frontmatter.clientsData}
       expirienceData={frontmatter.expirienceData}
+      getInTouchData={frontmatter.getInTouchData}
+      referencesData={frontmatter.referencesData}
+      ourAdvantachesData={frontmatter.ourAdvantachesData}
     />
   )
 };
@@ -107,7 +148,29 @@ export const indexPageQuery = graphql`
             pointList
           }
         }
+        getInTouchData {
+          title
+          description
+          image
+        }
+        referencesData {
+          title
+          slides {
+            title
+            image
+            description
+            text
+          }
+        }
+        ourAdvantachesData {
+          title
+          ourAdvantacheArray {
+            title
+            image
+            text
+          }
+        }
       }
     }
   }
-`
+`;
