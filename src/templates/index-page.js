@@ -10,6 +10,7 @@ import GetInTouch from 'blocks/HomePage/GetInTouch';
 import TechnologiesWeUse from 'blocks/HomePage/TechnologiesWeUse';
 import References from 'blocks/HomePage/References';
 import OurAdvantages from 'blocks/HomePage/OurAdvantages';
+import WorldWide from 'blocks/HomePage/WorldWide';
 
 import {tecnologyImage1,
   tecnologyImage10,
@@ -62,7 +63,7 @@ export class IndexPageTemplate extends Component {
   };
 
   render () {
-    const { title, promo, cards, clientsData, expirienceData, getInTouchData, referencesData, ourAdvantachesData } = this.props;
+    const { title, promo, cards, clientsData, expirienceData, getInTouchData, referencesData, ourAdvantachesData, worldWide } = this.props;
     return (
       <Fragment>
         <TopHomePage title={promo.title} description={promo.description}/>
@@ -74,6 +75,8 @@ export class IndexPageTemplate extends Component {
         <TechnologiesWeUse technologiesWeUseData={this.state.technologiesWeUseData} />
         <References referencesData={referencesData} />
         <OurAdvantages ourAdvantachesData={ourAdvantachesData}/>
+        <WorldWide worldWide={worldWide} />
+
       </Fragment>
     )
   }
@@ -95,6 +98,7 @@ const IndexPage = ({ data }) => {
       getInTouchData={frontmatter.getInTouchData}
       referencesData={frontmatter.referencesData}
       ourAdvantachesData={frontmatter.ourAdvantachesData}
+      worldWide={frontmatter.worldWide}
     />
   )
 };
@@ -168,6 +172,19 @@ export const indexPageQuery = graphql`
             title
             image
             text
+          }
+        }
+        worldWide {
+          title
+          worldWideData {
+            name
+            location
+            link
+            linkName
+            companyLogo
+            cursor
+            y
+            x
           }
         }
       }

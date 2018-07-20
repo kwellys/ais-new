@@ -190,6 +190,41 @@ collections:
                   - label: Description
                     name: text
                     widget: text
+          - label: 'Worldwide Company'
+            name: worldWide
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: 'Client'
+                name: worldWideData
+                widget: list
+                fields:
+                  - label: 'Company Name'
+                    name: name
+                    widget: string
+                  - label: Location
+                    name: location
+                    widget: string
+                  - label: 'Site Link'
+                    name: link
+                    widget: string
+                  - label: 'Link Name'
+                    name: linkName
+                    widget: string
+                  - label: 'Company Logo'
+                    name: companyLogo
+                    widget: image
+                  - label: 'Pin Image'
+                    name: cursor
+                    widget: image
+                  - label: 'Y coord'
+                    name: y
+                    widget: string
+                  - label: 'X coord'
+                    name: x
+                    widget: string
       - file: src/pages/about/index.md
         label: About
         name: about
