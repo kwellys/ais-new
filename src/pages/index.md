@@ -154,5 +154,15 @@ ourAdvantachesData:
       text: We make sure your projects are ready for launch
       title: Warranty
   title: OUR ADVANTAGES
+worldWide:
+  title: Worldwide company
+  worldWideData:
+    - companyLogo: /img/meitan.png
+      link: /
+      linkName: meitan.ru
+      location: 'Russia, Barnaul'
+      name: Meitan
+      x: '56'
+      'y': '44'
 ---
 
