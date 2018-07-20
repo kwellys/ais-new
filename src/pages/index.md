@@ -157,7 +157,7 @@ ourAdvantachesData:
 worldWide:
   title: Worldwide company
   worldWideData:
-    - companyLogo: /img/meitan.png
+    - companyLogo: /img/vector.png
       cursor: /img/map_marker.svg
       link: /
       linkName: meitan.ru
