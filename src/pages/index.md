@@ -158,6 +158,7 @@ worldWide:
   title: Worldwide company
   worldWideData:
     - companyLogo: /img/meitan.png
+      cursor: /img/map_marker.svg
       link: /
       linkName: meitan.ru
       location: 'Russia, Barnaul'
