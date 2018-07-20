@@ -30,7 +30,6 @@ servicesData:
         - NodeJS
         - MongoDB
         - Docker
-      isMobileOpen: true
       title: Back-end Development
     - description: Engaging interaction with state of the art frameworks
       image: /img/extraservice2.png
@@ -109,5 +108,9 @@ expirienceData:
         - Trading portals
       title: Fin tech
   title: Our experience
+getInTouchData:
+  description: Leave you email address to schedule an individual free consultation
+  image: /img/group2-3-.svg
+  title: Lets get in touch
 ---
 
