@@ -133,5 +133,26 @@ referencesData:
         velit esse cillum dolore eu fugiat nulla pariatur.
       title: Usi Blum
   title: References
+ourAdvantachesData:
+  ourAdvantacheArray:
+    - image: /img/celebrity.svg
+      text: In latest technologies. Over 80 full-time employees
+      title: Experts
+    - image: /img/group-1.svg
+      text: We sucessfully deliver pojects since 2008
+      title: Know-how
+    - image: /img/group-3.svg
+      text: We guarantee your projects are ready for launch
+      title: Full cycle
+    - image: /img/chat.svg
+      text: We always stay in touch via any preferable communication channel
+      title: Communication
+    - image: /img/group-2.svg
+      text: Choose payment plans and means that is convinient for you
+      title: Flexible payments
+    - image: /img/group.svg
+      text: We make sure your projects are ready for launch
+      title: Warranty
+  title: OUR ADVANTAGES
 ---
 
