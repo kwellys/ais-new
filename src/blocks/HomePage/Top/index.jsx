@@ -1,26 +1,32 @@
-import React, {Fragment} from 'react';
+import React, { Component } from 'react';
 import style from './style';
+import Button from '../../../components/Button';
 
-const TopHomePage = ({title, description}) => (
-  <Fragment>
+const TopHomePage = () => (
+  <div>
     <div className="home-page">
       <div className="home-page__content">
         <div className="home-page__title">
           <h1>
-            {title}
+            For the beautiful web
           </h1>
         </div>
         <div className="home-page__description">
-          <p>
-            {description}
-          </p>
+          <h1>
+            We are a team of professionals dedicated to creating fast, beautiful
+            and reliable web applications
+          </h1>
+        </div>
+        <div className="m-button">
+          <Button title="request a quote" />
         </div>
       </div>
     </div>
     <style jsx>
       {style}
     </style>
-  </Fragment>
+  </div>
 );
+
 
 export default TopHomePage;

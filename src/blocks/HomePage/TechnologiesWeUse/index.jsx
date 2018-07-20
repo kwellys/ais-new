@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import style from './style';
+import Cube from 'components/Cube';
 
 import DefaultLayout from '../../../layouts/Default';
-import Cube from '../../../components/Cube';
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import style from './style';
 
 const TechnologiesWeUse = ({ technologiesWeUseData }) => (
   <div>
@@ -21,7 +21,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   inverted
                   isOneImage
                   noRotate
-                  imageColor={technologiesWeUseData.logoNodeJS}
+                  image={technologiesWeUseData.logoNodeJS}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -32,7 +32,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   inverted
                   isOneImage
                   noRotate
-                  imageColor={technologiesWeUseData.logoHTML}
+                  image={technologiesWeUseData.logoHTML}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -45,7 +45,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   noRotate
                   isOneImage
                   inverted
-                  imageColor={technologiesWeUseData.logoAspNet}
+                  image={technologiesWeUseData.logoAspNet}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -53,7 +53,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   inverted
                   isOneImage
                   noRotate
-                  imageColor={technologiesWeUseData.logoMongo}
+                  image={technologiesWeUseData.logoMongo}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -64,7 +64,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   inverted
                   isOneImage
                   noRotate
-                  imageColor={technologiesWeUseData.logoReact}
+                  image={technologiesWeUseData.logoReact}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -72,7 +72,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   noRotate
                   isOneImage
                   inverted
-                  imageColor={technologiesWeUseData.logoSass}
+                  image={technologiesWeUseData.logoSass}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -80,7 +80,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   noRotate
                   isOneImage
                   inverted
-                  imageColor={technologiesWeUseData.logoVue}
+                  image={technologiesWeUseData.logoVue}
                 />
               </div>
             </div>
@@ -90,7 +90,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   noRotate
                   isOneImage
                   inverted
-                  imageColor={technologiesWeUseData.logoMySql}
+                  image={technologiesWeUseData.logoMySql}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -98,7 +98,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   inverted
                   isOneImage
                   noRotate
-                  imageColor={technologiesWeUseData.logoPHP}
+                  image={technologiesWeUseData.logoPHP}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -109,7 +109,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   inverted
                   isOneImage
                   noRotate
-                  imageColor={technologiesWeUseData.logoAngular}
+                  image={technologiesWeUseData.logoAngular}
                 />
               </div>
               <div className="tech-we-use__cube">
@@ -117,7 +117,7 @@ const TechnologiesWeUse = ({ technologiesWeUseData }) => (
                   noRotate
                   isOneImage
                   inverted
-                  imageColor={technologiesWeUseData.logoGit}
+                  image={technologiesWeUseData.logoGit}
                 />
               </div>
               <div className="tech-we-use__cube">

@@ -82,4 +82,20 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       value,
     })
   }
-}
+};
+
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+
+exports.modifyWebpackConfig = ({ config }) => config.merge({
+  plugins: [
+    new ImageminPlugin({
+      disable: process.env.NODE_ENV !== 'production',
+    }),
+  ],
+  resolve: {
+    alias: {
+      // eslint-disable-next-line no-underscore-dangle
+      '@': path.resolve(config._config.context, './src'),
+    },
+  },
+});

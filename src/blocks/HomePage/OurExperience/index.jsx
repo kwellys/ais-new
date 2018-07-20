@@ -1,11 +1,10 @@
-import React from 'react';
+import Experience from 'components/Experience';
+// import Cube from 'components/Cube';
+import DefaultLayout from '../../../layouts/Default';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import style from './style';
-
-// import Cube from '../../../components/Cube';
-import DefaultLayout from '../../../layouts/Default';
-import Experience from '../../../components/Experience';
 
 const OurExperience = ({ expirience }) => (
   <div>

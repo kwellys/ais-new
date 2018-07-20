@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import { colors } from '../../utils/style-helper';
 
-const Text = ({ children, alignStart, inverted }) => (
+const Text = ({
+  children, noAlign, inverted, small,
+}) => (
   <p className="b-text">
     {children}
     <style jsx>
@@ -11,22 +13,27 @@ const Text = ({ children, alignStart, inverted }) => (
         .b-text {
           font-family: 'Montserrat';
           line-height: 20px;
-          font-size: 16px;
-          text-align: ${alignStart ? 'initial' : 'center'};
+          font-size: ${small ? '14px' : '16px'};
+          text-align: ${noAlign ? 'initial' : 'center'};
           color: ${inverted ? colors.white : colors.textColor};
           line-height: 2;
+          @media (max-width: 1150px){
+            font-size: ${small ? '12px' : '12px'};
+          }
         }
       `}
     </style>
   </p>);
 Text.propTypes = {
   children: PropTypes.string.isRequired,
-  alignStart: PropTypes.bool,
+  noAlign: PropTypes.bool,
   inverted: PropTypes.bool,
+  small: PropTypes.bool,
 };
 
 Text.defaultProps = {
-  alignStart: false,
+  noAlign: false,
   inverted: false,
+  small: false,
 };
 export default Text;

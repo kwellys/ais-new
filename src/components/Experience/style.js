@@ -16,17 +16,18 @@ export default css`
       max-width: 1470px;
       overflow: hidden;
       display: flex;
+      padding: 0 45px;
       &_inverted {
         flex-direction: row-reverse;
       }
     }
     &__wrapper {
-      height: 500px;
+      min-height: 500px;
       display: flex;
       justify-content: center;
       background-color: ${colors.lightGray};
       &_inverted {
-        height: 561px;
+        min-height: 561px;
         background-color: ${colors.white};
       }
     }
@@ -57,6 +58,46 @@ export default css`
       overflow: hidden;
     }
   }
+  @media (max-width: 1150px) {
+    .exp {
+      &__description {
+        padding-left: 6%;
+      }
+      &__image {
+        &-container {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    .exp {
+      &__container {
+        flex-direction: column;
+        padding: 45px;
+      }
+      &__description {
+        min-height: min-content;
+        padding-left: 11%;
+      }
+      &__image {
+        &-container {
+          margin-top: 15px;
+        }
+      }
+      &__wrapper {
+        &_inverted {
+          .exp__container {
+            flex-direction: column-reverse;
+          }
+          .exp__image-container {
+            margin-top: 0;
+            margin-bottom: 15px; 
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const listItem = css`
@@ -76,26 +117,35 @@ export const listItem = css`
 `;
 
 export const viewCases = css`
-  .b-view-cases {
-    ${setStyle(fontFamily, flexAlign)} font-style: normal;
-    font-weight: normal;
-    line-height: 27px;
-    font-size: 16px;
-    text-decoration: none;
-
-    color: ${colors.blue};
-    display: flex;
-    &:after {
-      content: '';
-      display: block;
-
-      margin-top: 3px;
-
-      width: 11px;
-      height: 10px;
-      margin-left: 6px;
-      background-repeat: no-repeat;
-      background-image: url(${Arrow});
+  .viewcase__container {
+    width: 102px;
+    height: 18px;
+    .b-view-cases {
+      ${setStyle(fontFamily, flexAlign)} font-style: normal;
+      font-weight: normal;
+      line-height: 27px;
+      font-size: 16px;
+      text-decoration: none;
+  
+      color: ${colors.blue};
+      display: flex;
+      padding-bottom: 2px;
+      &:hover {
+        transition: all 0.3s;
+        border-bottom: 1px solid ${colors.darkBlue};
+      }
+      &:after {
+        content: '';
+        display: block;
+  
+        margin-top: 3px;
+  
+        width: 11px;
+        height: 10px;
+        margin-left: 6px;
+        background-repeat: no-repeat;
+        background-image: url(${Arrow});
+      }
     }
   }
 `;

@@ -1,23 +1,34 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import classname from 'classname';
 
 import style from './style';
 
-const CustomLink = ({ title, href }) => (
-  <a className="link" href={href}>
-    {title }
-    <style jsx>
-      {style}
-    </style>
-  </a>
-);
+const CustomLink = ({
+  href, title, uppercase, inverted,
+}) => {
+  const styleName = classname('link', { 'link-uppercase': uppercase, 'link-inverted ': inverted });
+  return (
+    <a className={styleName} href={href}>
+      {title}
+      <style jsx>
+        {style}
+      </style>
+    </a>
+  );
+};
 
 CustomLink.propTypes = {
-  title: PropTypes.string,
   href: PropTypes.string,
+  title: PropTypes.string,
+  uppercase: PropTypes.bool,
+  inverted: PropTypes.bool,
 };
 CustomLink.defaultProps = {
-  title: PropTypes.string,
-  href: PropTypes.string,
+  href: '',
+  title: '',
+  uppercase: false,
+  inverted: false,
 };
+
 export default CustomLink;

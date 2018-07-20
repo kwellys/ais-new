@@ -1,34 +1,31 @@
-import React from 'react';
+import defaultImage from 'assets/img/service1.png';
+import Text from 'components/Text';
+import Title from 'components/Title';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import style from './style';
 
-import Title from '../Title';
-import Text from '../Text';
-
-import defaultImage from '../../assets/img/service1.png';
-
 const Card = ({ image, title, text }) => (
-  <div>
-    <div className="b-card">
-      <div className="b-card__body">
-        <div className="b-card__image">
-          <img src={image} alt="card-logo" />
-        </div>
-        <div className="b-card__title">
-          <Title title={title} />
-        </div>
-        <div className="b-card__text">
-          <Text>
-            {text}
-          </Text>
-        </div>
+  <div className="b-card">
+    <div className="b-card__body">
+      <div className="b-card__image">
+        <img src={image} alt="card-logo" style={{ maxWidth: '100%' }} />
+      </div>
+      <div className="b-card__title">
+        <Title title={title} />
+      </div>
+      <div className="b-card__text">
+        <Text>
+          {text}
+        </Text>
       </div>
     </div>
     <style jsx>
       {style}
     </style>
   </div>
+
 );
 
 Card.propTypes = {

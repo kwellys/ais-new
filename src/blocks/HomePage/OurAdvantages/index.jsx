@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import style from './style';
-
+import AdvantachesCard from 'components/AdvantachesCard';
 
 import DefaultLayout from '../../../layouts/Default';
-import AdvantachesCard from '../../../components/AdvantachesCard';
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import style from './style';
 
 const OurExperience = ({ ourAdvantachesData }) => (
   <div>

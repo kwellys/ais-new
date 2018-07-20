@@ -1,51 +1,54 @@
-import React from 'react';
+import imageBackend from 'assets/img/extraservice1.png';
+import Text from 'components/Text';
+import Title from 'components/Title';
 import PropTypes from 'prop-types';
-import Text from '../Text';
-import Title from '../Title';
+import React from 'react';
 import style from './style';
-import imageBackend from '../../assets/img/extraservice1.png';
 
-const Services = ({
-  title, description, technologies, image,
-}) => {
-  const renderTechnologies = () => {
-    const rendered = technologies.map(technologie => (
-      <div className="renderedTWrapper" key={technologie}>
-        <div className="chevron" />
-        <div>
+class Services extends React.Component {
+  render() {
+    const {
+      title, description, technologies, image,
+    } = this.props;
+    const renderTechnologies = () => {
+      const rendered = technologies.map(technologie => (
+        <div className="rendered-twrapper" key={technologie}>
+          <div className="chevron" />
+          <div>
+            <Text>
+              {technologie}
+            </Text>
+          </div>
+          <style jsx>
+            {style}
+          </style>
+        </div>
+      ));
+      return rendered;
+    };
+    return (
+      <div className="ser-wrapper">
+        <div className="ser-wrapper__image-wrapper">
+          <img src={image} alt="title" style={{ width: '100%' }} />
+        </div>
+        <div className="ser-wrapper__textmedium">
+          <Title title={title} />
+        </div>
+        <div className="ser-wrapper__descr">
           <Text>
-            {technologie}
+            {description}
           </Text>
+        </div>
+        <div className="overWrapper">
+          {renderTechnologies()}
         </div>
         <style jsx>
           {style}
         </style>
       </div>
-    ));
-    return rendered;
-  };
-  return (
-    <div className="ser-wrapper">
-      <div className="ser-wrapper__imageWrapper">
-        <img src={image} alt="title" />
-      </div>
-      <div className="ser-wrapper__textmedium">
-        <Title title={title} />
-      </div>
-      <div className="ser-wrapper__descr">
-        <Text>
-          {description}
-        </Text>
-      </div>
-      <div className="overWrapper">
-        {renderTechnologies()}
-      </div>
-      <style jsx>
-        {style}
-      </style>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Services;
 

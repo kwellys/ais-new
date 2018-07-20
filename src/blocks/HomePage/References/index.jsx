@@ -1,85 +1,101 @@
-import React from 'react';
-// import PropTypes from 'prop-types'
-import Slider from 'react-slick';
-
-import style from './style';
+import Text from 'components/Text';
+import Title from 'components/Title';
 
 import DefaultLayout from '../../../layouts/Default';
-// import AdvantachesCard from '../../../components/AdvantachesCard';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Swiper from 'react-slider-swiper';
+import leftBg from 'assets/img/slider_bg1.svg';
+import rightBg from 'assets/img/slider_bg2.svg';
 
-class References extends React.Component {
-  constructor(props) {
-    super(props);
+import style, { card } from './style';
 
-    this.state = {
-      settings: {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    };
-  }
-
-  render() {
-    const { settings } = this.state;
-    return (
-      <div>
-        {/* <DefaultLayout title="REFERENCES"> */}
-        <div className="references">
-          <div className="references__container">
-            <Slider {...settings}>
-              <div>
-                <h3>
-1
-                </h3>
-              </div>
-              <div>
-                <h3>
-2
-                </h3>
-              </div>
-              <div>
-                <h3>
-3
-                </h3>
-              </div>
-              <div>
-                <h3>
-4
-                </h3>
-              </div>
-              <div>
-                <h3>
-5
-                </h3>
-              </div>
-              <div>
-                <h3>
-6
-                </h3>
-              </div>
-            </Slider>
+const SliderCard = ({ slide }) => {
+  const {
+    title, image, description, text,
+  } = slide;
+  return (
+    <div className="b-card">
+      <div className="b-card__container">
+        <div className="b-card__header">
+          <div className="b-card__image-box">
+            <img src={image} alt="avatar" style={{ width: '100%' }} />
+          </div>
+          <div className="b-card__descr-box">
+            <div className="b-card__title">
+              <Title title={title} noAlign />
+            </div>
+            <div className="b-card__descr">
+              <Text small noAlign>
+                {description}
+              </Text>
+            </div>
           </div>
         </div>
-        {/* </DefaultLayout> */}
-        <style jsx>
-          {style}
-        </style>
+        <div className="b-card__text">
+          <Text small noAlign>
+            {text}
+          </Text>
+        </div>
       </div>
-    );
-  }
-}
+      <style jsx>
+        {card}
+      </style>
+    </div>
+  );
+};
+
+SliderCard.propTypes = {
+  slide: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+const settings = {
+  nextButton: '.swiper-button-next.swiper-button-next-ref',
+  prevButton: '.swiper-button-prev.swiper-button-prev-ref',
+};
+const References = ({ referencesData }) => (
+  <div>
+    <DefaultLayout title={referencesData.title}>
+      <div className="references">
+        <div className="references__cube references__cube_left">
+          <img src={leftBg} alt="left cube" style={{ width: '100%' }} />
+        </div>
+        <div className="references__cube references__cube_right">
+          <img src={rightBg} alt="right cube" style={{ width: '100%' }} />
+        </div>
+        <div className="references__container">
+          <Swiper {...settings}>
+            {referencesData.slides.map(slide => (
+              <div className="swiper-slide" key={slide.title}>
+                <SliderCard slide={slide} />
+              </div>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    </DefaultLayout>
+    <style jsx>
+      {style}
+    </style>
+  </div>
+);
 
 References.propTypes = {
-  // ourAdvantachesData: PropTypes.shape({
-  //   title: PropTypes.string,
-  //   ourAdvantacheArray: PropTypes.arrayOf(PropTypes.object),
-  // }),
+  referencesData: PropTypes.shape({
+    title: PropTypes.string,
+    ourAdvantacheArray: PropTypes.arrayOf(PropTypes.object),
+  }),
 };
 References.defaultProps = {
-  // ourAdvantachesData: [{}],
+  referencesData: {
+    title: 'Need title',
+    slides: [],
+  },
 };
 
 export default References;

@@ -1,9 +1,8 @@
-import React from 'react';
+import Title from 'components/Title';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import style from './style';
-
-import Title from '../../components/Title';
 
 const Default = ({ children, title }) => (
   <div className="default__container">

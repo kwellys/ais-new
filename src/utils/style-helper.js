@@ -1,15 +1,19 @@
-
-export const boxShadow = '0 0 25px #62A9FC';
+export const boxShadow = '0 4px 16px #0641B7';
 
 export const desctopMaxWidth = '1440px';
 
 export const colors = {
+  aqua: '#18DBDF',
   blue: '#3588F9',
   darkBlue: '#045DC5',
+  darkBlueForButton: '#0641B7',
   lightBlue: '#62A9FC',
-  white: '#ffffff',
   lightGray: '#EDF3FF',
+  red: '#F66565',
   textColor: '#525252',
+  white: '#ffffff',
+  whiteBlue: '#F2F8FF',
+  darkViolet: '#2B329E',
 };
 
 export const fontFamily = {
@@ -36,13 +40,19 @@ export const flexAlign = {
   'align-items': 'center',
 };
 
+export const flexColumn = {
+  display: 'flex',
+  'flex-direction': 'column',
+};
+
 export function setStyle(...styles) {
-  const result = [];
+  const result = new Map();
+
   styles.forEach((styleObj) => {
     Object.keys(styleObj).forEach((item) => {
-      result.push(`${item}: ${styleObj[item]};`);
+      result.set(item, `${item}:${styleObj[item]};`);
     });
   });
 
-  return result.join('');
+  return Array.from(result.values()).join('');
 }

@@ -1,14 +1,14 @@
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 
-import TopHomePage from '../blocks/HomePage/Top';
-import TopCards from '../blocks/HomePage/TopCards';
+import TopHomePage from 'blocks/HomePage/Top';
+import TopCards from 'blocks/HomePage/TopCards';
 
 export const IndexPageTemplate = ({
-  title,
-  promo,
-  cards
-}) => (
+                                    title,
+                                    promo,
+                                    cards
+                                  }) => (
   <Fragment>
     <TopHomePage title={promo.title} description={promo.description}/>
     <TopCards cards={cards}/>
@@ -23,9 +23,9 @@ const IndexPage = ({ data }) => {
 
   return (
     <IndexPageTemplate
-       title={frontmatter.title}
-       promo={frontmatter.promo}
-       cards={frontmatter.cards}
+      title={frontmatter.title}
+      promo={frontmatter.promo}
+      cards={frontmatter.cards}
     />
   )
 };
@@ -53,6 +53,12 @@ export const indexPageQuery = graphql`
           title
           text
           image
+        }
+        clientsData {
+          title
+          client {
+            image
+          }
         }
       }
     }

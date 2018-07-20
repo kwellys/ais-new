@@ -1,16 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import expBG1 from 'assets/img/exp1.png';
 import classname from 'classname';
+import Text from 'components/Text';
+import Title from 'components/Title';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import style, { listItem, viewCases } from './style';
-import Title from '../Title';
-import Text from '../Text';
-
-import expBG1 from '../../assets/img/exp1.png';
 
 const ListItem = ({ text }) => (
   <div className="b-list">
-    <Text alignStart>
+    <Text noAlign>
       {text}
     </Text>
     <style jsx>
@@ -24,12 +23,14 @@ ListItem.propTypes = {
 };
 
 const ViewCase = ({ href }) => (
-  <a href={href} className="b-view-cases">
+  <div className="viewcase__container">
+    <a href={href} className="b-view-cases">
     view cases
+    </a>
     <style jsx>
       {viewCases}
     </style>
-  </a>
+  </div>
 );
 
 ViewCase.propTypes = {

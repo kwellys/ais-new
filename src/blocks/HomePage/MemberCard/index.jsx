@@ -1,16 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import style from './style';
+import PersonalCard from 'components/PersonalCard';
 import DefaultComponent from '../../../layouts/Default';
-import PersonalCard from '../../../components/PersonalCard';
+import PropTypes from 'prop-types';
+import React from 'react';
+import style from './style';
 
 const MemberCard = ({ personalCards }) => (
   <div>
     <DefaultComponent title={personalCards.title}>
       <div className="members">
-        {personalCards.personalDetails.map(detail => (
-          <PersonalCard key={detail.title} title={detail.title} image={detail.image} role={detail.role} />
-        ))}
+        <div className="members__wrapper">
+          {personalCards.personalDetails.map(detail => (
+            <PersonalCard key={detail.title} title={detail.title} image={detail.image} role={detail.role}/>
+          ))}
+        </div>
       </div>
     </DefaultComponent>
     <style jsx>

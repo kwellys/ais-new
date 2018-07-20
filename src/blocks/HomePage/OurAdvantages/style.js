@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css';
-import { setStyle, flexJustify, flexSpaceBetween } from '../../../utils/style-helper';
+import { setStyle, flexJustify, flexSpaceBetween } from 'utils/style-helper';
 
 export default css`
   .our-arvantaches {
@@ -7,17 +7,38 @@ export default css`
       ${setStyle(flexJustify)}
       width: 100%;
       margin-bottom: 42px;
+      @media (max-width: 1200px){
+        margin-bottom: 0;
+      }
+      @media (max-width: 900px){
+        margin-bottom: 37px;
+      }
+      @media screen and(max-width: 610px) {
+        flex-direction: column;
+      }
     }
     &__container {
       ${setStyle(flexSpaceBetween)}
-      padding-bottom: 149px;
-      max-width: 998px;
+      max-width: 1238px;
       width: 100%;
       flex-wrap: wrap;
+      @media screen and(max-width: 610px){
+        flex-direction: column;
+        align-items: center;
+      }
     }
     &__card {
       flex-basis: 33%;
       margin-bottom: 98px;
+      transition: all 0.3s ease-in-out;
+      @media screen and(max-width: 1024px){
+        margin-bottom: 36px;
+      }
+      @media screen and(max-width: 410px){
+        margin-bottom: 36px;
+        padding-left: 22px;
+        padding-right: 11px;
+      }
     }
   }
 `;

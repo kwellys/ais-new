@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import style from './style';
 import DefaultComponent from '../../../layouts/Default';
+import PropTypes from 'prop-types';
+import React from 'react';
+import style from './style';
 
 const Latest = ({ latest }) => (
   <div>
@@ -9,7 +9,7 @@ const Latest = ({ latest }) => (
       <div className="l-wrapper">
         <div className="l-wrapper__container">
           <div className="l-wrapper__container-left">
-            <img src={latest.image1} alt="ShowProject" />
+            <img className="project1" src={latest.image1} alt="ShowProject" />
             <div className="overlayer">
               <div className="overlayer__title">
                 {latest.title2}
@@ -21,7 +21,7 @@ const Latest = ({ latest }) => (
           </div>
           <div className="l-wrapper__container-right">
             <div className="l-wrapper__container-right-upper">
-              <img src={latest.image2} alt="ShowProject" />
+              <img className="project2" src={latest.image2} alt="ShowProject" />
               <div className="overlayer">
                 <div className="overlayer__title">
                   {latest.title2}
@@ -33,7 +33,7 @@ const Latest = ({ latest }) => (
             </div>
             <div className="l-wrapper__container-right-bottom">
               <div className="i1">
-                <img src={latest.image3} alt="ShowProject" />
+                <img className="project3" src={latest.image3} alt="ShowProject" />
                 <div className="overlayer">
                   <div className="overlayer__title">
                     {latest.title2}
@@ -44,7 +44,7 @@ const Latest = ({ latest }) => (
                 </div>
               </div>
               <div className="i2">
-                <img src={latest.image4} alt="ShowProject" />
+                <img className="project4" src={latest.image4} alt="ShowProject" />
                 <div className="overlayer">
                   <div className="overlayer__title">
                     {latest.title2}

@@ -1,33 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import defaultImage from 'assets/img/Group-1.png';
 import classname from 'classname';
+
+import Title from 'components/Title';
+import PropTypes from 'prop-types';
+import React from 'react';
 import style from './style';
 
-import defaultImageColor from '../../assets/img/Group-1-color.png';
-import defaultImageBlack from '../../assets/img/Group-1-black.png';
-
-import Title from '../Title';
-
 const Cube = ({
-  imageColor,
-  imageBlack,
-  isOneImage,
   big,
-  title,
+  highlight,
+  darkened,
+  image,
   inverted,
-  noRotate,
   invisible,
+  isOneImage,
+  noRotate,
+  title,
 }) => {
   const cubeWrapperClass = classname('b-cube__wrapper', {
     'b-cube__wrapper_big': big,
-    'b-cube__wrapper_no-rotate': noRotate,
     'b-cube__wrapper_invisible': invisible,
+    'b-cube__wrapper_no-rotate': noRotate,
   });
   const cubeClass = classname('b-cube', {
-    'b-cube_one-img': isOneImage,
     'b-cube_big': big,
+    'b-cube_darkened': darkened,
+    'b-cube_highlight': highlight,
     'b-cube_inverted': inverted,
     'b-cube_no-rotate': noRotate,
+    'b-cube_one-img': isOneImage,
   });
 
   const renderContent = () => {
@@ -44,17 +45,10 @@ const Cube = ({
     return (
       <div className="b-cube__content">
         <img
-          className="b-cube__img b-cube__img_color"
-          src={imageColor}
+          className="b-cube__img"
+          src={image}
           alt="cube-logo"
         />
-        {isOneImage ? null : (
-          <img
-            className="b-cube__img b-cube__img_black"
-            src={imageBlack}
-            alt="cube-logo"
-          />
-        )}
         <style jsx>
           {style}
         </style>
@@ -75,24 +69,26 @@ const Cube = ({
 };
 
 Cube.propTypes = {
-  imageColor: PropTypes.string,
-  imageBlack: PropTypes.string,
-  isOneImage: PropTypes.bool,
   big: PropTypes.bool,
-  title: PropTypes.string,
+  darkened: PropTypes.bool,
+  highlight: PropTypes.bool,
+  image: PropTypes.string,
   inverted: PropTypes.bool,
-  noRotate: PropTypes.bool,
   invisible: PropTypes.bool,
+  isOneImage: PropTypes.bool,
+  noRotate: PropTypes.bool,
+  title: PropTypes.string,
 };
 Cube.defaultProps = {
-  imageColor: defaultImageColor,
-  imageBlack: defaultImageBlack,
-  isOneImage: false,
   big: false,
-  title: '',
+  darkened: false,
+  highlight: false,
+  image: defaultImage,
   inverted: false,
-  noRotate: false,
   invisible: false,
+  isOneImage: false,
+  noRotate: false,
+  title: '',
 };
 
 export default Cube;

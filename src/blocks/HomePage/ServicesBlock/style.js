@@ -1,27 +1,47 @@
 import css from 'styled-jsx/css';
-import { setStyle, flexJustify, flexSpaceBetween } from '../../../utils/style-helper';
+import { setStyle, flexJustify, flexSpaceBetween } from 'utils/style-helper';
 
 export default css`
   .servicesWrapper {
-      width: 100%;
-      ${setStyle(flexJustify)}
-    &__content {
-      ${setStyle(flexSpaceBetween)}
-      max-width: 1300px;
+    width: 100%;
+    margin-bottom: 122px;
+    @media (max-width: 1200px){
+      margin-bottom: 79px;
+    }
+    @media (max-width: 900px){
+      margin-bottom: 48px;
+    }
+
+    ${setStyle(flexJustify)} &__content {
+      ${setStyle(flexSpaceBetween)} max-width: 1300px;
       width: 100%;
       overflow: hidden;
+      @media (max-width: 1150px) {
+        max-width: 900px;
+      }
+      @media (max-width: 850px) {
+        max-width: 670px;
+      }
+      @media (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        max-width: 280px;
+      }
       &-inner {
-        dislay: flex;
         flex-basis: 25%;
         margin-right: 40px;
+        @media (max-width: 850px) {
+          margin-right: 4px;
+        }
         &:last-child {
           margin-right: 0;
         }
       }
     }
     &__title {
-        width: 100%;
-        margin-bottom: 69px;
+      width: 100%;
+      margin-bottom: 69px;
     }
   }
 `;

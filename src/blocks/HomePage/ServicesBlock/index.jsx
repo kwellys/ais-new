@@ -1,24 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import style from './style';
+import Service from 'components/Service';
+import ServiceMobile from 'components/ServiceMobile';
 
 import DefaultLayout from '../../../layouts/Default';
+import PropTypes from 'prop-types';
+import React from 'react';
+import windowSize from 'react-window-size';
+import style from './style';
 
-import Service from '../../../components/Service';
-
-const ServicesBlock = ({ servicesData }) => (
+const ServicesBlock = ({ servicesData, windowWidth, onClick }) => (
   <div>
     <DefaultLayout title={servicesData.title}>
       <div className="servicesWrapper">
         <div className="servicesWrapper__content">
-          {servicesData.servicesArr.map(service => (
+          {servicesData.servicesArr.map((service, index) => (
             <div className="servicesWrapper__content-inner" key={service.title}>
-              <Service
-                title={service.title}
-                description={service.description}
-                technologies={service.technologies}
-                image={service.image}
-              />
+              {windowWidth < 700 ? (
+                <ServiceMobile
+                  title={service.title}
+                  description={service.description}
+                  technologies={service.technologies}
+                  image={service.image}
+                  isMobileOpen={service.isMobileOpen}
+                  onClick={e => onClick(index)}
+                />
+              ) : (
+                <Service
+                  title={service.title}
+                  description={service.description}
+                  technologies={service.technologies}
+                  image={service.image}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -30,13 +42,15 @@ const ServicesBlock = ({ servicesData }) => (
   </div>
 );
 
-export default ServicesBlock;
+export default windowSize(ServicesBlock);
 
 ServicesBlock.propTypes = {
   servicesData: PropTypes.shape({
     title: PropTypes.string,
     servicesData: PropTypes.arrayOf(PropTypes.object),
   }),
+  windowWidth: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 ServicesBlock.defaultProps = {
