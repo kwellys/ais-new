@@ -164,5 +164,20 @@ worldWide:
       linkName: meitan.ru
       location: 'Russia, Barnaul'
       name: Meitan
+personalCards:
+  personalDetails:
+    - image: /img/galuza.png
+      role: Founder
+      title: Sergey Galuza
+    - image: /img/stupak.png
+      role: Director
+      title: Vitaly Stupak
+    - image: /img/schebet.png
+      role: CTO
+      title: Alexander Schebet
+    - image: /img/yurkevich.png
+      role: Customer relations manager
+      title: Vitali Yurkevich
+  title: Company and team
 ---
 
