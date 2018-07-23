@@ -30,6 +30,9 @@ const IndexPagePreview = ({ entry }) => {
   const entryWorldWide = entry.getIn(['data', 'worldWide']);
   const worldWide = entryWorldWide ? entryWorldWide.toJS() : [];
 
+  const entryPersonalCards = entry.getIn(['data', 'personalCards']);
+  const personalCards = entryPersonalCards ? entryPersonalCards.toJS() : [];
+
   return (
     <IndexPageTemplate
       title={entry.getIn(['data', 'title'])}
@@ -42,6 +45,7 @@ const IndexPagePreview = ({ entry }) => {
       referencesData={referencesData}
       ourAdvantachesData={ourAdvantachesData}
       worldWide={worldWide}
+      personalCards={personalCards}
     />
   )
 }

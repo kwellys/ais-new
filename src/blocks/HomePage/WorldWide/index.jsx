@@ -11,8 +11,10 @@ import style from './style';
 
 const scrollToCenter = () => {
   const a = document.querySelector('.world-wide__wrapper');
-  const width = a.offsetWidth;
-  a.scrollTo(width / 2, 0);
+  if (a) {
+    const width = a.offsetWidth;
+    a.scrollTo(width / 2, 0);
+  }
 };
 
 class WorldWide extends React.Component {

@@ -223,6 +223,26 @@ collections:
                       - label: 'Y'
                         name: y
                         widget: string
+          - label: 'Company and Team'
+            name: personalCards
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: 'Team Member'
+                name: personalDetails
+                widget: list
+                fields:
+                  - label: Name
+                    name: title
+                    widget: string
+                  - label: Role
+                    name: role
+                    widget: string
+                  - label: Photo
+                    name: image
+                    widget: image
       - file: src/pages/about/index.md
         label: About
         name: about

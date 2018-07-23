@@ -13,7 +13,6 @@ const OurExperience = ({ divided, expirience }) => {
     <div>
       <DefaultLayout title={expirience.title}>
         <div className={experienceClasses}>
-          {console.log(expirience)}
           {expirience.expirienceArray.map(exp => (
             <Experience key={exp.title} descr={exp} inverted={exp.inverted} more={exp.more} reversed={exp.reversed} />
           ))}

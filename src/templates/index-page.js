@@ -11,6 +11,8 @@ import TechnologiesWeUse from '../blocks/HomePage/TechnologiesWeUse';
 import References from '../blocks/HomePage/References';
 import OurAdvantages from '../blocks/HomePage/OurAdvantages';
 import WorldWide from '../blocks/HomePage/WorldWide';
+import MemberCard from '../blocks/HomePage/MemberCard';
+
 
 import {tecnologyImage1,
   tecnologyImage10,
@@ -58,12 +60,8 @@ export class IndexPageTemplate extends Component {
     this.setState({ servicesData: { title: servicesData.title, servicesArr: [...servData] } });
   };
 
-  switchPopUp = () => {
-    this.setState(prev => ({ showPopUp: !prev.showPopUp }));
-  };
-
   render () {
-    const { title, promo, cards, clientsData, expirienceData, getInTouchData, referencesData, ourAdvantachesData, worldWide } = this.props;
+    const { title, promo, cards, clientsData, expirienceData, getInTouchData, referencesData, ourAdvantachesData, worldWide, personalCards } = this.props;
     return (
       <Fragment>
         <TopHomePage {...promo}/>
@@ -76,7 +74,7 @@ export class IndexPageTemplate extends Component {
         <References referencesData={referencesData} />
         <OurAdvantages ourAdvantachesData={ourAdvantachesData}/>
         <WorldWide worldWide={worldWide} />
-
+        <MemberCard personalCards={personalCards} />
       </Fragment>
     )
   }
@@ -99,6 +97,7 @@ const IndexPage = ({ data }) => {
       referencesData={frontmatter.referencesData}
       ourAdvantachesData={frontmatter.ourAdvantachesData}
       worldWide={frontmatter.worldWide}
+      personalCards={frontmatter.personalCards}
     />
   )
 };
@@ -179,12 +178,20 @@ export const indexPageQuery = graphql`
           worldWideData {
             name
             location
-            link
             linkName
             companyLogo
-            cursor
-            y
-            x
+            coords {
+              x
+              y
+            }
+          }
+        }
+        personalCards {
+          title
+          personalDetails {
+            title
+            role
+            image
           }
         }
       }
