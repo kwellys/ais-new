@@ -1,5 +1,5 @@
-import Service from 'components/Service';
-import ServiceMobile from 'components/ServiceMobile';
+import Service from '../../../components/Service';
+import ServiceMobile from '../../../components/ServiceMobile';
 
 import DefaultLayout from '../../../layouts/Default';
 import PropTypes from 'prop-types';

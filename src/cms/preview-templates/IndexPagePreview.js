@@ -27,6 +27,9 @@ const IndexPagePreview = ({ entry }) => {
   const entryAdvantages = entry.getIn(['data', 'ourAdvantachesData']);
   const ourAdvantachesData = entryAdvantages ? entryAdvantages.toJS() : [];
 
+  const entryWorldWide = entry.getIn(['data', 'worldWide']);
+  const worldWide = entryWorldWide ? entryWorldWide.toJS() : [];
+
   return (
     <IndexPageTemplate
       title={entry.getIn(['data', 'title'])}
@@ -38,6 +41,7 @@ const IndexPagePreview = ({ entry }) => {
       getInTouchData={getInTouchData}
       referencesData={referencesData}
       ourAdvantachesData={ourAdvantachesData}
+      worldWide={worldWide}
     />
   )
 }

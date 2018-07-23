@@ -15,15 +15,15 @@ export default css`
     overflow: hidden;
     &:hover {
         z-index: 10;
-        overflow: auto;
+        overflow: visible;
         width: initial;
         height: initial;
         .company {
             opacity: 1;
-            transition: opasity 0.3s ease-in ease-out;
+            transition: opasity 0.3s ease-in;
         }
     }
-    .mapMarker {
+    .mapMaker {
         z-index: -1;
     }
     .company {
@@ -31,12 +31,14 @@ export default css`
       height: 118px;
       background-color: ${colors.white};
       display: flex;
-      top: 53px;
-      left: 34px;
+      position: absolute;
+      top: 64px;
+      left: 13px;
       ${setStyle(flexAlign)} justify-content: space-around;
       box-shadow: 1px 1px 4px rgba(23, 128, 224, 0.271);
       border-radius: 15px;
       opacity: 0;
+      opacity: 1;
       &__info {
         ${setStyle(flexColumn)} &-name {
           max-width: max-content;

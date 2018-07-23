@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 
-import { ErrorStyle, FieldStyle, UploadStyle, ViewStyle } from './style';
+import {
+  ErrorStyle, FieldStyle, UploadStyle, ViewStyle,
+} from './style';
 
 const InputError = ({ invalid, text }) => {
   if (invalid) {
@@ -60,10 +62,9 @@ class InputView extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { invalid: false };
-
     this.onChange = this.onChange.bind(this);
   }
+
 
   onChange(event) {
     let invalid = false;
@@ -83,21 +84,30 @@ class InputView extends Component {
       }
     }
 
-    this.setState({ invalid });
 
     const { change } = this.props;
 
     change({ invalid, value: event.target.value });
-  };
+  }
 
   render() {
-    const { error, name, placeholder, type, upload } = this.props;
-    const { invalid } = this.state;
+    const {
+      error, name, placeholder, type, upload, invalid,
+    } = this.props;
 
     if (type === 'textarea') {
       return (
         <div className="input-view">
-          <textarea className={`input-view__field input-view__textarea ${invalid ? 'input-view__field-invalid' : ''}`} id={name} name={name} placeholder={placeholder} rows="5" onChange={this.onChange} />
+          <textarea
+            className={`input-view__field input-view__textarea ${
+              invalid ? 'input-view__field-invalid' : ''
+            }`}
+            id={name}
+            name={name}
+            placeholder={placeholder}
+            rows="5"
+            onChange={this.onChange}
+          />
           <InputError invalid={invalid} text={error} />
           <UploadLabel name={upload} />
           <style jsx>
@@ -109,7 +119,16 @@ class InputView extends Component {
 
     return (
       <div className="input-view">
-        <input className={`input-view__field input-view__input ${invalid ? 'input-view__field-invalid' : ''}`} id={name} name={name} placeholder={placeholder} type={type} onChange={this.onChange} />
+        <input
+          className={`input-view__field input-view__input ${
+            invalid ? 'input-view__field-invalid' : ''
+          }`}
+          id={name}
+          name={name}
+          placeholder={placeholder}
+          type={type}
+          onChange={this.onChange}
+        />
         <InputError invalid={invalid} text={error} />
         <UploadLabel name={upload} />
         <style jsx>
@@ -137,12 +156,30 @@ InputView.defaultProps = {
   upload: null,
 };
 
-const InputField = ({ change, error, label, name, placeholder, type, upload }) => (
+const InputField = ({
+  change,
+  error,
+  label,
+  name,
+  placeholder,
+  type,
+  upload,
+  invalid,
+}) => (
   <div className="input-field">
     <label className="input-field__label" htmlFor={name}>
       {label}
+      {/* {console.log(invalid)} */}
     </label>
-    <InputView change={change} error={error} name={name} placeholder={placeholder} type={type} upload={upload} />
+    <InputView
+      change={change}
+      error={error}
+      name={name}
+      placeholder={placeholder}
+      type={type}
+      upload={upload}
+      invalid={invalid}
+    />
     <style jsx>
       {FieldStyle}
     </style>

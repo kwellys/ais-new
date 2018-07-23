@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { colors } from '../../utils/style-helper';
+import { colors } from 'utils/style-helper';
 
 const Text = ({
   children, noAlign, inverted, small,
@@ -23,17 +23,19 @@ const Text = ({
         }
       `}
     </style>
-  </p>);
+  </p>
+);
+
 Text.propTypes = {
   children: PropTypes.string.isRequired,
   noAlign: PropTypes.bool,
   inverted: PropTypes.bool,
   small: PropTypes.bool,
 };
-
 Text.defaultProps = {
   noAlign: false,
   inverted: false,
   small: false,
 };
+
 export default Text;

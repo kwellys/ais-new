@@ -6,8 +6,8 @@ import {
   flexAllAlign,
 } from '../../utils/style-helper';
 
-import successIcon from 'assets/img/success-icon.svg';
-import errorIcon from 'assets/img/error-icon.png';
+import successIcon from '@/assets/img/success-icon.svg';
+import errorIcon from '@/assets/img/error-icon.png';
 
 export default css`
   .btn {

@@ -12,6 +12,12 @@ class PopUp extends Component {
       sent: false,
       timer: null,
       values: {},
+      counter: 5,
+      startedInterval: false,
+      form: {
+        name: { invalid: false, value: '' },
+        email: { invalid: false, value: '' },
+      },
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,49 +36,100 @@ class PopUp extends Component {
     }
   }
 
-  handleChange(name, value) {
-    const { values } = this.state;
+  handleChange(name, values) {
+    const { form } = this.state;
+    const newForm = Object.keys(form).reduce((total, key) => {
+      if (key === name) {
+        total[key] = { ...values };
+      } else {
+        total[key] = { ...form[key] };
+      }
+      return total;
+    }, {});
 
-    values[name] = value;
+    this.setState({ form: { ...newForm } });
+  }
 
-    this.setState({ values });
+  setErrorForFields = () => {
+    const { form } = this.state;
+
+    const newForm = Object.keys(form).reduce((total, key) => {
+      if (form[key].value === '') {
+        total[key] = { ...form[key], invalid: true };
+      } else {
+        total[key] = { ...form[key] };
+      }
+      return total;
+    }, {});
+
+    this.setState({ form: { ...newForm } });
+  }
+
+  isFormValid = () => {
+    const { form } = this.state;
+
+    const isValid = Object.keys(form).filter(
+      key => form[key].value === '' || form[key].invalid,
+    );
+
+    return isValid.length === 0;
   }
 
   handleSubmit(event) {
     event.preventDefault();
-
-    const { timer, values } = this.state;
-
-    if (timer != null) {
-      clearTimeout(timer);
+    
+    if (this.isFormValid()) {
+      console.log('Yeah!');
+    } else {
+      this.setErrorForFields();
     }
+    // const { timer, values } = this.state;
 
-    // TODO Validate and send feedback data
+    // if (timer != null) {
+    //   clearTimeout(timer);
+    // }
 
-    console.log(values);
+    // // TODO Validate and send feedback data
 
-    this.setState({
-      sent: true,
-      timer: setTimeout(() => {
-        this.setState({ sent: false });
-      }, 5000),
-    });
+    // // console.log(values);
+
+    // this.setState({
+    //   sent: true,
+    // });
   }
 
   render() {
-    const { fields, onClose, popup, showPopUp } = this.props;
-
+    const {
+      fields, onClose, popup, showPopUp,
+    } = this.props;
+    const { form } = this.state;
     const renderFeedback = () => {
-      const { sent } = this.state;
+      const { sent, counter, startedInterval } = this.state;
 
       if (sent) {
+        const text = popup.sent.text.replace(/\[numberSec\]/, counter);
+        if (!startedInterval) {
+          const inverval = setInterval(() => {
+            if (this.state.counter === 0) {
+              clearInterval(inverval);
+              onClose();
+            }
+
+            this.setState(prev => ({
+              counter: prev.counter - 1,
+              startedInterval: true,
+            }));
+          }, 1000);
+        }
+
+
         return (
-          <Sent text={popup.sent.text} title={popup.sent.title} />
+          <Sent text={text} title={popup.sent.title} />
         );
       }
 
       return (
-        <Feedback title={popup.title} fields={fields} change={this.handleChange} submit={this.handleSubmit} />
+        <Feedback title={popup.title} fields={fields} change={this.handleChange} submit={this.handleSubmit} fieldInfo={form} />
       );
     };
 

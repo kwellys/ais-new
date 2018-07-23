@@ -1,7 +1,8 @@
-import Cursor from 'components/Cursor';
+import Cursor from '../../../components/Cursor';
 import DefaultLayout from '../../../layouts/Default';
 import PropTypes from 'prop-types';
 import React from 'react';
+import dragscroll from './dragscroll';
 
 import style from './style';
 

@@ -36,7 +36,7 @@ collections:
     files:
       - file: src/pages/index.md
         label: 'Index Page'
-        name: index
+        name: index-page
         fields:
           - label: 'Template Key'
             name: templateKey
@@ -207,24 +207,22 @@ collections:
                   - label: Location
                     name: location
                     widget: string
-                  - label: 'Site Link'
-                    name: link
-                    widget: string
                   - label: 'Link Name'
                     name: linkName
                     widget: string
                   - label: 'Company Logo'
                     name: companyLogo
                     widget: image
-                  - label: 'Pin Image'
-                    name: cursor
-                    widget: image
-                  - label: 'Y coord'
-                    name: y
-                    widget: string
-                  - label: 'X coord'
-                    name: x
-                    widget: string
+                  - label: 'Map Coordinates'
+                    name: coords
+                    widget: object
+                    fields:
+                      - label: 'X'
+                        name: x
+                        widget: string
+                      - label: 'Y'
+                        name: y
+                        widget: string
       - file: src/pages/about/index.md
         label: About
         name: about

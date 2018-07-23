@@ -21,6 +21,7 @@
     "gatsby-plugin-sass": "^1.0.17",
     "gatsby-plugin-sharp": "^1.6.34",
     "gatsby-plugin-styled-jsx": "^2.0.6",
+    "gatsby-plugin-styled-jsx-postcss": "^1.1.2",
     "gatsby-remark-images": "^1.5.50",
     "gatsby-source-filesystem": "^1.5.23",
     "gatsby-transformer-remark": "^1.7.33",

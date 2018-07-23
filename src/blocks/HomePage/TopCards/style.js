@@ -23,6 +23,21 @@ export default css`
       @media (max-width: 680px){
         max-width: 300px;
       }
+      @media (max-width: 375px){
+        max-width: 280px;
+      }
+      @media (max-width: 359px){
+        max-width: 260px;
+      }
+      @media (max-width: 340px){
+        max-width: 100%;
+        box-sizing: border-box;
+
+      }
+      @media (max-width: 335px){
+        // max-width: 200px;
+        // box-sizing: border-box;
+      }
     }
     &__wrapper {
       margin-top: -170px;

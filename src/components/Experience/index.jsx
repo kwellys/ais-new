@@ -22,10 +22,32 @@ ListItem.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-const ViewCase = ({ href }) => (
+const ListBlock = ({ items }) => {
+  if (items.length === 1) {
+    return (
+      <Text noAlign>
+        {items[0].title}
+      </Text>
+    );
+  }
+
+  return (
+    <div>
+      {items.map(point => (
+        <ListItem key={point} text={point} />
+      ))}
+    </div>
+  );
+};
+
+ListBlock.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+const ViewCase = ({ href, more }) => (
   <div className="viewcase__container">
     <a href={href} className="b-view-cases">
-    view cases
+      {more ? 'see more' : 'view cases'}
     </a>
     <style jsx>
       {viewCases}
@@ -35,21 +57,33 @@ const ViewCase = ({ href }) => (
 
 ViewCase.propTypes = {
   href: PropTypes.string,
+  more: PropTypes.bool,
 };
 ViewCase.defaultProps = {
   href: '/',
+  more: false,
 };
 
-const Experience = ({ descr, inverted }) => {
+const Experience = ({ descr, inverted, more, reversed }) => {
   const expWrapper = classname('exp__wrapper', {
     exp__wrapper_inverted: inverted,
-  });
-  const expContainer = classname('exp__container', {
-    exp__container_inverted: inverted,
+    exp__wrapper_reversed: reversed,
+    exp__wrapper_reflected: inverted && reversed,
   });
   const expDescription = classname('exp__description', {
     exp__description_inverted: inverted,
+    exp__description_reversed: reversed,
+    exp__description_reflected: inverted && reversed,
   });
+  const expContainer = classname('exp__container', {
+    exp__container_inverted: inverted,
+    exp__container_reversed: reversed,
+    exp__container_reflected: inverted && reversed,
+  });
+  const expList = classname('exp__list', {
+    exp__list_indent: descr.pointList.length === 1,
+  });
+
   return (
     <div className={expWrapper}>
       <div className={expContainer}>
@@ -57,12 +91,10 @@ const Experience = ({ descr, inverted }) => {
           <div className="exp__title">
             <Title big title={descr.title} />
           </div>
-          <div className="exp__list">
-            {descr.pointList.map(point => (
-              <ListItem key={point} text={point} />
-            ))}
+          <div className={expList}>
+            <ListBlock items={descr.pointList} />
           </div>
-          <ViewCase href={descr.href} />
+          <ViewCase href={descr.href} more={more} />
         </div>
         <div className="exp__image-container">
           <div className="exp__image-wrapper">
@@ -84,13 +116,17 @@ Experience.propTypes = {
     image: PropTypes.string,
   }),
   inverted: PropTypes.bool,
+  more: PropTypes.bool,
+  reversed: PropTypes.bool,
 };
 Experience.defaultProps = {
   descr: {
-    pointList: [{}],
+    pointList: [],
     title: 'Need title',
     image: expBG1,
   },
   inverted: false,
+  more: false,
+  reversed: false,
 };
 export default Experience;

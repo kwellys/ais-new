@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import style from './style';
 
+import Pointer from '../../assets/img/map_marker.svg'
 const Cursor = ({ singleMarker }) => {
   return (
     <div className="cursor">
-      <img className="mapMaker" src={singleMarker.cursor} alt="map maker" />
+      <img className="mapMaker" src={Pointer} alt="map maker" />
       <div className="company">
         <div className="company__info">
           <div className="company__info-name">
@@ -18,7 +19,7 @@ const Cursor = ({ singleMarker }) => {
               {singleMarker.location}
             </Text>
           </span>
-          <a className="company__info-link" href={singleMarker.link}>
+          <a className="company__info-link" href={`http://${singleMarker.linkName}`}>
             {singleMarker.linkName}
           </a>
         </div>
@@ -34,7 +35,7 @@ const Cursor = ({ singleMarker }) => {
       <style jsx>
         {`
         .cursor {
-          top: ${singleMarker.y + "%"};left: ${singleMarker.x + "%"};
+          top: ${singleMarker.coords.y + "%"};left: ${singleMarker.coords.x + "%"};
       }`
         }
       </style>

@@ -1,4 +1,4 @@
-import Card from 'components/Card';
+import Card from '../../../components/Card';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Swiper from 'react-slider-swiper';
@@ -17,7 +17,6 @@ const TopCards = ({ cards }) => {
         centeredSlides: true,
         slidesPerView: 1,
         spaceBetween: 0,
-        followFinger: true,
       },
     },
     centeredSlides: false,

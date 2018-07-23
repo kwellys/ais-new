@@ -1,16 +1,16 @@
 import React, {Fragment, Component} from 'react'
 import PropTypes from 'prop-types'
 
-import TopHomePage from 'blocks/HomePage/Top';
-import TopCards from 'blocks/HomePage/TopCards';
-import ServicesBlock from 'blocks/HomePage/ServicesBlock';
-import OurClients from 'blocks/HomePage/OurClients';
-import OurExperience from 'blocks/HomePage/OurExperience';
-import GetInTouch from 'blocks/HomePage/GetInTouch';
-import TechnologiesWeUse from 'blocks/HomePage/TechnologiesWeUse';
-import References from 'blocks/HomePage/References';
-import OurAdvantages from 'blocks/HomePage/OurAdvantages';
-import WorldWide from 'blocks/HomePage/WorldWide';
+import TopHomePage from '../blocks/HomePage/Top';
+import TopCards from '../blocks/HomePage/TopCards';
+import ServicesBlock from '../blocks/HomePage/ServicesBlock';
+import OurClients from '../blocks/HomePage/OurClients';
+import OurExperience from '../blocks/HomePage/OurExperience';
+import GetInTouch from '../blocks/HomePage/GetInTouch';
+import TechnologiesWeUse from '../blocks/HomePage/TechnologiesWeUse';
+import References from '../blocks/HomePage/References';
+import OurAdvantages from '../blocks/HomePage/OurAdvantages';
+import WorldWide from '../blocks/HomePage/WorldWide';
 
 import {tecnologyImage1,
   tecnologyImage10,
@@ -41,7 +41,7 @@ export class IndexPageTemplate extends Component {
       logoSass: tecnologyImage10,
       logoHTML: tecnologyImage3,
       logoVue: tecnologyImage9,
-    }
+    },
   };
 
   handleMobileService = (index) => {
@@ -66,7 +66,7 @@ export class IndexPageTemplate extends Component {
     const { title, promo, cards, clientsData, expirienceData, getInTouchData, referencesData, ourAdvantachesData, worldWide } = this.props;
     return (
       <Fragment>
-        <TopHomePage title={promo.title} description={promo.description}/>
+        <TopHomePage {...promo}/>
         <TopCards cards={cards}/>
         <ServicesBlock servicesData={this.state.servicesData} onClick={this.handleMobileService} />
         <OurClients clientsData={clientsData} />

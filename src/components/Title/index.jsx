@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classname from 'classname';
-import { colors } from '../../utils/style-helper';
+import { colors } from 'utils/style-helper';
 
 const Title = ({
   title, sectionHeader, big, inverted, uppercase, noAlign,

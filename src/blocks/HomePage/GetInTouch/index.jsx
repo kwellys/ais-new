@@ -1,6 +1,6 @@
-import Button from 'components/Button';
-import Text from 'components/Text';
-import Title from 'components/Title';
+import Button from '../../../components/Button';
+import Text from '../../../components/Text';
+import Title from '../../../components/Title';
 import PropTypes from 'prop-types';
 import React from 'react';
 

@@ -1,12 +1,12 @@
-import Text from 'components/Text';
-import Title from 'components/Title';
+import Text from '../../../components/Text';
+import Title from '../../../components/Title';
 
-import DefaultLayout from '../../../layouts/Default';
+import DefaultLayout from 'layouts/Default';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Swiper from 'react-slider-swiper';
-import leftBg from 'assets/img/slider_bg1.svg';
-import rightBg from 'assets/img/slider_bg2.svg';
+import leftBg from '../../../assets/img/slider_bg1.svg';
+import rightBg from '../../../assets/img/slider_bg2.svg';
 
 import style, { card } from './style';
 

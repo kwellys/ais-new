@@ -1,4 +1,4 @@
-import Cube from 'components/Cube';
+import Cube from '../../../components/Cube';
 
 import DefaultLayout from '../../../layouts/Default';
 import PropTypes from 'prop-types';

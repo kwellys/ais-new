@@ -1,4 +1,4 @@
-import PersonalCard from 'components/PersonalCard';
+import PersonalCard from '../../../components/PersonalCard';
 import DefaultComponent from '../../../layouts/Default';
 import PropTypes from 'prop-types';
 import React from 'react';

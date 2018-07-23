@@ -30,6 +30,12 @@ export default css`
         min-height: 561px;
         background-color: ${colors.white};
       }
+      &_reversed {
+        background-color: ${colors.white};
+      }
+      &_reflected {
+        background-color: ${colors.lightGray};
+      }
     }
     &__description {
       flex-basis: 50%;
@@ -43,19 +49,22 @@ export default css`
     }
     &__list {
       margin-bottom: 29px;
+      &_indent {
+        padding-right: 21%;
+      }
     }
     &__title {
       margin-bottom: 20px;
-    }
-    &__image-wrapper {
-      width: 100%;
-      height: 100%;
-      ${setStyle(flexAllAlign)}
     }
     &__image {
       width: 90%;
       max-width: 690.11px;
       overflow: hidden;
+      &-wrapper {
+        width: 100%;
+        height: 100%;
+        ${setStyle(flexAllAlign)}
+      }
     }
   }
   @media (max-width: 1150px) {
@@ -83,6 +92,11 @@ export default css`
       &__image {
         &-container {
           margin-top: 15px;
+        }
+      }
+      &__list {
+        &_indent {
+          padding-right: 0;
         }
       }
       &__wrapper {

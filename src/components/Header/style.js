@@ -11,6 +11,10 @@ export default css`
     ${setStyle(flexJustify)} width: 100%;
     position: absolute;
     padding-top: 30px;
+    transition: all 0.3s;
+    @media screen and(max-width: 700px) {
+      padding-top: 0;
+    }
     &__content {
       ${setStyle(flexAlign)} @media screen and (max-width: 2254px) {
         max-width: 2220px;

@@ -1,4 +1,4 @@
-import AdvantachesCard from 'components/AdvantachesCard';
+import AdvantachesCard from '../../../components/AdvantachesCard';
 
 import DefaultLayout from '../../../layouts/Default';
 import PropTypes from 'prop-types';
