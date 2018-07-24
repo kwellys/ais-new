@@ -14,7 +14,6 @@ const Form = ({
 
     <form
       name="customerr-form"
-      method="post"
       action="/"
       data-netlify="true"
       className="feedback-form__form"
@@ -89,16 +88,20 @@ Form.defaultProps = {
   success: false,
   error: false,
 };
-/*
+
 function encode(data) {
   const formData = new FormData();
 
   for (const key of Object.keys(data)) {
-    formData.append(key, data[key].value);
+    if (typeof data[key] === "string") {
+      formData.append(key, data[key]);
+    } else {
+      formData.append(key, data[key].value);
+    }
   }
 
   return formData;
-}*/
+}
 
 class Block extends React.Component {
   constructor(props) {
@@ -150,11 +153,9 @@ class Block extends React.Component {
         })
       })
         .then(() => console.log(
-          encode({
-            "form-name": form.getAttribute("name"),
-            ...this.state.form
-          }).entries()
-        ));
+          'we are good'
+        ))
+        .catch(error => alert(error));
     } else {
       this.setErrorForFields();
     }
