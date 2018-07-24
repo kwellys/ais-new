@@ -13,7 +13,7 @@ const Form = ({
     <Title title={title} big inverted uppercase />
 
     <form
-      name="customer-form"
+      name="customerr-form"
       method="post"
       action="/"
       data-netlify="true"
@@ -150,7 +150,10 @@ class Block extends React.Component {
         })
       })
         .then(() => console.log(
-          console.log(this.state)
+          encode({
+            "form-name": form.getAttribute("name"),
+            ...this.state.form
+          }).entries()
         ));
     } else {
       this.setErrorForFields();
