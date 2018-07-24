@@ -90,6 +90,16 @@ Form.defaultProps = {
   error: false,
 };
 
+function encode(data) {
+  const formData = new FormData();
+
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key].value);
+  }
+
+  return formData;
+}
+
 class Block extends React.Component {
   constructor(props) {
     super(props);
