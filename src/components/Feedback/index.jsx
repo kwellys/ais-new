@@ -94,7 +94,11 @@ function encode(data) {
   const formData = new FormData();
 
   for (const key of Object.keys(data)) {
-    formData.append(key, data[key].value);
+    if (typeof data[key] === "string") {
+      formData.append(key, data[key]);
+    } else {
+      formData.append(key, data[key].value);
+    }
   }
 
   return formData;
