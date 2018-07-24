@@ -131,7 +131,7 @@ class Block extends React.Component {
     event.preventDefault();
 
     if (this.isFormValid()) {
-      const form = e.target;
+      const form = event.target;
       fetch("/", {
         method: "POST",
         body: encode({
