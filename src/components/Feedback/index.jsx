@@ -89,7 +89,7 @@ Form.defaultProps = {
   success: false,
   error: false,
 };
-
+/*
 function encode(data) {
   const formData = new FormData();
 
@@ -98,7 +98,7 @@ function encode(data) {
   }
 
   return formData;
-}
+}*/
 
 class Block extends React.Component {
   constructor(props) {
