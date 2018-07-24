@@ -95,7 +95,7 @@ class TemplateWrapper extends Component {
         <Helmet meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
-        ]} title="Home | Gatsby + Netlify CMS" />
+        ]} title="AIS Novations | We are aimed to create fast, beautiful and reliable web applications" />
         <PopUp
           showPopUp={showPopUp}
           onClose={this.switchPopUp}
