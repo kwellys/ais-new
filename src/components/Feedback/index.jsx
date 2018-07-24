@@ -1,18 +1,24 @@
-import FileField from 'components/FileField';
-import InputField from 'components/InputField';
-import Title from 'components/Title';
+import FileField from '../FileField';
+import InputField from '../InputField';
+import Title from '../Title';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '../Button';
 import { BlockStyle, FormStyle, SentStyle } from './style';
 
 const Form = ({
-                change, fields, submit, title, fieldInfo, loaded, sent, errored,
+                change, fields, submit, title, fieldInfo, loading, success, error,
               }) => (
   <div className="feedback-form">
     <Title title={title} big inverted uppercase />
 
-    <form className="feedback-form__form" name="customer-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit}>
+    <form
+      name="customer-form"
+      method="post"
+      action="/"
+      data-netlify="true"
+      className="feedback-form__form"
+      onSubmit={submit}>
       <input type="hidden" name="form-name" value="customer-form" />
       {fields.map(field => (
         <InputField
@@ -32,7 +38,7 @@ const Form = ({
         />
       ))}
       <FileField change={value => change('file', value)} name="file" />
-      <Button title="Submit" type="submit" long loading={loaded} success={sent} error={errored} />
+      <Button title="Submit" type="submit" long loading={loading} success={success} error={error} />
     </form>
     <style jsx>
       {FormStyle}
@@ -53,12 +59,35 @@ Form.propTypes = {
   ),
   submit: PropTypes.func,
   title: PropTypes.string,
+  fieldInfo: PropTypes.shape({
+    name: PropTypes.shape({
+      invalid: PropTypes.bool,
+      value: PropTypes.string,
+      required: PropTypes.bool,
+    }),
+    email: PropTypes.shape({
+      invalid: PropTypes.bool,
+      value: PropTypes.string,
+      required: PropTypes.bool,
+    }),
+    phone: PropTypes.shape({
+      invalid: PropTypes.bool,
+      value: PropTypes.string,
+    }),
+  }),
+  loading: PropTypes.bool,
+  success: PropTypes.bool,
+  error: PropTypes.bool,
 };
 Form.defaultProps = {
   change: null,
   title: '',
   submit: null,
   fields: [],
+  fieldInfo: {},
+  loading: false,
+  success: false,
+  error: false,
 };
 
 class Block extends React.Component {
@@ -102,8 +131,15 @@ class Block extends React.Component {
     event.preventDefault();
 
     if (this.isFormValid()) {
-      console.log('Need to send form');
-      this.simulateSendForm();
+      const form = e.target;
+      fetch("/", {
+        method: "POST",
+        body: encode({
+          "form-name": form.getAttribute("name"),
+          ...this.state.form
+        })
+      })
+        .then(() => console.log(`we're good`));
     } else {
       this.setErrorForFields();
     }
@@ -153,8 +189,9 @@ class Block extends React.Component {
 
   render() {
     const { title, fields } = this.props;
-    const { form } = this.state;
-    const { loading, success, error } = this.state;
+    const {
+      form, loading, success, error,
+    } = this.state;
 
     return (
       <div className="feedback">
@@ -168,9 +205,9 @@ class Block extends React.Component {
                 submit={this.onSubmit}
                 title={title}
                 fieldInfo={form}
-                loaded={loading}
-                sent={success}
-                errored={error}
+                loading={loading}
+                success={success}
+                error={error}
               />
             </div>
           </div>
@@ -194,14 +231,16 @@ Block.propTypes = {
     }),
   ),
   title: PropTypes.string,
+  setEmailError: PropTypes.func,
 };
 Block.defaultProps = {
   title: '',
   fields: [],
+  setEmailError: {},
 };
 
 const Sent = ({ text, title }) => (
-  <div className="feedback-sent">
+  <div className="feedback-success">
     <div className="feedback-sent__content">
       <Title title={title} big inverted uppercase />
       <div className="feedback-sent__text">

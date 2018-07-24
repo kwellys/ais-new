@@ -151,6 +151,7 @@ InputView.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
   upload: PropTypes.string,
+  invalid: PropTypes.bool,
 };
 InputView.defaultProps = {
   change: null,
@@ -159,6 +160,7 @@ InputView.defaultProps = {
   placeholder: '',
   type: 'text',
   upload: null,
+  invalid: false,
 };
 
 const InputField = ({
@@ -199,6 +201,7 @@ InputField.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
   upload: PropTypes.string,
+  invalid: PropTypes.bool,
 };
 InputField.defaultProps = {
   change: null,
@@ -208,6 +211,8 @@ InputField.defaultProps = {
   placeholder: '',
   type: 'text',
   upload: null,
+  invalid: false,
 };
+
 
 export default InputField;

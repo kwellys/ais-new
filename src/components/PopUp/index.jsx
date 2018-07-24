@@ -28,32 +28,6 @@ class PopUp extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleClick(e) {
-    if (e.target.classList.value.indexOf('b-pop-up__content') !== -1) {
-      document.getElementsByTagName('body')[0].style = '';
-
-      this.setState({ sent: false });
-
-      const { onClose } = this.props;
-
-      onClose();
-    }
-  }
-
-  handleChange(name, values) {
-    const { form } = this.state;
-    const newForm = Object.keys(form).reduce((total, key) => {
-      if (key === name) {
-        total[key] = { ...values };
-      } else {
-        total[key] = { ...form[key] };
-      }
-      return total;
-    }, {});
-
-    this.setState({ form: { ...newForm } });
-  }
-
   setErrorForFields = () => {
     const { form } = this.state;
     const { setEmailError } = this.props;
@@ -90,6 +64,32 @@ class PopUp extends Component {
     setTimeout(() => this.setState({ loading: false, error: true }), 1800);
     setTimeout(() => this.setState({ error: false, loading: true }), 3000);
     setTimeout(() => this.setState({ loading: false, success: true }), 3800);
+  }
+
+  handleClick(e) {
+    if (e.target.classList.value.indexOf('b-pop-up__content') !== -1) {
+      document.getElementsByTagName('body')[0].style = '';
+
+      this.setState({ sent: false });
+
+      const { onClose } = this.props;
+
+      onClose();
+    }
+  }
+
+  handleChange(name, values) {
+    const { form } = this.state;
+    const newForm = Object.keys(form).reduce((total, key) => {
+      if (key === name) {
+        total[key] = { ...values };
+      } else {
+        total[key] = { ...form[key] };
+      }
+      return total;
+    }, {});
+
+    this.setState({ form: { ...newForm } });
   }
 
   handleSubmit(event) {
@@ -138,9 +138,9 @@ class PopUp extends Component {
           submit={this.handleSubmit}
           fieldInfo={form}
           setEmailError={setEmailError}
-          loaded={loading}
-          sent={success}
-          errored={error}
+          loading={loading}
+          success={success}
+          error={error}
         />
       );
     };
@@ -202,6 +202,7 @@ PopUp.propTypes = {
     title: PropTypes.string,
   }),
   showPopUp: PropTypes.bool,
+  setEmailError: PropTypes.func.isRequired,
 };
 PopUp.defaultProps = {
   fields: [],

@@ -7,8 +7,8 @@ const FileView = ({ clear, file }) => (
   <div className={`file-view  ${file === null ? 'invisible' : ''}`}>
     <span>
       {file == null ? '---' : file.name}
-      <span className="file-view__remove" onClick={clear}>
-        <img className="file-view__remove-image" src={RemoveIcon} />
+      <span className="file-view__remove" onClick={clear} role="button" onKeyPress={clear} tabIndex={0}>
+        <img className="file-view__remove-image" src={RemoveIcon}  alt="File View" />
       </span>
     </span>
     <style jsx>
