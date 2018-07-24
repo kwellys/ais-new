@@ -19,7 +19,7 @@ const Form = ({
       data-netlify="true"
       className="feedback-form__form"
       onSubmit={submit}>
-      <input type="hidden" name="form-name" value="customer-form" />
+      <input type="hidden" name="form-name" value="customerr-form" />
       {fields.map(field => (
         <InputField
           key={field.name}
@@ -150,10 +150,7 @@ class Block extends React.Component {
         })
       })
         .then(() => console.log(
-          encode({
-            "form-name": form.getAttribute("name"),
-            ...this.state.form
-          })
+          console.log(this.state)
         ));
     } else {
       this.setErrorForFields();
