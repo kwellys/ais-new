@@ -90,6 +90,16 @@ Form.defaultProps = {
   error: false,
 };
 
+function encode(data) {
+  const formData = new FormData();
+
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key].value);
+  }
+
+  return formData;
+}
+
 class Block extends React.Component {
   constructor(props) {
     super(props);
@@ -139,7 +149,12 @@ class Block extends React.Component {
           ...this.state.form
         })
       })
-        .then(() => console.log(`we're good`));
+        .then(() => console.log(
+          encode({
+            "form-name": form.getAttribute("name"),
+            ...this.state.form
+          })
+        ));
     } else {
       this.setErrorForFields();
     }
