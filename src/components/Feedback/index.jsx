@@ -13,12 +13,12 @@ const Form = ({
     <Title title={title} big inverted uppercase />
 
     <form
-      name="customerr-form"
+      name="customer-submission-form"
       action="/"
       data-netlify="true"
       className="feedback-form__form"
       onSubmit={submit}>
-      <input type="hidden" name="form-name" value="customerr-form" />
+      <input type="hidden" name="form-name" value="customer-submission-form" />
       {fields.map(field => (
         <InputField
           key={field.name}
@@ -100,6 +100,7 @@ function encode(data) {
     }
   }
 
+
   return formData;
 }
 
@@ -152,9 +153,14 @@ class Block extends React.Component {
           ...this.state.form
         })
       })
-        .then(() => console.log(
-          'we are good'
-        ))
+        .then(() => {
+          for (var pair of encode({
+            "form-name": form.getAttribute("name"),
+            ...this.state.form
+          }).entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+          }
+        })
         .catch(error => alert(error));
     } else {
       this.setErrorForFields();
