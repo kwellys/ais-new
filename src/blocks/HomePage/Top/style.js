@@ -1,10 +1,11 @@
-import BG from 'assets/img/bg.svg';
+import BG from '../../../assets/img/bg.svg';
 import css from 'styled-jsx/css';
 import { colors, flexJustify, fontFamily, setStyle } from 'utils/style-helper';
 
 export const ImageStyle = css`
   .home-page {
     &__image {
+      box-sizing: border-box;
       padding: 75px 30px 75px 0;
       &_img {
         max-width: 100%;
@@ -84,8 +85,14 @@ export const PageStyle = css`
         max-width: 60%;
         padding: 0 !important;
         text-align: left;
-        @media (max-width: 640px) {
+        @media (max-width: 886px) {
           max-width: 75%;
+        }
+        @media (max-width: 740px) {
+          max-width: 75%;
+        }
+        @media (max-width: 660px) {
+          max-width: 78%;
         }
         @media (max-width: 600px) {
           max-width: none;
@@ -102,6 +109,14 @@ export const PageStyle = css`
       }
       @media screen and (max-width: 1100px) {
         font-size: 18px;
+        padding: 0 100px;
+      }
+      @media screen and (max-width: 740px) {
+        font-size: 16px;
+        padding: 0 100px;
+      }
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
         padding: 0 100px;
       }
       @media screen and (max-width: 600px) {

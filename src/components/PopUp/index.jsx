@@ -1,4 +1,4 @@
-import { Form as Feedback, Sent } from 'components/Feedback';
+import { Form as Feedback, Sent } from '../Feedback';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -15,9 +15,13 @@ class PopUp extends Component {
       counter: 5,
       startedInterval: false,
       form: {
-        name: { invalid: false, value: '' },
-        email: { invalid: false, value: '' },
+        name: { invalid: false, value: '', required: true },
+        email: { invalid: false, value: '', required: true },
+        phone: { invalid: false, value: '' },
       },
+      loading: false,
+      success: false,
+      error: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -52,10 +56,16 @@ class PopUp extends Component {
 
   setErrorForFields = () => {
     const { form } = this.state;
+    const { setEmailError } = this.props;
+
+    setEmailError('Enter email');
 
     const newForm = Object.keys(form).reduce((total, key) => {
-      if (form[key].value === '') {
-        total[key] = { ...form[key], invalid: true };
+      if (form[key].value === '' && form[key].required) {
+        total[key] = {
+          ...form[key],
+          invalid: true,
+        };
       } else {
         total[key] = { ...form[key] };
       }
@@ -69,38 +79,33 @@ class PopUp extends Component {
     const { form } = this.state;
 
     const isValid = Object.keys(form).filter(
-      key => form[key].value === '' || form[key].invalid,
+      key => form[key].value === '' && form[key].required,
     );
 
     return isValid.length === 0;
   }
 
+  simulateSendForm = () => {
+    this.setState({ loading: true });
+    setTimeout(() => this.setState({ loading: false, error: true }), 1800);
+    setTimeout(() => this.setState({ error: false, loading: true }), 3000);
+    setTimeout(() => this.setState({ loading: false, success: true }), 3800);
+  }
+
   handleSubmit(event) {
     event.preventDefault();
-    
+
     if (this.isFormValid()) {
-      console.log('Yeah!');
+      console.log('Need to send');
+      this.simulateSendForm();
     } else {
       this.setErrorForFields();
     }
-    // const { timer, values } = this.state;
-
-    // if (timer != null) {
-    //   clearTimeout(timer);
-    // }
-
-    // // TODO Validate and send feedback data
-
-    // // console.log(values);
-
-    // this.setState({
-    //   sent: true,
-    // });
   }
 
   render() {
     const {
-      fields, onClose, popup, showPopUp,
+      fields, onClose, popup, showPopUp, setEmailError,
     } = this.props;
     const { form } = this.state;
     const renderFeedback = () => {
@@ -122,14 +127,21 @@ class PopUp extends Component {
           }, 1000);
         }
 
-
-        return (
-          <Sent text={text} title={popup.sent.title} />
-        );
+        return <Sent text={text} title={popup.sent.title} />;
       }
-
+      const { loading, success, error } = this.state;
       return (
-        <Feedback title={popup.title} fields={fields} change={this.handleChange} submit={this.handleSubmit} fieldInfo={form} />
+        <Feedback
+          title={popup.title}
+          fields={fields}
+          change={this.handleChange}
+          submit={this.handleSubmit}
+          fieldInfo={form}
+          setEmailError={setEmailError}
+          loaded={loading}
+          sent={success}
+          errored={error}
+        />
       );
     };
 
@@ -172,13 +184,15 @@ class PopUp extends Component {
 }
 
 PopUp.propTypes = {
-  fields: PropTypes.arrayOf(PropTypes.shape({
-    error: PropTypes.string,
-    label: PropTypes.string,
-    name: PropTypes.string,
-    placeholder: PropTypes.string,
-    type: PropTypes.oneOf(['email', 'text', 'textarea']),
-  })),
+  fields: PropTypes.arrayOf(
+    PropTypes.shape({
+      error: PropTypes.string,
+      label: PropTypes.string,
+      name: PropTypes.string,
+      placeholder: PropTypes.string,
+      type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
+    }),
+  ),
   onClose: PropTypes.func.isRequired,
   popup: PropTypes.shape({
     sent: PropTypes.shape({

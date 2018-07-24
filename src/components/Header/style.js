@@ -9,9 +9,9 @@ import {
 export default css`
   .b-header {
     ${setStyle(flexJustify)} width: 100%;
-    position: absolute;
-    padding-top: 30px;
-    transition: all 0.3s;
+    position: fixed;
+    height: 60px;
+    transition: all 0.5s ease-out;
     @media screen and(max-width: 700px) {
       padding-top: 0;
     }
@@ -27,7 +27,6 @@ export default css`
       justify-content: space-between;
     }
     &__links {
-      margin-top: 13px;
       padding-left: 180px;
       @media screen and(max-width: 1100px) {
         padding-left: 70px;
@@ -40,6 +39,7 @@ export default css`
       }
     }
     &__button {
+      padding-right: 20px;
       @media (max-width: 700px) {
         display: none;
       }
@@ -55,18 +55,15 @@ export default css`
 
   .scrolled {
     background-color: #66a7ff;
-    height: 80px;
-    position: fixed;
+    height: 60px;
     z-index: 30;
-    transition: all 0.1s;
-    padding-top: 0;
+    transition: all 0.5s ease-in-out;
     @media (max-width: 700px) {
         height: 60px;
       }
   }
 
   .links__scrolled {
-    margin-top: 0;
     transition: all 0.2s;
   }
 `;

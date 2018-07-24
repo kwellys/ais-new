@@ -88,9 +88,9 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 exports.modifyWebpackConfig = ({ config }) => config.merge({
   plugins: [
-    new ImageminPlugin({
-      disable: process.env.NODE_ENV !== 'production',
-    }),
+    // new ImageminPlugin({
+    //   disable: process.env.NODE_ENV !== 'production',
+    // }),
   ],
   resolve: {
     alias: {

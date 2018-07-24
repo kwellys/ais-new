@@ -24,7 +24,6 @@ export default css`
     text-transform: uppercase;
     cursor: pointer;
     margin-right: 30px;
-    margin-top: 15px;
     border: none;
     @media screen and (max-width: 600px) {
       width: 189px;

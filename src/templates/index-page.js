@@ -28,7 +28,6 @@ import {tecnologyImage1,
 
 export class IndexPageTemplate extends Component {
   state = {
-    showPopUp: false,
     servicesData: this.props.servicesData,
     technologiesWeUseData: {
       title: 'TECHNOLOGIES WE USE',

@@ -1,7 +1,7 @@
 import classname from 'classname';
-import Button from 'components/Button';
-import CustomLink from 'components/CustomLink';
-import Logo from 'components/Logo';
+import Button from '../Button';
+import CustomLink from '../CustomLink';
+import Logo from '../Logo';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import style from './style';
@@ -25,7 +25,7 @@ class Header extends Component {
   };
 
   scrolled = () => {
-    if (window.scrollY > 20) {
+    if (window.scrollY > 50) {
       this.setState({ isFixed: true });
     } else {
       this.setState({ isFixed: false });

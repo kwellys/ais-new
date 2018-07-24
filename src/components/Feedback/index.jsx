@@ -7,8 +7,8 @@ import Button from '../Button';
 import { BlockStyle, FormStyle, SentStyle } from './style';
 
 const Form = ({
-  change, fields, submit, title, fieldInfo,
-}) => (
+                change, fields, submit, title, fieldInfo, loaded, sent, errored,
+              }) => (
   <div className="feedback-form">
     <Title title={title} big inverted uppercase />
 
@@ -19,7 +19,11 @@ const Form = ({
           change={value => change(field.name, value)}
           error={field.error}
           label={field.label}
-          invalid={fieldInfo[field.name] !== undefined ? fieldInfo[field.name].invalid : null}
+          invalid={
+            fieldInfo[field.name] !== undefined
+              ? fieldInfo[field.name].invalid
+              : null
+          }
           name={field.name}
           placeholder={field.placeholder}
           type={field.type}
@@ -27,7 +31,7 @@ const Form = ({
         />
       ))}
       <FileField change={value => change('file', value)} name="file" />
-      <Button title="Submit" type="submit" long />
+      <Button title="Submit" type="submit" long loading={loaded} success={sent} error={errored} />
     </form>
     <style jsx>
       {FormStyle}
@@ -43,7 +47,7 @@ Form.propTypes = {
       label: PropTypes.string,
       name: PropTypes.string,
       placeholder: PropTypes.string,
-      type: PropTypes.oneOf(['email', 'text', 'textarea']),
+      type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
     }),
   ),
   submit: PropTypes.func,
@@ -62,9 +66,13 @@ class Block extends React.Component {
 
     this.state = {
       form: {
-        name: { invalid: false, value: '' },
-        email: { invalid: false, value: '' },
+        name: { invalid: false, value: '', required: true },
+        email: { invalid: false, value: '', required: true },
+        phone: { invalid: false, value: '' },
       },
+      loading: false,
+      success: false,
+      error: false,
     };
 
     this.onChange = this.onChange.bind(this);
@@ -73,6 +81,7 @@ class Block extends React.Component {
 
   onChange(name, values) {
     const { form } = this.state;
+    const { setEmailError } = this.props;
     const newForm = Object.keys(form).reduce((total, key) => {
       if (key === name) {
         total[key] = { ...values };
@@ -81,6 +90,9 @@ class Block extends React.Component {
       }
       return total;
     }, {});
+    if (name === 'email') {
+      setEmailError('Email isn’t correct');
+    }
 
     this.setState({ form: { ...newForm } });
   }
@@ -89,7 +101,8 @@ class Block extends React.Component {
     event.preventDefault();
 
     if (this.isFormValid()) {
-      console.log('Yeah!');
+      console.log('Need to send form');
+      this.simulateSendForm();
     } else {
       this.setErrorForFields();
     }
@@ -97,12 +110,20 @@ class Block extends React.Component {
     // TODO Validate and send feedback data
   }
 
+
   setErrorForFields = () => {
     const { form } = this.state;
+    const { setEmailError } = this.props;
+
+    setEmailError('Enter email');
+
 
     const newForm = Object.keys(form).reduce((total, key) => {
-      if (form[key].value === '') {
-        total[key] = { ...form[key], invalid: true };
+      if (form[key].value === '' && form[key].required) {
+        total[key] = {
+          ...form[key],
+          invalid: true,
+        };
       } else {
         total[key] = { ...form[key] };
       }
@@ -112,11 +133,18 @@ class Block extends React.Component {
     this.setState({ form: { ...newForm } });
   }
 
+  simulateSendForm = () => {
+    this.setState({ loading: true });
+    setTimeout(() => this.setState({ loading: false, error: true }), 1800);
+    setTimeout(() => this.setState({ error: false, loading: true }), 3000);
+    setTimeout(() => this.setState({ loading: false, success: true }), 3800);
+  }
+
   isFormValid = () => {
     const { form } = this.state;
 
     const isValid = Object.keys(form).filter(
-      key => form[key].value === '' || form[key].invalid,
+      key => form[key].value === '' && form[key].required,
     );
 
     return isValid.length === 0;
@@ -125,6 +153,7 @@ class Block extends React.Component {
   render() {
     const { title, fields } = this.props;
     const { form } = this.state;
+    const { loading, success, error } = this.state;
 
     return (
       <div className="feedback">
@@ -138,6 +167,9 @@ class Block extends React.Component {
                 submit={this.onSubmit}
                 title={title}
                 fieldInfo={form}
+                loaded={loading}
+                sent={success}
+                errored={error}
               />
             </div>
           </div>
@@ -157,7 +189,7 @@ Block.propTypes = {
       label: PropTypes.string,
       name: PropTypes.string,
       placeholder: PropTypes.string,
-      type: PropTypes.oneOf(['email', 'text', 'textarea']),
+      type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
     }),
   ),
   title: PropTypes.string,

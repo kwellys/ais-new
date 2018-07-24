@@ -11,7 +11,7 @@ const TopHomeImage = ({ image }) => {
 
   return (
     <div className="home-page__image">
-      <img className="home-page__image_img" src={image} />
+      <img className="home-page__image_img" src={image} alt="Services" />
       <style jsx>
         {ImageStyle}
       </style>
@@ -27,11 +27,11 @@ TopHomeImage.defaultProps = {
 };
 
 const TopHomePage = ({
-  description,
-  image,
-  request,
-  title,
-}) => {
+                       description,
+                       image,
+                       request,
+                       title,
+                     }) => {
   const pageClass = classname('home-page', {
     'home-page_image': image != null,
   });

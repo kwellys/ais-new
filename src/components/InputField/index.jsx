@@ -1,4 +1,4 @@
-import UploadIcon from 'assets/img/upload.svg';
+import UploadIcon from '../../assets/img/upload.svg';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import isEmail from 'validator/lib/isEmail';
@@ -75,6 +75,11 @@ class InputView extends Component {
 
         break;
       }
+      case 'number': {
+        invalid = event.target.value.length < 7;
+
+        break;
+      }
       default: {
         const { error } = this.props;
 
@@ -101,7 +106,7 @@ class InputView extends Component {
           <textarea
             className={`input-view__field input-view__textarea ${
               invalid ? 'input-view__field-invalid' : ''
-            }`}
+              }`}
             id={name}
             name={name}
             placeholder={placeholder}
@@ -122,14 +127,14 @@ class InputView extends Component {
         <input
           className={`input-view__field input-view__input ${
             invalid ? 'input-view__field-invalid' : ''
-          }`}
+            }`}
           id={name}
           name={name}
           placeholder={placeholder}
           type={type}
           onChange={this.onChange}
         />
-        <InputError invalid={invalid} text={error} />
+        {error !== '' && <InputError invalid={invalid} text={error} />}
         <UploadLabel name={upload} />
         <style jsx>
           {ViewStyle}
@@ -144,7 +149,7 @@ InputView.propTypes = {
   error: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(['email', 'text', 'textarea']),
+  type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
   upload: PropTypes.string,
 };
 InputView.defaultProps = {
@@ -157,15 +162,15 @@ InputView.defaultProps = {
 };
 
 const InputField = ({
-  change,
-  error,
-  label,
-  name,
-  placeholder,
-  type,
-  upload,
-  invalid,
-}) => (
+                      change,
+                      error,
+                      label,
+                      name,
+                      placeholder,
+                      type,
+                      upload,
+                      invalid,
+                    }) => (
   <div className="input-field">
     <label className="input-field__label" htmlFor={name}>
       {label}
@@ -192,7 +197,7 @@ InputField.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(['email', 'text', 'textarea']),
+  type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
   upload: PropTypes.string,
 };
 InputField.defaultProps = {

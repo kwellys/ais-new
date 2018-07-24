@@ -82,7 +82,7 @@ export default css`
   @media (max-width: 576px) {
     .exp {
       &__container {
-        flex-direction: column;
+        flex-direction: column-reverse;
         padding: 45px;
       }
       &__description {
@@ -100,14 +100,9 @@ export default css`
         }
       }
       &__wrapper {
-        &_inverted {
-          .exp__container {
-            flex-direction: column-reverse;
-          }
-          .exp__image-container {
-            margin-top: 0;
-            margin-bottom: 15px; 
-          }
+        .exp__image-container {
+          margin-top: 0;
+          margin-bottom: 15px; 
         }
       }
     }
@@ -146,7 +141,7 @@ export const viewCases = css`
       padding-bottom: 2px;
       &:hover {
         transition: all 0.3s;
-        border-bottom: 1px solid ${colors.darkBlue};
+        border-bottom: 1px solid ${colors.blue};
       }
       &:after {
         content: '';
