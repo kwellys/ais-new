@@ -12,7 +12,8 @@ const Form = ({
   <div className="feedback-form">
     <Title title={title} big inverted uppercase />
 
-    <form className="feedback-form__form" onSubmit={submit}>
+    <form className="feedback-form__form" name="customer-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit}>
+      <input type="hidden" name="form-name" value="customer-form" />
       {fields.map(field => (
         <InputField
           key={field.name}
