@@ -153,7 +153,14 @@ class Block extends React.Component {
           ...this.state.form
         })
       })
-        .then(() => console.log(`we're good`));
+        .then(() => {
+          for (var pair of encode({
+            "form-name": form.getAttribute("name"),
+            ...this.state.form
+          }).entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+          }
+        });
     } else {
       this.setErrorForFields();
     }
