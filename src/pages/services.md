@@ -3,22 +3,29 @@ templateKey: services-page
 title: Our Coffeeeeeeeee
 topHome:
   description: >-
-    We are a team of professionals dedicated to creating fast, beautiful and
-    reliable web applications
-  title: For the beautiful web
+    Комплексные решения по разработке программного обеспечения и поддержке
+    проектов
   image: /img/exp2.png
+  title: Услуги
 expirience:
   expirienceArray:
-    - href: /
-      image: /img/exp1.png
-      inverted: false
+    - image: /img/exp1.png
+      inverted: true
       more: true
-      reversed: true
       pointList:
-        - ERP and CRM systems
-        - Corporate portals
-        - Data analytics and visualization
-        - Integration
-      title: Business solutions
+        - Прод
+        - авыаыва
+        - ывавыаыва
+        - ываыва
+        - ываываываыв
+        - ываываыва
+      reversed: true
+      title: Веб-разработкаа
+    - image: /img/exp3.png
+      inverted: true
+      pointList:
+        - Проведение тестов и прочего
+        - еще что-нибудь
+      title: Тестирование
 ---
 
