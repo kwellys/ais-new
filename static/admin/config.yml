@@ -281,6 +281,9 @@ collections:
                   - label: Image
                     name: image
                     widget: image
+                  - label: 'Link to'
+                    name: href
+                    widget: string
                   - label: 'Reverse direction'
                     name: inverted
                     widget: boolean
