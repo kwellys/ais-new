@@ -13,7 +13,7 @@ glob(`${folder}/**/*.html`, (er, files) => {
     const newValue = data.replace(/<style id=\"[^>]+\>[\D\d\:\;\"\.\{\}\s\-]+\<\/style>/gim, (str) => {
       const pureCss = str.replace(/<style id=\"[^>]+\>|<\/style>/gim, '');
       css += pureCss;
-      return `<link rel="stylesheet" type="text/css" href="${fileName}" />`;
+      return `<link rel="stylesheet" type="text/css" href="/${fileName}" />`;
     });
     fs.writeFileSync(pathToFile, newValue, 'utf-8');
   });
