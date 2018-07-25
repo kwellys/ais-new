@@ -1,15 +1,20 @@
 import css from 'styled-jsx/css';
 import { setStyle, flexJustify } from '../../utils/style-helper';
 
-export default css`
-.default {
-  &__wrapper {
-    width: 100%;
+export const BlockStyle = css`
+  .default {
+    &__wrapper {
+      width: 100%;
+    }
+    &__container {
+        ${setStyle(flexJustify)}
+    }
   }
-  &__container {
-      ${setStyle(flexJustify)}
-  }
-  &__title {
+`;
+
+export const TitleStyle = css`
+  .default {
+    &__title {
       width: 100%;
       margin-bottom: 76px;
       @media (max-width: 1100px){
@@ -21,6 +26,6 @@ export default css`
       @media (max-width: 600px){
         margin-bottom: 35px;
       }
+    }
   }
-}
 `;
