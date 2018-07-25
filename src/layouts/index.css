@@ -218,6 +218,3 @@ input[type=number]::-webkit-outer-spin-button {
 html, body {
   min-width: 320px;
 }
-
-/* styles for rocket-chat online */
-.livechat-room .title h1 { font-size: 12pt; }

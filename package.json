@@ -49,12 +49,13 @@
   "main": "n/a",
   "scripts": {
     "start": "npm run develop",
-    "build": "gatsby build && npm run extract-style",
+    "build": "gatsby build && npm run extract-style && npm run copy-rocket-styles",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "extract-style": "node ./deploy/styled-jsx-css.js"
+    "extract-style": "node ./deploy/styled-jsx-css.js",
+    "copy-rocket-styles": "node deploy/copy-rocket-style.js"
   },
   "devDependencies": {
     "eslint-plugin-import": "^2.13.0",

@@ -5,9 +5,8 @@ const glob = require('glob');
 const folder = './public';
 const fileName = 'jsx-styles.css';
 
-
-glob(`${folder}/*.html`, (er, files) => {
-  let css = '';
+let css = '';
+glob(`${folder}/**/*.html`, (er, files) => {
   files.forEach((file) => {
     const pathToFile = path.resolve(file);
     const data = fs.readFileSync(pathToFile, 'utf8');
@@ -19,6 +18,18 @@ glob(`${folder}/*.html`, (er, files) => {
     fs.writeFileSync(pathToFile, newValue, 'utf-8');
   });
 
-  fs.writeFileSync(`${path.resolve(folder)}/${fileName}`, css);
-  console.log('Styles were extracted!');
+  glob(`${folder}/**/*.css`, (er, files) => {
+    files.forEach((file) => {
+
+      const pathToFile = path.resolve(file);
+      const data = fs.readFileSync(pathToFile, 'utf8');
+
+      css += data;
+      fs.unlinkSync(pathToFile);
+    });
+
+    fs.writeFileSync(`${path.resolve(folder)}/${fileName}`, css);
+
+    console.log('Styles were extracted!');
+  });
 });
