@@ -1,6 +1,7 @@
 import React, {Fragment, Component} from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import Favicon from '../../Favicon.png'
 import classname from 'classname';
 
 import Header from '../components/Header';
@@ -96,6 +97,8 @@ class TemplateWrapper extends Component {
         <Helmet meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
+        ]} link={[
+          { rel: 'shortcut icon', type: 'image/png', href: `${Favicon}` }
         ]} title="AIS Novations | We are aimed to create fast, beautiful and reliable web applications" />
         <PopUp
           showPopUp={showPopUp}
