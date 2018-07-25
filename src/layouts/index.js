@@ -9,6 +9,7 @@ import PopUp from '../components/PopUp';
 import { Block as Feedback } from '../components/Feedback';
 
 import './index.css'
+import '../utils/rocket-chat';
 
 class TemplateWrapper extends Component {
   state = {
