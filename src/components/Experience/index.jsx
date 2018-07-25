@@ -23,7 +23,6 @@ ListItem.propTypes = {
 };
 
 const ListBlock = ({ items }) => {
-  console.log(items);
   if (items.length === 1) {
     return (
       <Text noAlign>
