@@ -12,6 +12,7 @@ expirience:
     - image: /img/exp1.png
       inverted: true
       more: true
+      href: '/'
       pointList:
         - Прод
         - авыаыва
@@ -23,6 +24,7 @@ expirience:
       title: Веб-разработкаа
     - image: /img/exp3.png
       inverted: true
+      href: '/'
       pointList:
         - Проведение тестов и прочего
         - еще что-нибудь
