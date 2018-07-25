@@ -25,7 +25,7 @@ glob(`${folder}/**/*.html`, (er, files) => {
       const data = fs.readFileSync(pathToFile, 'utf8');
 
       css += data;
-      fs.unlinkSync(pathToFile);
+      // fs.unlinkSync(pathToFile);
     });
 
     fs.writeFileSync(`${path.resolve(folder)}/${fileName}`, css);
