@@ -245,7 +245,7 @@ collections:
                     widget: image
       - file: src/pages/services.md
         label: 'Services Page'
-        name: services-pages
+        name: services-page
         fields:
           - label: 'Template Key'
             name: templateKey
