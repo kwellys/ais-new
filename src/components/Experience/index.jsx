@@ -23,6 +23,7 @@ ListItem.propTypes = {
 };
 
 const ListBlock = ({ items }) => {
+  console.log(items);
   if (items.length === 1) {
     return (
       <Text noAlign>
@@ -64,7 +65,9 @@ ViewCase.defaultProps = {
   more: false,
 };
 
-const Experience = ({ descr, inverted, more, reversed }) => {
+const Experience = ({
+                      descr, inverted, more, reversed,
+                    }) => {
   const expWrapper = classname('exp__wrapper', {
     exp__wrapper_inverted: inverted,
     exp__wrapper_reversed: reversed,

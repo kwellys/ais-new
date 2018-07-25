@@ -21,7 +21,7 @@ const ServicesBlock = ({ servicesData, windowWidth, onClick }) => (
                   technologies={service.technologies}
                   image={service.image}
                   isMobileOpen={service.isMobileOpen}
-                  onClick={e => onClick(index)}
+                  onClick={() => onClick(index)}
                 />
               ) : (
                 <Service

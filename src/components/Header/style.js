@@ -12,6 +12,7 @@ export default css`
     position: fixed;
     height: 60px;
     transition: all 0.5s ease-out;
+    z-index: 30;
     @media screen and(max-width: 700px) {
       padding-top: 0;
     }
