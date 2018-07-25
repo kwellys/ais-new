@@ -69,6 +69,7 @@ class PopUp extends Component {
   handleClick(e) {
     if (e.target.classList.value.indexOf('b-pop-up__content') !== -1) {
       document.getElementsByTagName('body')[0].style = '';
+      document.querySelector('.b-header__content').style = '';
 
       this.setState({ sent: false });
 
@@ -147,7 +148,8 @@ class PopUp extends Component {
 
     const renderPopUp = () => {
       if (showPopUp) {
-        document.getElementsByTagName('body')[0].style = 'overflow: hidden;padding-right: 20px;';
+        document.getElementsByTagName('body')[0].style = 'overflow: hidden;padding-right: 15px;';
+        document.querySelector('.b-header__content').style = 'padding-right: 15px;';
       }
 
       return (
@@ -158,6 +160,7 @@ class PopUp extends Component {
                 className="b-pop-up__close"
                 onClick={() => {
                   document.getElementsByTagName('body')[0].style = '';
+                  document.querySelector('.b-header__content').style = '';
 
                   this.setState({ sent: false });
 

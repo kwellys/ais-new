@@ -13,7 +13,8 @@ const scrollToCenter = () => {
   const a = document.querySelector('.world-wide__wrapper');
   if (a) {
     const width = a.offsetWidth;
-    a.scrollTo(width / 2, 0);
+    // a.scrollTo(width / 2, 0);
+    a.scrollIntoView(width / 2);
   }
 };
 

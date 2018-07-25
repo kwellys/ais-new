@@ -18,17 +18,24 @@ glob(`${folder}/**/*.html`, (er, files) => {
     fs.writeFileSync(pathToFile, newValue, 'utf-8');
   });
 
-  glob(`${folder}/**/*.css`, (er, files) => {
-    files.forEach((file) => {
+  glob(`${folder}/**/*.css`, (er, cssFiles) => {
+    cssFiles.forEach((file) => {
+      if (file.indexOf('cms.css') !== 0) {
+        return;
+      }
 
       const pathToFile = path.resolve(file);
       const data = fs.readFileSync(pathToFile, 'utf8');
 
       css += data;
-      // fs.unlinkSync(pathToFile);
+      fs.unlinkSync(pathToFile);
     });
-
-    fs.writeFileSync(`${path.resolve(folder)}/${fileName}`, css);
+    let cssImported = '';
+    const cssWithOutImport = css.replace(/@import url\([^>]+?\);/gim, (str) => {
+      cssImported += str;
+      return '';
+    });
+    fs.writeFileSync(`${path.resolve(folder)}/${fileName}`, cssImported + cssWithOutImport);
 
     console.log('Styles were extracted!');
   });

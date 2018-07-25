@@ -7,7 +7,7 @@ import style from './style';
 import Pointer from '../../assets/img/map_marker.svg'
 const Cursor = ({ singleMarker }) => {
   return (
-    <div className="cursor">
+    <div className="cursor" style={{top: singleMarker.coords.y + '%', left: singleMarker.coords.x + '%'}}>
       <img className="mapMaker" src={Pointer} alt="map maker" />
       <div className="company">
         <div className="company__info">
@@ -31,13 +31,6 @@ const Cursor = ({ singleMarker }) => {
       </div>
       <style jsx>
         {style}
-      </style>
-      <style jsx>
-        {`
-        .cursor {
-          top: ${singleMarker.coords.y + "%"};left: ${singleMarker.coords.x + "%"};
-      }`
-        }
       </style>
     </div>
   );
