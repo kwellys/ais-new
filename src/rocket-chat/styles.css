@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
-div.livechat-room .widget-open .title {
+div.livechat-room.widget-open .title {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
