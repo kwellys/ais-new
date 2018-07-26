@@ -24,7 +24,7 @@ cards:
     title: Maintenance and Support
 servicesData:
   servicesArr:
-    - description: Rocket fast backend with lastest technologies
+    - description: Rocket fast backend with latest technologies
       image: /img/extraservice1.png
       technologies:
         - NodeJS
@@ -86,7 +86,7 @@ expirienceData:
       inverted: false
       pointList:
         - Decentralized web applications
-        - Corporate polls and voting ICO
+        - Corporate polls and voting
         - ICO and Token emmission
         - Decentralized platform
       title: Blockchain
@@ -94,7 +94,7 @@ expirienceData:
       image: /img/exp4.png
       inverted: true
       pointList:
-        - Booking platform
+        - Booking platforms
         - Website from hotel website
         - PMS integration
         - Custom PMS solutions
