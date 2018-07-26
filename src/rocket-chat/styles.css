@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
-.widget-open div.livechat-room .title {
+div.livechat-room .widget-open .title {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
+body > div > div.title
 div.livechat-room .title h1 {
     font-family: Montserrat;
     font-style: normal;
@@ -49,4 +50,27 @@ div.livechat-room .header .info h2 {
     line-height: normal;
     font-size: 14px;
     color: #525252;
+}
+div.livechat-room .header .info {
+    display: flex;
+    align-items: center;
+}
+div.livechat-room .header {
+    border-bottom: 1px solid #D9E6FF;
+}
+div.livechat-room .messages .wrapper .message .thumb {
+    display: none;
+}
+div.livechat-room .messages .wrapper .message .content {
+    margin-left: 0;
+}
+div.livechat-room .messages .wrapper .message.new-day:before {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 12px;
+    text-align: center;
+
+    color: #BDBDBD;
 }
