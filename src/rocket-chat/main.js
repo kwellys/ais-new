@@ -23,7 +23,6 @@
   // $(document).ready(function() {
   widgetLoaded(widget);
   function widget() {
-    console.log("Jquery was loaded");
     var isOpen = false;
     $(".livechat-room").addClass("widget-close");
 
@@ -39,7 +38,6 @@
     }
     var title = $(".title");
     var online = title.attr("style").indexOf("#C1272D") !== -1;
-    console.log(online);
     title.on("click", function() {
       handleWidget();
     });
@@ -48,7 +46,6 @@
       title.css({
         background: "linear-gradient(38.83deg, #66A6FF 30.26%, #6DFFD6 115.74%)"
       });
-      console.log(online);
     } else {
       title.css({
         background:
