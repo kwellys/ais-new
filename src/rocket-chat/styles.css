@@ -80,9 +80,19 @@ div.livechat-room .messages .wrapper .message.new-day .content:after {
 }
 div.livechat-room .messages .wrapper .message.own .content {
     background: #62A9FC;
-    border: none;
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius: 12px;
 }
-div.livechat-room .messages .wrapper .message .user {
+div.livechat-room .messages .wrapper .message .content {
+    background-color: #EDF3FF;
+    border: none;
+    padding: 13px 10px 10px 21px;
+    background: #EDF3FF;
+    border-bottom-left-radius: unset;
+    border-radius: 12px;
+}
+div.livechat-room .messages .wrapper .message .user,
+div.livechat-room .messages .wrapper .message .body {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
@@ -90,13 +100,23 @@ div.livechat-room .messages .wrapper .message .user {
     font-size: 12px;
 
     color: #525252;
+    margin-bottom: 16px;
 }
-div.livechat-room .messages .wrapper .message [data-username="guest-*"] .user {
+div.livechat-room .messages .wrapper .message [data-username*="guest-"] .user,
+div.livechat-room .messages .wrapper .message [data-username*="guest-"] .body {
+    color: #FFFFFF;
+}
+div.livechat-room .messages .wrapper .message.own .content:before, 
+div.livechat-room .messages .wrapper .message .content:before {
+    display: none;
+}
+
+div.livechat-room .messages .wrapper .message .info {
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 12px;
-    
-    color: #FFFFFF;
+    font-weight: normal;
+    line-height: 22px;
+    font-size: 10px;
+
+    color: #636363;
 }
