@@ -1,20 +1,21 @@
 (function () {
+  $(document).ready(function(){
   // console.log('Widget was loaded!');
   var script = this.document.createElement('script');
   script.src = "https://code.jquery.com/jquery-3.3.1.min.js";
   script.onload = function () {
     // console.log('Jquery was loaded')
     var isOpen = false;
-    $('.livechat-room').addClass('close');
-    
+    $('.livechat-room').addClass('widget-close');
+
     function handleWidget(){
       isOpen = !isOpen;
       if(isOpen){
-        $('.livechat-room').removeClass('close')
-        $('.livechat-room').addClass('open')
+        $('.livechat-room').removeClass('widget-close')
+        $('.livechat-room').addClass('widget-open')
       } else {
-        $('.livechat-room').removeClass('open')
-        $('.livechat-room').addClass('close')
+        $('.livechat-room').removeClass('widget-open')
+        $('.livechat-room').addClass('widget-close')
       }
     }
     var title = $('.title');
@@ -39,4 +40,6 @@
 
 }
   document.head.appendChild(script);
+  })
+
 })();
