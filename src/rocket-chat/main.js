@@ -52,7 +52,7 @@
     } else {
       title.css({
         background:
-          "linear-gradient(38.83deg, #97ABD4 27.05%, rgba(217, 230, 255, 0.69) 115.74%);"
+          "linear-gradient(38.83deg, #97ABD4 27.05%, rgba(217, 230, 255, 0.69) 115.74%)"
       });
     }
     // var max = $('.maximize')

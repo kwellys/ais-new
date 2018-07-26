@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
-div.livechat-room.widget-open .title {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
 body > div > div.title
 div.livechat-room .title h1 {
     font-family: Montserrat;
@@ -16,13 +12,15 @@ div.livechat-room .title h1 {
 }
 div.livechat-room .title { 
     padding: 0 26px 0 39px;
-    border-radius: 50px;
-    flex: 1 0 60px;
+    border-radius: 23px;
+    flex: 1 0 50px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     transition: all .3s;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 div.livechat-room .header .picture {
     padding: 0;
@@ -36,6 +34,7 @@ div.livechat-room .header .picture img{
 div.livechat-room .header {
     flex: 1 0 72px;
     padding: 13px 30px;
+    box-shadow: unset;
 }
 div.livechat-room .header .info li {
 
@@ -119,4 +118,16 @@ div.livechat-room .messages .wrapper .message .info {
     font-size: 10px;
 
     color: #636363;
+}
+div.livechat-room .footer .message-bar .input-wrapper textarea {
+    height: 50px;
+}
+div.livechat-room .title h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 18px;
+
+    color: #FFFFFF;
 }
