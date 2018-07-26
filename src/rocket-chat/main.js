@@ -3,11 +3,24 @@
   var script = this.document.createElement('script');
   script.src = "https://code.jquery.com/jquery-3.3.1.min.js";
   script.onload = function () {
-    console.log('Jquery was loaded')
-
+    // console.log('Jquery was loaded')
+    var isOpen = false;
+    $('.livechat-room').addClass('close');
+    
+    function handleWidget(){
+      isOpen = !isOpen;
+      if(isOpen){
+        $('.livechat-room').removeClass('close')
+        $('.livechat-room').addClass('open')
+      } else {
+        $('.livechat-room').removeClass('open')
+        $('.livechat-room').addClass('close')
+      }
+    }
     var title = $('.title');
     var online = title.attr('style').indexOf('#C1272D') !== -1;
     console.log(online)
+    title.on('click',function (){ handleWidget() });
 
     if(online){
       title.css({background: 'linear-gradient(38.83deg, #66A6FF 30.26%, #6DFFD6 115.74%)'})

@@ -1,7 +1,8 @@
 /* styles for rocket-chat online */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-[data-state="opened"] div.livechat-room .title {
+
+.widget-open div.livechat-room .title {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -20,4 +21,4 @@ div.livechat-room .title {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
- }
+}
