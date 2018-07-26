@@ -4,7 +4,11 @@
     var script = document.createElement("script");
     script.src = "https://code.jquery.com/jquery-3.3.1.min.js";
     script.onload = function() {
-      $(document).ready(function() {
+      
+    };
+    
+    document.head.appendChild(script);
+    $(document).ready(function() {
       console.log('Jquery was loaded')
       var isOpen = false;
       $(".livechat-room").addClass("widget-close");
@@ -47,7 +51,5 @@
       // max.children('path').attr('fill', 'white')
       // max.children('path').attr('transform', 'translate(3.49605 4.6665)')
         });
-      document.head.appendChild(script);
-    };
 
 })();

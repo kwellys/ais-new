@@ -35,3 +35,9 @@ div.livechat-room .header {
     flex: 1 0 72px;
     padding: 13px 30px;
 }
+div.livechat-room .header .info li {
+    
+}
+div.livechat-room .header .info li:nth-child(2){
+    display: none;
+}
