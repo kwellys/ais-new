@@ -22,6 +22,7 @@ div.livechat-room .title {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    transition: all .3s;
 }
 div.livechat-room .header .picture {
     padding: 0;
@@ -73,4 +74,29 @@ div.livechat-room .messages .wrapper .message.new-day:before {
     text-align: center;
 
     color: #BDBDBD;
+}
+div.livechat-room .messages .wrapper .message.new-day .content:after {
+    display: none;
+}
+div.livechat-room .messages .wrapper .message.own .content {
+    background: #62A9FC;
+    border: none;
+}
+div.livechat-room .messages .wrapper .message .user {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 12px;
+
+    color: #525252;
+}
+div.livechat-room .messages .wrapper .message [data-username="guest-*"] .user {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 12px;
+    
+    color: #FFFFFF;
 }
