@@ -22,3 +22,10 @@ div.livechat-room .title {
     justify-content: space-between;
     align-items: center;
 }
+div.livechat-room .header .picture {
+    padding: 0;
+}
+div.livechat-room .header {
+    flex: 1 0 72px;
+    padding: 13px 30px;
+}
