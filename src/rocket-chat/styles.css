@@ -1,2 +1,17 @@
 /* styles for rocket-chat online */
-div.livechat-room .title { flex: 1 0 72px; }
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+div.livechat-room .title h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 18px;
+}
+div.livechat-room .title { 
+    flex: 1 0 72px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+ }
