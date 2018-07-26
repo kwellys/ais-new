@@ -219,7 +219,11 @@ html, body {
   min-width: 320px;
 }
 
-.rocketchat-widget {
-  width: 375px;
-  height: 600px;
+.rocketchat-widget[data-state="opened"] {
+  width: 375px!important;
+  height: 600px!important;
+}
+.rocketchat-widget[data-state="closed"] {
+  width: 375px!important;
+  height: 72px!important;
 }

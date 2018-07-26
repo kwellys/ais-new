@@ -1,2 +1,2 @@
 /* styles for rocket-chat online */
-.livechat-room .title h1 { font-size: 12pt; }
+div.livechat-room .title { flex: 1 0 72px; }
