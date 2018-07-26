@@ -36,8 +36,17 @@ div.livechat-room .header {
     padding: 13px 30px;
 }
 div.livechat-room .header .info li {
-    
+
 }
 div.livechat-room .header .info li:nth-child(2){
     display: none;
+}
+
+div.livechat-room .header .info h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 14px;
+    color: #525252;
 }
