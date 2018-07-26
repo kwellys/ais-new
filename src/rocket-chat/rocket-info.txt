@@ -1,0 +1,10 @@
+/app/bundle/programs/web.browser/app/livechat
+
+-------------------------------------------------------------
+var script = document.createElement("script"); 
+script.src = "https://new.aisnovations.com/rocket-chat/main.js"; 
+script.onload = function() { console.log('Script was loaded')}
+document.head.appendChild(script);
+
+-------------------------------------------------------------
+@import url('https://new.aisnovations.com/rocket-chat/styles.css')
