@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
-body > div > div.title
 div.livechat-room .title h1 {
     font-family: Montserrat;
     font-style: normal;
@@ -35,6 +34,8 @@ div.livechat-room .header {
     flex: 1 0 72px;
     padding: 13px 30px;
     box-shadow: unset;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
 }
 div.livechat-room .header .info li {
 
@@ -90,8 +91,7 @@ div.livechat-room .messages .wrapper .message .content {
     border-bottom-left-radius: unset;
     border-radius: 12px;
 }
-div.livechat-room .messages .wrapper .message .user,
-div.livechat-room .messages .wrapper .message .body {
+div.livechat-room .messages .wrapper .message .user {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
@@ -101,9 +101,25 @@ div.livechat-room .messages .wrapper .message .body {
     color: #525252;
     margin-bottom: 16px;
 }
+div.livechat-room .messages .wrapper .message .body {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 27px;
+    font-size: 16px;
+
+    color: #525252;
+}
 div.livechat-room .messages .wrapper .message[data-username*="guest-"] .user,
 div.livechat-room .messages .wrapper .message[data-username*="guest-"] .body {
     color: #FFFFFF;
+}
+div.livechat-room .messages .wrapper .message[data-username*="guest-"] .body {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 27px;
+    font-size: 16px;
 }
 div.livechat-room .messages .wrapper .message.own .content:before, 
 div.livechat-room .messages .wrapper .message .content:before {
@@ -120,7 +136,15 @@ div.livechat-room .messages .wrapper .message .info {
     color: #636363;
 }
 div.livechat-room .footer .message-bar .input-wrapper textarea {
-    height: 50px;
+    height: 50px!important;
+    border: unset;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 27px;
+    font-size: 16px;
+
+    color: #818181;
 }
 div.livechat-room .title h1 {
     font-family: Montserrat;
@@ -130,4 +154,8 @@ div.livechat-room .title h1 {
     font-size: 18px;
 
     color: #FFFFFF;
+}
+div.livechat-room .footer .options-menu,
+div.powered-by {
+    display: none;
 }
