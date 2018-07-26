@@ -6,7 +6,7 @@ window.onload = function () {
     console.log('Jquery was loaded')
 
     var title = $('.title');
-    var online = title.attr('style').indexOf('#C1272D') !== -1;
+    var online = title !== undefined;
     console.log(online)
     // var max = $('.maximize')
     // max.attr('viewBox', '0 0 28 28')
