@@ -9,16 +9,16 @@
 
     document.head.appendChild(script);
 
-    function widgetLoaded(){
+    function widgetLoaded(func = f => f){
       function check(){
-        return $('.title');
+        return $('.title').length !== 0;
       }
 
       var timer = setInterval(() => {
         var trigger = check();
-        if(trigger !== undefined){
+        if(trigger){
           clearInterval(timer)
-          console.log('Loaded!')
+          func()
         }
       })
     }
