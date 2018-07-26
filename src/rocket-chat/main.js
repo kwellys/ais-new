@@ -1,4 +1,4 @@
-window.onload = function () {
+(function () {
   // console.log('Widget was loaded!');
   var script = this.document.createElement('script');
   script.src = "https://code.jquery.com/jquery-3.3.1.min.js";
@@ -6,11 +6,12 @@ window.onload = function () {
     console.log('Jquery was loaded')
 
     var title = $('.title');
-    var online = title !== undefined;
+    var online = title.attr('style').indexOf('#C1272D') !== -1;
     console.log(online)
-    
+
     if(online){
       title.css({background: 'linear-gradient(38.83deg, #66A6FF 30.26%, #6DFFD6 115.74%)'})
+      console.log(online)
     } else {
       title.css({background: 'linear-gradient(38.83deg, #97ABD4 27.05%, rgba(217, 230, 255, 0.69) 115.74%);'})
     }
@@ -25,4 +26,4 @@ window.onload = function () {
 
 }
   document.head.appendChild(script);
-};
+})();
