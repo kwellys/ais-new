@@ -102,8 +102,8 @@ div.livechat-room .messages .wrapper .message .body {
     color: #525252;
     margin-bottom: 16px;
 }
-div.livechat-room .messages .wrapper .message [data-username*="guest-"] .user,
-div.livechat-room .messages .wrapper .message [data-username*="guest-"] .body {
+div.livechat-room .messages .wrapper .message[data-username*="guest-"] .user,
+div.livechat-room .messages .wrapper .message[data-username*="guest-"] .body {
     color: #FFFFFF;
 }
 div.livechat-room .messages .wrapper .message.own .content:before, 

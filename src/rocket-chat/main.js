@@ -17,7 +17,7 @@
         clearInterval(timer);
         func();
       }
-    });
+    }, 50);
   }
 
   // $(document).ready(function() {
