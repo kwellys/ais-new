@@ -225,5 +225,5 @@ html, body {
 }
 .rocketchat-widget[data-state="closed"] {
   width: 375px!important;
-  height: 72px!important;
+  height: 60px!important;
 }

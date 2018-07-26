@@ -8,6 +8,12 @@ window.onload = function () {
     var title = $('.title');
     var online = title !== undefined;
     console.log(online)
+    
+    if(online){
+      title.css({background: 'linear-gradient(38.83deg, #66A6FF 30.26%, #6DFFD6 115.74%)'})
+    } else {
+      title.css({background: 'linear-gradient(38.83deg, #97ABD4 27.05%, rgba(217, 230, 255, 0.69) 115.74%);'})
+    }
     // var max = $('.maximize')
     // max.attr('viewBox', '0 0 28 28')
     // max.attr('width', '28')
