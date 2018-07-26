@@ -177,9 +177,9 @@ button.button {
 
     color: #FFFFFF;
 }
-input.livechat-form, 
-input.livechat-form input, 
-input.livechat-form select {
+div.livechat-form, 
+div.livechat-form input, 
+div.livechat-form select {
     background: #FFFFFF;
     border: 1px solid #D9E6FF;
     box-sizing: border-box;
@@ -195,3 +195,33 @@ input.livechat-form select {
 
     color: #525252;
 }
+div.livechat-room .offline form input, 
+div.livechat-room .offline form textarea {
+    background: #FFFFFF;
+    border: 1px solid #62A9FC;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 22px;
+    font-size: 12px;
+    letter-spacing: -0.0241176em;
+
+    color: #525252;
+}
+div.livechat-room .offline form textarea {
+    height: 139px;
+}
+
+p.livechat-room .offline .offline-message {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 27px;
+    font-size: 16px;
+
+    color: #525252;
+}
+input.livechat-room .offline form input, .livechat-room .offline form textarea
