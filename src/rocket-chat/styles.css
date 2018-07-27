@@ -230,8 +230,6 @@ p.livechat-room .offline .offline-message {
 button.button:before {
     display: none;
 }
-@media (max-width: 550px){
-    div.livechat-room .title {
-        border-radius: unset;
-    }
+div.livechat-room .messages .wrapper .message[data-username*="guest-"] .info {
+    color: #D9E6FF;
 }
