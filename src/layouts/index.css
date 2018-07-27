@@ -227,5 +227,16 @@ html, body {
 }
 .rocketchat-widget[data-state="closed"] {
   width: 375px!important;
-  height: 60px!important;
+  height: 35px!important;
+}
+@media (max-width: 550px){
+  .rocketchat-widget[data-state="closed"] {
+    width: 100%!important;
+    right: 0!important;
+  }
+  .rocketchat-widget[data-state="opened"] {
+    width: 100%!important;
+    height: 100%!important;
+    right: 0!important;
+  }
 }
