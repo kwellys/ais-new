@@ -12,7 +12,7 @@ div.livechat-room .title h1 {
 div.livechat-room .title { 
     padding: 0 26px 0 39px;
     border-radius: 23px;
-    flex: 1 0 50px;
+    flex: 1 0 35px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -195,6 +195,9 @@ div.livechat-form select {
 
     color: #525252;
 }
+div.livechat-form {
+    margin-bottom: 0;
+}
 div.livechat-room .offline form input, 
 div.livechat-room .offline form textarea {
     background: #FFFFFF;
@@ -226,4 +229,9 @@ p.livechat-room .offline .offline-message {
 }
 button.button:before {
     display: none;
+}
+@media (max-width: 550px){
+    div.livechat-room .title {
+        border-radius: unset;
+    }
 }
