@@ -45,6 +45,32 @@ export default css`
         display: none;
       }
     }
+    &__mob-button {
+      display: none;
+      transition: all 0.3s;
+      @media screen and(max-width: 700px) {
+        display: block;
+        margin-left: 276px;
+      }
+      @media screen and(max-width: 630px) {
+        margin-left: 246px;
+      }
+      @media screen and(max-width: 600px) {
+        margin-left: 100px;
+      }
+      @media screen and(max-width: 500px) {
+        margin-left: 70px;
+      }
+      @media screen and(max-width: 430px) {
+        margin-left: 30px;
+      }
+      @media screen and(max-width: 400px) {
+        margin-left: 0;
+      }
+      @media screen and(max-width: 350px) {
+        margin-left: 0;
+      }
+    }
     &__m-menu {
         display: none;
         @media (max-width: 700px){

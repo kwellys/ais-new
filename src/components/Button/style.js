@@ -31,7 +31,6 @@ export default css`
       font-size: 10px;
     }
     @media screen and (max-width: 600px) {
-      width: 189px;
       height: 40px;
       line-height: 14px;
       font-size: 12px;
@@ -39,15 +38,16 @@ export default css`
       border: none;
       }
     @media screen and (max-width: 500px) {
-      width: 169px;
       height: 36px;
       line-height: 12px;
       font-size: 10px;
       margin: 0;
       border: none;
       }
+    @media screen and (max-width: 350px) {
+      padding: 0 8px;
+      }
     @media screen and (max-width: 320px) {
-    width: 149px;
     height: 33px;
     margin: 0;
     border: none;
