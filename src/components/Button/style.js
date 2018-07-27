@@ -25,6 +25,7 @@ export default css`
     cursor: pointer;
     margin-right: 30px;
     border: none;
+    ${flexAllAlign}
     @media (max-width: 1300px){
       padding: 0 14px;
       height: 27px;
