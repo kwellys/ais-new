@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Button from '../Button';
 
 import style from './style';
 
@@ -24,7 +25,7 @@ class HamburgerMenu extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const { links } = this.props;
+    const { links, onClick } = this.props;
     const renderMenu = () => (
       <div className="b-hamburger__menu-box">
         <button className="b-hamburger__close" type="button" onClick={this.handleClose} />
@@ -35,7 +36,7 @@ class HamburgerMenu extends React.Component {
               {link.title}
             </a>
           ))}
-
+          <Button inverted title="Request a quote" onClick={onClick} />
 
         </div>
         <style jsx>

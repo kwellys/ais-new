@@ -57,7 +57,7 @@ class Header extends Component {
           <Button title="request a quote" onClick={onClick} />
           </div>
           <div className="b-header__m-menu">
-            <HamburgerMenu links={links} />
+            <HamburgerMenu links={links} onClick={onClick} />
           </div>
 
         </div>
