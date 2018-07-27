@@ -218,7 +218,9 @@ input[type=number]::-webkit-outer-spin-button {
 html, body {
   min-width: 320px;
 }
-
+.rocketchat-widget {
+  transition: all 0.3s!important;
+}
 .rocketchat-widget[data-state="opened"] {
   width: 375px!important;
   height: 600px!important;
@@ -226,5 +228,4 @@ html, body {
 .rocketchat-widget[data-state="closed"] {
   width: 375px!important;
   height: 60px!important;
-  transition: all 0.3s!important;
 }

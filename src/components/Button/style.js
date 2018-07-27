@@ -11,7 +11,7 @@ import errorIcon from '@/assets/img/error-icon.png';
 
 export default css`
   .btn {
-    width: 239px;
+    padding: 0 52px;
     height: 45px;
     line-height: 17px;
     color: ${colors.blue};
@@ -25,6 +25,11 @@ export default css`
     cursor: pointer;
     margin-right: 30px;
     border: none;
+    @media (max-width: 1300px){
+      padding: 0 14px;
+      height: 27px;
+      font-size: 10px;
+    }
     @media screen and (max-width: 600px) {
       width: 189px;
       height: 40px;
@@ -46,11 +51,6 @@ export default css`
     height: 33px;
     margin: 0;
     border: none;
-    }
-    @media (max-width: 1300px){
-      width: 123.05px;
-      height: 27px;
-      font-size: 10px;
     }
     &:hover {
       box-shadow: ${boxShadow};
@@ -119,6 +119,11 @@ export default css`
       &:last-child {
         margin-right: 0;
       }
+    }
+    &__tranparency {
+      color: #ffffff;
+      border: 2px solid white;
+      background: rgba(105, 210, 236, 0.16);
     }
   }
   @keyframes blink {
