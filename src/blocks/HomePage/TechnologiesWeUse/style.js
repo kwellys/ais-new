@@ -119,6 +119,7 @@ export default css`
       }
       &__container{
         max-width: 308px;
+        margin-bottom: 50px;
       } 
     }
 

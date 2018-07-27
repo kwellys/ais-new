@@ -221,7 +221,6 @@ html, body {
 .rocketchat-widget {
   transition: all 0.3s!important;
 }
-
 .rocketchat-widget[data-state="opened"] {
   width: 375px!important;
   height: 600px!important;
