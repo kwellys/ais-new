@@ -61,9 +61,6 @@ const TopHomePage = ({
               {description}
             </h1>
           </div>
-          <div className="m-button">
-            <Button title={request} />
-          </div>
         </div>
       </div>
       <style jsx>

@@ -53,8 +53,11 @@ class Header extends Component {
           <div className="b-header__button">
             <Button title="request a quote" onClick={onClick} scrollStatus={isFixed} />
           </div>
+          <div className="b-header__mob-button">
+          <Button title="request a quote" onClick={onClick} />
+          </div>
           <div className="b-header__m-menu">
-            <HamburgerMenu links={links} />
+            <HamburgerMenu links={links} onClick={onClick} />
           </div>
 
         </div>

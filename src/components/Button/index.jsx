@@ -6,7 +6,7 @@ import style from './style';
 
 const Button = ({
   title, type, long, inverted, disable,
-  scrollStatus, loading, success, error,
+  scrollStatus, loading, success, error, err404,
   ...rest
 }) => {
   const renderMessage = () => {
@@ -64,6 +64,7 @@ const Button = ({
     { btn__inverted: inverted },
     { btn__disable: disable },
     { scrolled: scrollStatus },
+    { btn__tranparency: err404 },
   );
   return (
     <button type={type} className={btnClass} {...rest}>
@@ -87,6 +88,7 @@ Button.propTypes = {
   loading: PropTypes.bool,
   success: PropTypes.bool,
   error: PropTypes.bool,
+  err404: PropTypes.bool,
 };
 Button.defaultProps = {
   title: 'Button',
@@ -98,6 +100,7 @@ Button.defaultProps = {
   success: false,
   error: false,
   scrollStatus: false,
+  err404: false,
 };
 
 export default Button;
