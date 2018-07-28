@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Header from '../components/Header';
 import Title from '../components/Title';
 import Button from '../components/Button';
-import style from './style';
+import style from '../utils/style';
 import Astro from '../assets/img/astronaut.svg';
 import NotFoundCode from '../assets/img/404.svg';
 

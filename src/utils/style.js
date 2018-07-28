@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 import BG from '../assets/img/bg.svg';
-import { colors, fontFamily, setStyle, flexJustify, flexAlign } from '../utils/style-helper';
+import { colors, fontFamily, setStyle, flexJustify, flexAlign } from './style-helper';
 
 export default css`
 .not-found {
