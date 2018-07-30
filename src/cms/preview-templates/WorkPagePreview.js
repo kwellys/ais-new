@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { WorkPageTemplate } from '../../templates/work-page'
 
-const WorkPageTemplate = ({ entry }) => {
+const WorkPagePreview= ({ entry }) => {
   const entryTopHome = entry.getIn(['data', 'topHome']);
   const topHome = entryTopHome ? entryTopHome.toJS() : [];
 
@@ -18,10 +18,10 @@ const WorkPageTemplate = ({ entry }) => {
   )
 }
 
-WorkPageTemplate.propTypes = {
+WorkPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   })
 }
 
-export default WorkPageTemplate
+export default WorkPagePreview
