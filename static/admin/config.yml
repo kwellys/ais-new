@@ -432,13 +432,13 @@ collections:
                     name: items
                     widget: list
       - file: src/pages/work.md
-        label: 'Works page'
+        label: 'Works Page'
         name: work-page
         fields:
           - label: 'Template Key'
             name: templateKey
             widget: hidden
-            default: work-page
+            default: services-page
           - label: Title
             name: title
             widget: string
@@ -455,3 +455,34 @@ collections:
               - label: Image
                 name: image
                 widget: image
+          - label: 'Our Services'
+            name: expirience
+            widget: object
+            fields:
+              - label: Service
+                name: expirienceArray
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Image
+                    name: image
+                    widget: image
+                  - label: 'Link to'
+                    name: href
+                    widget: string
+                  - label: 'Reverse direction'
+                    name: inverted
+                    widget: boolean
+                  - label: Reversed
+                    name: reversed
+                    widget: hidden
+                    default: true
+                  - label: More
+                    name: more
+                    widget: hidden
+                    default: true
+                  - label: Experiences
+                    name: pointList
+                    widget: list
