@@ -297,10 +297,7 @@ collections:
                     default: true
                   - label: Experiences
                     name: pointList
-                    widget: list
-                  - label: 'Tag for project'
-                    name: tag
-                    widget: string                    
+                    widget: list                  
       - file: src/pages/about/index.md
         label: About
         name: about
@@ -489,6 +486,12 @@ collections:
                   - label: Experiences
                     name: pointList
                     widget: list
+                  - label: Experiences
+                    name: pointList
+                    widget: list
+                  - label: 'Tag for project'
+                    name: tag
+                    widget: string                      
           - label: 'Filters for project'
             name: filters
             widget: list

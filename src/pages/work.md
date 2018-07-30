@@ -15,12 +15,14 @@ expirience:
         - Продукты
       reversed: false
       title: Веб-разработкаа
+      tag: Blockchain
     - href: /
       image: /img/exp3.png
       inverted: false
       pointList:
         - Проведение тестов и прочего
       title: Тестирование
+      tag: E-commerce
 filters:
   - title: E-commerce
   - title: Blockchain
