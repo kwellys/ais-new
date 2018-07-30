@@ -10,6 +10,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PopUp from "../components/PopUp";
 import { Block as Feedback } from "../components/Feedback";
+import Filter from '../blocks/WorkPage/Filter'
 
 export class WorkPageTemplate extends Component {
   state = {
@@ -88,9 +89,10 @@ export class WorkPageTemplate extends Component {
   };
 
   render() {
-    const { topHome, expirience } = this.props;
+    const { topHome, expirience, filters } = this.props;
     const { feedback, contacts, links, showPopUp, popup } = this.state;
     const mainClass = classname({ blur: showPopUp });
+    // console.log(filters)
     return (
       <Fragment>
         <PopUp
@@ -103,6 +105,7 @@ export class WorkPageTemplate extends Component {
         <div className={mainClass}>
           <Header links={links} onClick={this.switchPopUp} />
           <TopHomePage {...topHome} />
+          <Filter filters={filters}/>
           <OurExperience
             request="Сделать запрос"
             title={null}
@@ -137,6 +140,7 @@ const WorkPage = ({ data }) => {
       title={frontmatter.title}
       topHome={frontmatter.topHome}
       expirience={frontmatter.expirience}
+      filters={frontmatter.filters}
     />
   );
 };
@@ -169,7 +173,12 @@ export const WorkPageQuery = graphql`
             more
             reversed
             pointList
+            tag
+            title
           }
+        }
+        filters {
+          title
         }
       }
     }

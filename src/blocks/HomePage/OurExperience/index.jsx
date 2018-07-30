@@ -13,9 +13,12 @@ const OurExperience = ({ divided, expirience }) => {
     <div>
       <DefaultLayout title={expirience.title}>
         <div className={experienceClasses}>
-          {expirience.expirienceArray.map(exp => (
+        {expirience.expirienceArray.map(exp => {             
+            console.log(exp) 
+          return (
             <Experience key={exp.title} descr={exp} inverted={exp.inverted} more={exp.more} reversed={exp.reversed} />
-          ))}
+          )
+        })}
         </div>
       </DefaultLayout>
       <style jsx>

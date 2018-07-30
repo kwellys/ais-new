@@ -5,7 +5,6 @@ import React from 'react';
 import { BlockStyle, TitleStyle } from './style';
 
 const DefaultTitle = ({ title }) => {
-  console.log(title);
   if (title == null) {
     return null;
   }

@@ -48,7 +48,7 @@ ViewCase.defaultProps = {
   more: false
 };
 
-const Experience = ({ descr, inverted, more, reversed }) => {
+const Experience = ({ descr, inverted, more, reversed, tag }) => {
   const expWrapper = classname("exp__wrapper", {
     exp__wrapper_inverted: inverted,
     exp__wrapper_reversed: reversed,
@@ -85,6 +85,7 @@ const Experience = ({ descr, inverted, more, reversed }) => {
             <img className="exp__image" src={descr.image} alt="expirience" />
           </div>
         </div>
+        <p>Tag: {tag}</p>
       </div>
       <style jsx>{style}</style>
     </div>
@@ -94,12 +95,13 @@ const Experience = ({ descr, inverted, more, reversed }) => {
 Experience.propTypes = {
   descr: PropTypes.shape({
     title: PropTypes.string,
-    pointList: PropTypes.arrayOf(PropTypes.object),
+    pointList: PropTypes.arrayOf(PropTypes.string),
     image: PropTypes.string
   }),
   inverted: PropTypes.bool,
   more: PropTypes.bool,
-  reversed: PropTypes.bool
+  reversed: PropTypes.bool,
+  tag: PropTypes.string,
 };
 Experience.defaultProps = {
   descr: {
@@ -109,6 +111,7 @@ Experience.defaultProps = {
   },
   inverted: false,
   more: false,
-  reversed: false
+  reversed: false,
+  tag: ''
 };
 export default Experience;

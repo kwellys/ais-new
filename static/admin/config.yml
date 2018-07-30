@@ -298,6 +298,9 @@ collections:
                   - label: Experiences
                     name: pointList
                     widget: list
+                  - label: 'Tag for project'
+                    name: tag
+                    widget: string                    
       - file: src/pages/about/index.md
         label: About
         name: about
@@ -486,3 +489,10 @@ collections:
                   - label: Experiences
                     name: pointList
                     widget: list
+          - label: 'Filters for project'
+            name: filters
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string                 

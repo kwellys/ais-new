@@ -13,14 +13,19 @@ expirience:
       more: true
       href: '/'
       pointList:
-        - Продgffsdfsdfdfd
+        - Продукты
       reversed: false
       title: Веб-разработкаа
+      tag: Business solutions
     - image: /img/exp3.png
       inverted: false
       href: '/'
       pointList:
         - Проведение тестов и прочего
       title: Тестирование
+      tag: Blockchain
+filters:
+  - title: 'E-commerce'
+  - title: 'Blockchain'
 ---
 
