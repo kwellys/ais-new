@@ -14,18 +14,20 @@ expirience:
       pointList:
         - Продукты
       reversed: false
-      title: Веб-разработкаа
       tag: Blockchain
+      title: Веб-разработкаа
     - href: /
       image: /img/exp3.png
       inverted: false
       pointList:
         - Проведение тестов и прочего
-      title: Тестирование
       tag: E-commerce
+      title: Тестирование
 filters:
+  - title: Business solutions
   - title: E-commerce
   - title: Blockchain
-  - title: New filter
+  - title: Booking & Event
+  - title: Fin Tech
 ---
 
