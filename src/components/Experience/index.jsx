@@ -27,7 +27,7 @@ const ListBlock = ({ items }) => {
 };
 
 ListBlock.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired
+  items: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 const ViewCase = ({ href, more }) => (

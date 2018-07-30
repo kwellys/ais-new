@@ -7,20 +7,25 @@ import Button from "../../../components/Button";
 
 import style from "./style";
 
-const Filter = ({ filters }) => {
-  // const experienceClasses = classname('our-experience__wrapper', { 'our-experience__wrapper-divided': divided });
-console.log(filters)
+const prerapeKey = (dirtKey = "") =>
+  dirtKey
+    .toLocaleLowerCase()
+    .split(" ")
+    .join("");
+
+const Filter = ({ filters, onClick, activeFilters }) => {
   return (
     <div className="filter">
-      {/* <DefaultLayout title={expirience.title}>
-        <div className={experienceClasses}>
-          {expirience.expirienceArray.map(exp => (
-            <Experience key={exp.title} descr={exp} inverted={exp.inverted} more={exp.more} reversed={exp.reversed} />
-          ))}
-        </div>
-      </DefaultLayout> */}
-      <Button title="Show all" />
-      {filters.map((filter, index) => <Button title={filter.title} key={index} />)}
+      {filters.map((filter, index) => (
+        <Button
+          pressed={
+            activeFilters[prerapeKey(filter.title)].active
+          }
+          title={filter.title}
+          key={index}
+          onClick={e => onClick(prerapeKey(filter.title))}
+        />
+      ))}
       <style jsx>{style}</style>
     </div>
   );

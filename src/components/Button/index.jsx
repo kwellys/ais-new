@@ -1,29 +1,34 @@
-import classname from 'classname';
-import PropTypes from 'prop-types';
-import React from 'react';
+import classname from "classname";
+import PropTypes from "prop-types";
+import React from "react";
 
-import style from './style';
+import style from "./style";
 
 const Button = ({
-  title, type, long, inverted, disable,
-  scrollStatus, loading, success, error, err404,
+  title,
+  type,
+  long,
+  inverted,
+  disable,
+  scrollStatus,
+  loading,
+  success,
+  error,
+  err404,
+  pressed,
   ...rest
 }) => {
   const renderMessage = () => {
     if (loading) {
       return (
         <div className="btn__message-box">
-          <div className="btn__message">
-            sending
-          </div>
+          <div className="btn__message">sending</div>
           <div className="btn__dots">
             <div className="btn__dot" />
             <div className="btn__dot" />
             <div className="btn__dot" />
           </div>
-          <style jsx>
-            {style}
-          </style>
+          <style jsx>{style}</style>
         </div>
       );
     }
@@ -31,13 +36,9 @@ const Button = ({
     if (success) {
       return (
         <div className="btn__message-box">
-          <div className="btn__message btn__message_success">
-            Successfully
-          </div>
+          <div className="btn__message btn__message_success">Successfully</div>
           <div className="btn__success-icon" />
-          <style jsx>
-            {style}
-          </style>
+          <style jsx>{style}</style>
         </div>
       );
     }
@@ -45,42 +46,34 @@ const Button = ({
     if (error) {
       return (
         <div className="btn__message-box">
-          <div className="btn__message btn__message_error">
-            oops, try again
-          </div>
+          <div className="btn__message btn__message_error">oops, try again</div>
           <div className="btn__error-icon" />
-          <style jsx>
-            {style}
-          </style>
+          <style jsx>{style}</style>
         </div>
       );
     }
-    return (title);
+    return title;
   };
 
   const btnClass = classname(
-    'btn',
+    "btn",
     { btn__long: long },
-    { btn__inverted: inverted },
+    { btn__inverted: inverted || pressed },
     { btn__disable: disable },
     { scrolled: scrollStatus },
-    { btn__tranparency: err404 },
+    { btn__tranparency: err404 }
   );
   return (
-    <button type={type} className={btnClass} {...rest}>
+    <button {...rest} type={type} className={btnClass}>
       {renderMessage()}
-      <style jsx>
-        {style}
-      </style>
+      <style jsx>{style}</style>
     </button>
   );
 };
 
 Button.propTypes = {
   title: PropTypes.string,
-  type: PropTypes.oneOf([
-    'button', 'submit',
-  ]),
+  type: PropTypes.oneOf(["button", "submit"]),
   long: PropTypes.bool,
   inverted: PropTypes.bool,
   disable: PropTypes.bool,
@@ -89,10 +82,12 @@ Button.propTypes = {
   success: PropTypes.bool,
   error: PropTypes.bool,
   err404: PropTypes.bool,
+  onClick: PropTypes.func,
+  pressed: PropTypes.boo,
 };
 Button.defaultProps = {
-  title: 'Button',
-  type: 'button',
+  title: "Button",
+  type: "button",
   long: false,
   inverted: false,
   disable: false,
@@ -101,6 +96,8 @@ Button.defaultProps = {
   error: false,
   scrollStatus: false,
   err404: false,
+  onClick: f => f,
+  pressed: false
 };
 
 export default Button;

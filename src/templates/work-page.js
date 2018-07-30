@@ -10,7 +10,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PopUp from "../components/PopUp";
 import { Block as Feedback } from "../components/Feedback";
-import Filter from '../blocks/WorkPage/Filter'
+import Filter from "../blocks/WorkPage/Filter";
+const SHOW_ALL = "showall";
+const setStringToLowerCase = (dirtKey = "") =>
+  dirtKey
+    .toLocaleLowerCase()
+    .split(" ")
+    .join("");
 
 export class WorkPageTemplate extends Component {
   state = {
@@ -66,8 +72,22 @@ export class WorkPageTemplate extends Component {
           type: "textarea"
         }
       ]
-    }
+    },
+    activeFilters: []
   };
+  handleComputedFilters = () => {
+    const { filters } = this.props;
+    const newFilters = filters.reduce((newFilters, filter) => {
+      const key = setStringToLowerCase(filter.title);
+      const active = key === SHOW_ALL;
+      newFilters[key] = { value: filter.title, active };
+      return newFilters;
+    }, {});
+    this.setState({ activeFilters: newFilters });
+  };
+  componentWillMount() {
+    this.handleComputedFilters();
+  }
 
   switchPopUp = () => {
     this.setState(prev => ({ showPopUp: !prev.showPopUp }));
@@ -87,12 +107,77 @@ export class WorkPageTemplate extends Component {
     });
     this.setState({ feedback: { ...feedback, fields: newFields } });
   };
+  handleShowAllFilter = () => {
+    const { activeFilters } = this.state;
+    const newFilters = Object.keys(activeFilters).reduce((newFilters, key) => {
+      if (key === SHOW_ALL) {
+        newFilters[key] = {
+          ...activeFilters[key],
+          active: true
+        };
+      } else {
+        newFilters[key] = { ...activeFilters[key], active: false };
+      }
+      return newFilters;
+    }, {});
+    this.setState({ activeFilters: newFilters });
+  };
+  handleCurrentFilter = filterKey => {
+    const { activeFilters } = this.state;
+    const newFilters = Object.keys(activeFilters).reduce((newFilters, key) => {
+      if (key === filterKey || key === SHOW_ALL) {
+        if (key === SHOW_ALL) {
+          newFilters[key] = {
+            ...activeFilters[filterKey],
+            active: false
+          };
+        } else {
+          newFilters[key] = {
+            ...activeFilters[filterKey],
+            active: !activeFilters[filterKey].active
+          };
+        }
+      } else {
+        newFilters[key] = { ...activeFilters[key] };
+      }
+      return newFilters;
+    }, {});
+    this.setState({ activeFilters: newFilters });
+  };
 
+  handleFilter = filterKey => {
+    if (filterKey === SHOW_ALL) {
+      this.handleShowAllFilter();
+    } else {
+      this.handleCurrentFilter(filterKey);
+    }
+  };
+
+  filterArray = projects => {
+    const { activeFilters } = this.state;
+    const filters = Object.keys(activeFilters).filter(key => {
+      return activeFilters[key].active;
+    });
+    if (filters.indexOf(SHOW_ALL) !== -1) {
+      return projects;
+    }
+    const filtredProject = projects.expirienceArray.filter(project => {
+      return filters.indexOf(setStringToLowerCase(project.tag)) !== -1;
+    });
+    return { expirienceArray: filtredProject };
+  };
   render() {
     const { topHome, expirience, filters } = this.props;
-    const { feedback, contacts, links, showPopUp, popup } = this.state;
+    const {
+      feedback,
+      contacts,
+      links,
+      showPopUp,
+      popup,
+      activeFilters
+    } = this.state;
+    const { handleFilter, filterArray } = this;
     const mainClass = classname({ blur: showPopUp });
-    // console.log(filters)
     return (
       <Fragment>
         <PopUp
@@ -105,11 +190,15 @@ export class WorkPageTemplate extends Component {
         <div className={mainClass}>
           <Header links={links} onClick={this.switchPopUp} />
           <TopHomePage {...topHome} />
-          <Filter filters={filters}/>
+          <Filter
+            filters={filters}
+            onClick={handleFilter}
+            activeFilters={activeFilters}
+          />
           <OurExperience
             request="Сделать запрос"
             title={null}
-            expirience={expirience}
+            expirience={filterArray(expirience)}
           />
           <Feedback
             title={feedback.title}
