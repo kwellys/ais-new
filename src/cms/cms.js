@@ -5,6 +5,7 @@ import BlogPostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import ServicesPageTemplate from './preview-templates/ServicesPagePreview'
+import WorkPageTemplate from './preview-templates/WorkPageTemplate'
 
 CMS.registerPreviewStyle('/jsx-styles.css');
 CMS.registerPreviewStyle('/styles.css');
@@ -13,3 +14,4 @@ CMS.registerPreviewTemplate('products', ProductPagePreview);
 CMS.registerPreviewTemplate('blog', BlogPostPreview);
 CMS.registerPreviewTemplate('index-page', IndexPagePreview);
 CMS.registerPreviewTemplate('services-page', ServicesPageTemplate);
+CMS.registerPreviewTemplate('work-page', WorkPageTemplate);
