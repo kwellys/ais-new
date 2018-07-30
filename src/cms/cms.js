@@ -5,7 +5,7 @@ import BlogPostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import ServicesPageTemplate from './preview-templates/ServicesPagePreview'
-import WorkPageTemplate from './preview-templates/WorkPageTemplate'
+import WorkPageTemplate from './preview-templates/WorkPagePreview'
 
 CMS.registerPreviewStyle('/jsx-styles.css');
 CMS.registerPreviewStyle('/styles.css');
