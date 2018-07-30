@@ -1,89 +1,71 @@
-import expBG1 from 'assets/img/exp1.png';
-import classname from 'classname';
-import Text from 'components/Text';
-import Title from 'components/Title';
-import PropTypes from 'prop-types';
-import React from 'react';
+import expBG1 from "assets/img/exp1.png";
+import classname from "classname";
+import Text from "components/Text";
+import Title from "components/Title";
+import PropTypes from "prop-types";
+import React from "react";
 
-import style, { listItem, viewCases } from './style';
+import style, { listItem, viewCases } from "./style";
 
 const ListItem = ({ text }) => (
   <div className="b-list">
-    <Text noAlign>
-      {text}
-    </Text>
-    <style jsx>
-      {listItem}
-    </style>
+    <Text noAlign>{text}</Text>
+    <style jsx>{listItem}</style>
   </div>
 );
 
 ListItem.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 const ListBlock = ({ items }) => {
   if (items.length === 1) {
-    return (
-      <Text noAlign>
-        {items[0].title}
-      </Text>
-    );
+    return <Text noAlign>{items[0]}</Text>;
   }
 
-  return (
-    <div>
-      {items.map(point => (
-        <ListItem key={point} text={point} />
-      ))}
-    </div>
-  );
+  return <div>{items.map(point => <ListItem key={point} text={point} />)}</div>;
 };
 
 ListBlock.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 const ViewCase = ({ href, more }) => (
   <div className="viewcase__container">
     <a href={href} className="b-view-cases">
-      {more ? 'see more' : 'view cases'}
+      {more ? "See more" : "view cases"}
     </a>
-    <style jsx>
-      {viewCases}
-    </style>
+    <style jsx>{viewCases}</style>
   </div>
 );
 
 ViewCase.propTypes = {
   href: PropTypes.string,
-  more: PropTypes.bool,
+  more: PropTypes.bool
 };
 ViewCase.defaultProps = {
-  href: '/',
-  more: false,
+  href: "/",
+  more: false
 };
 
-const Experience = ({
-                      descr, inverted, more, reversed,
-                    }) => {
-  const expWrapper = classname('exp__wrapper', {
+const Experience = ({ descr, inverted, more, reversed }) => {
+  const expWrapper = classname("exp__wrapper", {
     exp__wrapper_inverted: inverted,
     exp__wrapper_reversed: reversed,
-    exp__wrapper_reflected: inverted && reversed,
+    exp__wrapper_reflected: inverted && reversed
   });
-  const expDescription = classname('exp__description', {
+  const expDescription = classname("exp__description", {
     exp__description_inverted: inverted,
     exp__description_reversed: reversed,
-    exp__description_reflected: inverted && reversed,
+    exp__description_reflected: inverted && reversed
   });
-  const expContainer = classname('exp__container', {
+  const expContainer = classname("exp__container", {
     exp__container_inverted: inverted,
     exp__container_reversed: reversed,
-    exp__container_reflected: inverted && reversed,
+    exp__container_reflected: inverted && reversed
   });
-  const expList = classname('exp__list', {
-    exp__list_indent: descr.pointList.length === 1,
+  const expList = classname("exp__list", {
+    exp__list_indent: descr.pointList.length === 1
   });
 
   return (
@@ -104,9 +86,7 @@ const Experience = ({
           </div>
         </div>
       </div>
-      <style jsx>
-        {style}
-      </style>
+      <style jsx>{style}</style>
     </div>
   );
 };
@@ -115,20 +95,20 @@ Experience.propTypes = {
   descr: PropTypes.shape({
     title: PropTypes.string,
     pointList: PropTypes.arrayOf(PropTypes.object),
-    image: PropTypes.string,
+    image: PropTypes.string
   }),
   inverted: PropTypes.bool,
   more: PropTypes.bool,
-  reversed: PropTypes.bool,
+  reversed: PropTypes.bool
 };
 Experience.defaultProps = {
   descr: {
     pointList: [],
-    title: 'Need title',
-    image: expBG1,
+    title: "Need title",
+    image: expBG1
   },
   inverted: false,
   more: false,
-  reversed: false,
+  reversed: false
 };
 export default Experience;

@@ -431,3 +431,27 @@ collections:
                   - label: Items
                     name: items
                     widget: list
+      - file: src/pages/work.md
+        label: 'Works page'
+        name: work-page
+        fields:
+          - label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: work-page
+          - label: Title
+            name: title
+            widget: string
+          - label: 'Top Block'
+            name: topHome
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Image
+                name: image
+                widget: image
