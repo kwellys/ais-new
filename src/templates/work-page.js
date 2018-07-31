@@ -77,6 +77,9 @@ export class WorkPageTemplate extends Component {
   };
   handleComputedFilters = () => {
     const { filters } = this.props;
+    if(!filters) {
+      return
+    }
     const newFilters = filters.reduce((newFilters, filter) => {
       const key = setStringToLowerCase(filter.title);
       const active = key === SHOW_ALL;

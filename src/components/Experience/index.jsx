@@ -49,7 +49,6 @@ ViewCase.defaultProps = {
 };
 
 const Experience = ({ descr, inverted, more, reversed, tag, description }) => {
-  console.log(description)
   const expWrapper = classname("exp__wrapper", {
     exp__wrapper_inverted: inverted,
     exp__wrapper_reversed: reversed,
