@@ -289,11 +289,9 @@ collections:
                     widget: boolean
                   - label: Reversed
                     name: reversed
-                    widget: hidden
                     default: true
                   - label: More
                     name: more
-                    widget: hidden
                     default: true
                   - label: Experiences
                     name: pointList
