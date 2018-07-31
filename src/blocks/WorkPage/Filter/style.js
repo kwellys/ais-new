@@ -4,6 +4,9 @@ import { setStyle, flexAllAlign } from "@/utils/style-helper";
 export default css`
   .filter {
     padding: 25px;
+    @media (max-width: 600px){
+      padding: 15px;
+    }
     &__button {
       margin-bottom: 20px;
       @media (max-width: 600px){
@@ -16,9 +19,6 @@ export default css`
       flex-wrap: wrap;
       @media (max-width: 1040px) {
         max-width: 825px;
-      }
-      @media (max-width: 450px){
-        /* justify-content: center; */
       }
     }
   }
