@@ -7,7 +7,7 @@ export default css`
     &__button {
       margin-bottom: 20px;
       @media (max-width: 600px){
-        margin-right: 20px;
+        margin-right: 10px;
       }
     }
     ${setStyle(flexAllAlign)} &__container {
@@ -18,7 +18,7 @@ export default css`
         max-width: 825px;
       }
       @media (max-width: 450px){
-        justify-content: center;
+        /* justify-content: center; */
       }
     }
   }
