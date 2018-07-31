@@ -23,6 +23,7 @@ const Filter = ({ filters, onClick, activeFilters }) => {
           }
           title={filter.title}
           key={index}
+          small
           onClick={e => onClick(prerapeKey(filter.title))}
         />
       ))}

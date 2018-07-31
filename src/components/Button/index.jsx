@@ -16,6 +16,7 @@ const Button = ({
   error,
   err404,
   pressed,
+  small,
   ...rest
 }) => {
   const renderMessage = () => {
@@ -57,11 +58,14 @@ const Button = ({
 
   const btnClass = classname(
     "btn",
-    { btn__long: long },
-    { btn__inverted: inverted || pressed },
-    { btn__disable: disable },
-    { scrolled: scrollStatus },
-    { btn__tranparency: err404 }
+    { 
+      btn__long: long, 
+      btn__inverted: inverted || pressed, 
+      btn__disable: disable,
+      scrolled: scrollStatus, 
+      btn__tranparency: err404,
+      btn__small: small
+    },
   );
   return (
     <button {...rest} type={type} className={btnClass}>

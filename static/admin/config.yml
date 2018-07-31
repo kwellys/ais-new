@@ -487,9 +487,9 @@ collections:
                   - label: Experiences
                     name: pointList
                     widget: list
-                  - label: 'Tag for project'
-                    name: tag
-                    widget: string                      
+                  - label: Tags for project
+                    name: tags
+                    widget: list
           - label: 'Filters for project'
             name: filters
             widget: list

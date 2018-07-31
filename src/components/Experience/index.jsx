@@ -85,7 +85,6 @@ const Experience = ({ descr, inverted, more, reversed, tag }) => {
             <img className="exp__image" src={descr.image} alt="expirience" />
           </div>
         </div>
-        <p>Tag: {tag}</p>
       </div>
       <style jsx>{style}</style>
     </div>

@@ -124,25 +124,36 @@ export class WorkPageTemplate extends Component {
   };
   handleCurrentFilter = filterKey => {
     const { activeFilters } = this.state;
-    const newFilters = Object.keys(activeFilters).reduce((newFilters, key) => {
-      if (key === filterKey || key === SHOW_ALL) {
-        if (key === SHOW_ALL) {
-          newFilters[key] = {
-            ...activeFilters[filterKey],
-            active: false
-          };
-        } else {
-          newFilters[key] = {
-            ...activeFilters[filterKey],
-            active: !activeFilters[filterKey].active
-          };
-        }
-      } else {
-        newFilters[key] = { ...activeFilters[key] };
-      }
-      return newFilters;
-    }, {});
-    this.setState({ activeFilters: newFilters });
+    const checkFilters = Object.keys(activeFilters).filter(key => {
+      return activeFilters[key].active;
+    });
+
+    if (checkFilters.length === 1 && checkFilters.indexOf(filterKey) !== -1) {
+      this.handleShowAllFilter();
+    } else {
+      const newFilters = Object.keys(activeFilters).reduce(
+        (newFilters, key) => {
+          if (key === filterKey || key === SHOW_ALL) {
+            if (key === SHOW_ALL) {
+              newFilters[key] = {
+                ...activeFilters[filterKey],
+                active: false
+              };
+            } else {
+              newFilters[key] = {
+                ...activeFilters[filterKey],
+                active: !activeFilters[filterKey].active
+              };
+            }
+          } else {
+            newFilters[key] = { ...activeFilters[key] };
+          }
+          return newFilters;
+        },
+        {}
+      );
+      this.setState({ activeFilters: newFilters });
+    }
   };
 
   handleFilter = filterKey => {
@@ -155,14 +166,27 @@ export class WorkPageTemplate extends Component {
 
   filterArray = projects => {
     const { activeFilters } = this.state;
+    console.log(activeFilters)
     const filters = Object.keys(activeFilters).filter(key => {
       return activeFilters[key].active;
     });
     if (filters.indexOf(SHOW_ALL) !== -1) {
       return projects;
     }
+
     const filtredProject = projects.expirienceArray.filter(project => {
-      return filters.indexOf(setStringToLowerCase(project.tag)) !== -1;
+      const projectTags = project.tags.map(item => {
+        return setStringToLowerCase(item)
+      })
+      // projectTags.forEach(tag =>)
+      console.log(projectTags, filters)
+      let result = false;
+      projectTags.forEach(projectTag => {
+        if(filters.indexOf(projectTag) !== -1){
+          result = true;
+        }
+      })
+      return result
     });
     return { expirienceArray: filtredProject };
   };
@@ -262,7 +286,7 @@ export const WorkPageQuery = graphql`
             more
             reversed
             pointList
-            tag
+            tags
             title
           }
         }

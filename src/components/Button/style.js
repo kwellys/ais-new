@@ -69,6 +69,13 @@ export default css`
       background-color: rgba(255, 255, 255, 0.3);
       cursor: not-allowed;
     }
+    &__small {
+      /* background-color: rgba(255, 255, 255, 0.3);
+      cursor: not-allowed; */
+      width: auto;
+      height: auto;
+      padding: 10px 47px;
+    }
     &:active {
       color: ${colors.darkBlueForButton};
     }
