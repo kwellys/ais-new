@@ -289,13 +289,13 @@ collections:
                     widget: boolean
                   - label: Reversed
                     name: reversed
-                    default: true
+                    widget: boolean
                   - label: More
                     name: more
-                    default: true
+                    widget: boolean
                   - label: Experiences
                     name: pointList
-                    widget: list                  
+                    widget: text
       - file: src/pages/about/index.md
         label: About
         name: about

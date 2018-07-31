@@ -15,11 +15,6 @@ expirience:
       href: '/'
       pointList:
         - Прод
-        - авыаыва
-        - ывавыаыва
-        - ываыва
-        - ываываываыв
-        - ываываыва
       reversed: true
       title: Веб-разработкаа
     - image: /img/exp3.png
@@ -27,7 +22,6 @@ expirience:
       href: '/'
       pointList:
         - Проведение тестов и прочего
-        - еще что-нибудь
       title: Тестирование
 ---
 
