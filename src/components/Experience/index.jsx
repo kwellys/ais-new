@@ -48,7 +48,8 @@ ViewCase.defaultProps = {
   more: false
 };
 
-const Experience = ({ descr, inverted, more, reversed, tag }) => {
+const Experience = ({ descr, inverted, more, reversed, tag, description }) => {
+  console.log(description)
   const expWrapper = classname("exp__wrapper", {
     exp__wrapper_inverted: inverted,
     exp__wrapper_reversed: reversed,
@@ -65,7 +66,7 @@ const Experience = ({ descr, inverted, more, reversed, tag }) => {
     exp__container_reflected: inverted && reversed
   });
   const expList = classname("exp__list", {
-    exp__list_indent: descr.pointList.length === 1
+    exp__list_indent: descr.pointList && descr.pointList.length === 1
   });
 
   return (
@@ -76,7 +77,7 @@ const Experience = ({ descr, inverted, more, reversed, tag }) => {
             <Title big title={descr.title} />
           </div>
           <div className={expList}>
-            <ListBlock items={descr.pointList} />
+            {descr.pointList ? <ListBlock items={descr.pointList} /> : <Text noAlign>{description}</Text>}
           </div>
           <ViewCase href={descr.href} more={more} />
         </div>

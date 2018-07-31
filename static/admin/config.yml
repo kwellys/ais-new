@@ -287,15 +287,15 @@ collections:
                   - label: 'Reverse direction'
                     name: inverted
                     widget: boolean
-                  - label: Reversed
+                  - label: 'Inverted background color'
                     name: reversed
-                    default: true
-                  - label: More
+                    widget: boolean
+                  - label: 'See more instead of View cases button'
                     name: more
-                    default: true
+                    widget: boolean
                   - label: Experiences
-                    name: pointList
-                    widget: list                  
+                    name: descr
+                    widget: text
       - file: src/pages/about/index.md
         label: About
         name: about

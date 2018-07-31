@@ -24,6 +24,7 @@ const OurExperience = ({ divided, expirience }) => {
                 more={exp.more}
                 reversed={exp.reversed}
                 tag={exp.tag}
+                description={exp.descr}
               />
             );
           })}
