@@ -29,10 +29,10 @@ expirience:
       title: Тестирование
 filters:
   - title: Show all
-  - title: Blockchain
+  - title: Booking & Event
   - title: Business solutions
   - title: Fin Tech
   - title: E-commerce
-  - title: Booking & Event
+  - title: Blockchain
 ---
 
