@@ -13,15 +13,13 @@ expirience:
       inverted: true
       more: true
       href: '/'
-      pointList:
-        - Прод
+      descr: Прод
       reversed: true
       title: Веб-разработкаа
     - image: /img/exp3.png
       inverted: true
       href: '/'
-      pointList:
-        - Проведение тестов и прочего
+      descr: Проведение тестов и прочего
       title: Тестирование
 ---
 

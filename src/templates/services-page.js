@@ -166,7 +166,7 @@ export const servicesPageQuery = graphql`
             inverted
             more
             reversed
-            pointList
+            descr
             title
           }
         }
