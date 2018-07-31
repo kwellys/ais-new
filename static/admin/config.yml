@@ -287,10 +287,10 @@ collections:
                   - label: 'Reverse direction'
                     name: inverted
                     widget: boolean
-                  - label: Reversed
+                  - label: 'Inverted background color'
                     name: reversed
                     widget: boolean
-                  - label: More
+                  - label: 'See more instead of View cases button'
                     name: more
                     widget: boolean
                   - label: Experiences
