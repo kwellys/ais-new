@@ -166,7 +166,6 @@ export class WorkPageTemplate extends Component {
 
   filterArray = projects => {
     const { activeFilters } = this.state;
-    console.log(activeFilters)
     const filters = Object.keys(activeFilters).filter(key => {
       return activeFilters[key].active;
     });
@@ -178,8 +177,6 @@ export class WorkPageTemplate extends Component {
       const projectTags = project.tags.map(item => {
         return setStringToLowerCase(item)
       })
-      // projectTags.forEach(tag =>)
-      console.log(projectTags, filters)
       let result = false;
       projectTags.forEach(projectTag => {
         if(filters.indexOf(projectTag) !== -1){

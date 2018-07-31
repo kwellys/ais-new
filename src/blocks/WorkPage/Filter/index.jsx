@@ -16,17 +16,18 @@ const prerapeKey = (dirtKey = "") =>
 const Filter = ({ filters, onClick, activeFilters }) => {
   return (
     <div className="filter">
-      {filters.map((filter, index) => (
-        <Button
-          pressed={
-            activeFilters[prerapeKey(filter.title)].active
-          }
-          title={filter.title}
-          key={index}
-          small
-          onClick={e => onClick(prerapeKey(filter.title))}
-        />
-      ))}
+      <div className="filter__container">
+        {filters.map((filter, index) => (
+          <div className="filter__button" key={index}>
+            <Button
+              pressed={activeFilters[prerapeKey(filter.title)].active}
+              title={filter.title}
+              small
+              onClick={e => onClick(prerapeKey(filter.title))}
+            />
+          </div>
+        ))}
+      </div>
       <style jsx>{style}</style>
     </div>
   );
