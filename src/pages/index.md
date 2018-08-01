@@ -106,7 +106,7 @@ expirienceData:
         - Online payment processing
         - Digital assets managment
         - Trading portals
-      title: Fin tech
+      title: FinTech
   title: Our experience
 getInTouchData:
   description: Leave you email address to schedule an individual free consultation
