@@ -19,7 +19,7 @@ cards:
     title: Development
   - image: /img/service3.png
     text: >-
-      We will ensure availability and reliability of all your online resorces.
+      We will ensure availability and reliability of all your online resources.
       We will keep your business online 24/7
     title: Maintenance and Support
 servicesData:
