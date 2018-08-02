@@ -6,10 +6,16 @@ export default css`
     width: 100%;
     margin-bottom: 138px;
     @media (max-width: 1200px){
-      margin-bottom: 79px;
+      margin-bottom: 135px;
     }
-    @media (max-width: 900px){
-      margin-bottom: 48px;
+    @media (max-width: 1024px){
+      margin-bottom: 90px;
+    }
+    @media (max-width: 768px){
+      margin-bottom: 70px;
+    }
+    @media (max-width: 600px){
+      margin-bottom: 36px;
     }
 
     ${setStyle(flexJustify)} &__content {
