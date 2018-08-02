@@ -16,7 +16,7 @@ export const TitleStyle = css`
   .default {
     &__title {
       width: 100%;
-      margin-bottom: 76px;
+      margin-bottom: 66px;
       @media (max-width: 1100px){
         margin-bottom: 50px;
       }
