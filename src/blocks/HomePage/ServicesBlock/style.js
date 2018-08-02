@@ -4,7 +4,7 @@ import { setStyle, flexJustify, flexSpaceBetween } from 'utils/style-helper';
 export default css`
   .servicesWrapper {
     width: 100%;
-    margin-bottom: 122px;
+    margin-bottom: 138px;
     @media (max-width: 1200px){
       margin-bottom: 79px;
     }
