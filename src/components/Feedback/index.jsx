@@ -86,9 +86,17 @@ Form.defaultProps = {
 
 function encode(data) {
   const formData = new FormData();
+  console.log(data);
+  const res = Object.keys(data).reduce(((prev, val) => {
+    return {
+      ...prev,
+      [val] : data[val].value,
+    }
+  }),{});
+  res['form-name'] = data['form-name'];
 
-  for (const key of Object.keys(data)) {
-    formData.append(key, data[key].value);
+  for (const key of Object.keys(res)) {
+    formData.append(key, res[key]);
   }
 
   return formData;
@@ -136,20 +144,15 @@ class Block extends React.Component {
 
     if (this.isFormValid()) {
       const form = event.target;
-      form.submit();
-      /*fetch("/", {
+      //form.submit();
+      fetch("/", {
         method: "POST",
         body: encode({
           "form-name": form.getAttribute("name"),
           ...this.state.form
         })
       })
-        .then(() => console.log(
-          encode({
-            "form-name": form.getAttribute("name"),
-            ...this.state.form
-          })
-        ));*/
+        .then(console.log('done'));
     } else {
       this.setErrorForFields();
     }
