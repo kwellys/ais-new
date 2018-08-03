@@ -4,6 +4,24 @@ import React, { Component } from "react";
 
 import style from "./style";
 
+function encode(data) {
+  const formData = new FormData();
+  const res = Object.keys(data).reduce(((prev, val) => {
+    return {
+      ...prev,
+      [val] : data[val].value,
+    }
+  }),{});
+  res['form-name'] = data['form-name'];
+  res['file'] = data['file'];
+  console.log(res)
+  for (const key of Object.keys(res)) {
+    formData.append(key, res[key]);
+  }
+
+  return formData;
+}
+
 class PopUp extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +35,9 @@ class PopUp extends Component {
       form: {
         name: { invalid: false, value: "", required: true },
         email: { invalid: false, value: "", required: true },
-        phone: { invalid: false, value: "" }
+        phone: { invalid: false, value: "" },
+        message: '',
+        file: null
       },
       loading: false,
       success: false,
@@ -83,10 +103,11 @@ class PopUp extends Component {
     const { form } = this.state;
     const newForm = Object.keys(form).reduce((total, key) => {
       if (key === name) {
-        total[key] = { ...values };
+        total[key] = values;
       } else {
         total[key] = { ...form[key] };
       }
+      console.log(total)
       return total;
     }, {});
 
@@ -95,10 +116,17 @@ class PopUp extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     if (this.isFormValid()) {
       const form = event.target;
-      form.submit();
+      //form.submit();
+      fetch("/", {
+        method: "POST",
+        body: encode({
+          "form-name": form.getAttribute("name"),
+          ...this.state.form
+        })
+      })
+        .then(console.log('done'));
     } else {
       this.setErrorForFields();
     }
