@@ -40,6 +40,9 @@ export default css`
     &__img {
       max-width: 110px;
       overflow: hidden;
+      @media (max-width: 800px){
+          max-width: 67px;
+        }
     }
     &__wrapper {
       padding: 20px;

@@ -26,10 +26,15 @@ export default css`
     margin-right: 30px;
     border: none;
     box-shadow: 0px 2px 44px rgba(23, 128, 224, 0.271031);
-    ${flexAllAlign} @media (max-width: 1300px) {
+    ${flexAllAlign} 
+    @media (max-width: 1300px) {
       padding: 0 14px;
       height: 27px;
+      font-size: 12px;
+    }
+    @media (max-width: 880px) {
       font-size: 10px;
+      height: 24px;
     }
     @media screen and (max-width: 600px) {
       height: 40px;
