@@ -1,8 +1,8 @@
-import { Form as Feedback, Sent } from '../Feedback';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Form as Feedback, Sent } from "../Feedback";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 
-import style from './style';
+import style from "./style";
 
 class PopUp extends Component {
   constructor(props) {
@@ -15,13 +15,13 @@ class PopUp extends Component {
       counter: 5,
       startedInterval: false,
       form: {
-        name: { invalid: false, value: '', required: true },
-        email: { invalid: false, value: '', required: true },
-        phone: { invalid: false, value: '' },
+        name: { invalid: false, value: "", required: true },
+        email: { invalid: false, value: "", required: true },
+        phone: { invalid: false, value: "" }
       },
       loading: false,
       success: false,
-      error: false,
+      error: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,13 +32,13 @@ class PopUp extends Component {
     const { form } = this.state;
     const { setEmailError } = this.props;
 
-    setEmailError('Enter email');
+    setEmailError("Enter email");
 
     const newForm = Object.keys(form).reduce((total, key) => {
-      if (form[key].value === '' && form[key].required) {
+      if (form[key].value === "" && form[key].required) {
         total[key] = {
           ...form[key],
-          invalid: true,
+          invalid: true
         };
       } else {
         total[key] = { ...form[key] };
@@ -47,29 +47,29 @@ class PopUp extends Component {
     }, {});
 
     this.setState({ form: { ...newForm } });
-  }
+  };
 
   isFormValid = () => {
     const { form } = this.state;
 
     const isValid = Object.keys(form).filter(
-      key => form[key].value === '' && form[key].required,
+      key => form[key].value === "" && form[key].required
     );
 
     return isValid.length === 0;
-  }
+  };
 
   simulateSendForm = () => {
     this.setState({ loading: true });
     setTimeout(() => this.setState({ loading: false, error: true }), 1800);
     setTimeout(() => this.setState({ error: false, loading: true }), 3000);
     setTimeout(() => this.setState({ loading: false, success: true }), 3800);
-  }
+  };
 
   handleClick(e) {
-    if (e.target.classList.value.indexOf('b-pop-up__content') !== -1) {
-      document.getElementsByTagName('body')[0].style = '';
-      document.querySelector('.b-header__content').style = '';
+    if (e.target.classList.value.indexOf("b-pop-up__content") !== -1) {
+      document.getElementsByTagName("body")[0].style = "";
+      document.querySelector(".b-header__content").style = "";
 
       this.setState({ sent: false });
 
@@ -97,7 +97,7 @@ class PopUp extends Component {
     event.preventDefault();
 
     if (this.isFormValid()) {
-      console.log('Need to send');
+      console.log("Need to send");
       this.simulateSendForm();
     } else {
       this.setErrorForFields();
@@ -105,9 +105,7 @@ class PopUp extends Component {
   }
 
   render() {
-    const {
-      fields, onClose, popup, showPopUp, setEmailError,
-    } = this.props;
+    const { fields, onClose, popup, showPopUp, setEmailError } = this.props;
     const { form } = this.state;
     const renderFeedback = () => {
       const { sent, counter, startedInterval } = this.state;
@@ -123,7 +121,7 @@ class PopUp extends Component {
 
             this.setState(prev => ({
               counter: prev.counter - 1,
-              startedInterval: true,
+              startedInterval: true
             }));
           }, 1000);
         }
@@ -148,8 +146,12 @@ class PopUp extends Component {
 
     const renderPopUp = () => {
       if (showPopUp) {
-        document.getElementsByTagName('body')[0].style = 'overflow: hidden;padding-right: 15px;';
-        document.querySelector('.b-header__content').style = 'padding-right: 15px;';
+        if (document.body.clientWidth - window.innerWidth !== 0) {
+          document.getElementsByTagName("body")[0].style =
+            "overflow: hidden;padding-right: 15px;";
+          document.querySelector(".b-header__content").style =
+            "padding-right: 15px;";
+        }
       }
 
       return (
@@ -159,8 +161,8 @@ class PopUp extends Component {
               <button
                 className="b-pop-up__close"
                 onClick={() => {
-                  document.getElementsByTagName('body')[0].style = '';
-                  document.querySelector('.b-header__content').style = '';
+                  document.getElementsByTagName("body")[0].style = "";
+                  document.querySelector(".b-header__content").style = "";
 
                   this.setState({ sent: false });
 
@@ -171,18 +173,12 @@ class PopUp extends Component {
               {renderFeedback()}
             </div>
           </div>
-          <style jsx>
-            {style}
-          </style>
+          <style jsx>{style}</style>
         </div>
       );
     };
 
-    return (
-      <div>
-        {showPopUp ? renderPopUp() : null}
-      </div>
-    );
+    return <div>{showPopUp ? renderPopUp() : null}</div>;
   }
 }
 
@@ -193,30 +189,30 @@ PopUp.propTypes = {
       label: PropTypes.string,
       name: PropTypes.string,
       placeholder: PropTypes.string,
-      type: PropTypes.oneOf(['email', 'text', 'textarea', 'number']),
-    }),
+      type: PropTypes.oneOf(["email", "text", "textarea", "number"])
+    })
   ),
   onClose: PropTypes.func.isRequired,
   popup: PropTypes.shape({
     sent: PropTypes.shape({
       text: PropTypes.string,
-      title: PropTypes.string,
+      title: PropTypes.string
     }),
-    title: PropTypes.string,
+    title: PropTypes.string
   }),
   showPopUp: PropTypes.bool,
-  setEmailError: PropTypes.func.isRequired,
+  setEmailError: PropTypes.func.isRequired
 };
 PopUp.defaultProps = {
   fields: [],
   popup: {
     sent: {
-      text: '',
-      title: '',
+      text: "",
+      title: ""
     },
-    title: '',
+    title: ""
   },
-  showPopUp: false,
+  showPopUp: false
 };
 
 export default PopUp;
