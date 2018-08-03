@@ -99,8 +99,6 @@ class PopUp extends Component {
     if (this.isFormValid()) {
       const form = event.target;
       form.submit();
-      console.log('Need to send');
-      //this.simulateSendForm();
     } else {
       this.setErrorForFields();
     }
