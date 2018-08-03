@@ -10,10 +10,10 @@ export default css`
       padding: 0 45px;
       box-sizing: border-box;
       @media screen and(max-width: 1101px) {
-        padding: 0 14px 0 90px;
+        /* padding: 0 14px 0 90px; */
       }
       @media screen and(max-width: 940px) {
-        padding: 0 14px 0 70px;
+        /* padding: 0 14px 0 70px; */
       }
       @media screen and(max-width: 610px) {
         flex-direction: row;
