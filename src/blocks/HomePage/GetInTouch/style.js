@@ -24,6 +24,7 @@ export default css`
     max-width: 1300px;
     width: 100%;
     overflow: hidden;
+    align-items: center;
   }
   &__description-box {
     ${setStyle(flexJustify)}
@@ -70,13 +71,21 @@ export default css`
       height: auto;
     }
     &__container {
+      /* flex-direction: column; */
+    }
+
+    &__image-box {
+      padding: 20px;
+    }
+  }
+}
+@media (max-width: 660px) {
+  .get-in-touch {
+    &__container {
       flex-direction: column;
     }
     &__description-box {
       padding: 20px 20px 0;
-    }
-    &__image-box {
-      padding: 20px;
     }
   }
 }

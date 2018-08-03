@@ -1,13 +1,13 @@
-import css from 'styled-jsx/css';
+import css from "styled-jsx/css";
 import {
   colors,
   boxShadow,
   setStyle,
-  flexAllAlign,
-} from '../../utils/style-helper';
+  flexAllAlign
+} from "../../utils/style-helper";
 
-import successIcon from '@/assets/img/success-icon.svg';
-import errorIcon from '@/assets/img/error-icon.png';
+import successIcon from "@/assets/img/success-icon.svg";
+import errorIcon from "@/assets/img/error-icon.png";
 
 export default css`
   .btn {
@@ -26,8 +26,7 @@ export default css`
     margin-right: 30px;
     border: none;
     box-shadow: 0px 2px 44px rgba(23, 128, 224, 0.271031);
-    ${flexAllAlign}
-    @media (max-width: 1300px){
+    ${flexAllAlign} @media (max-width: 1300px) {
       padding: 0 14px;
       height: 27px;
       font-size: 10px;
@@ -38,21 +37,21 @@ export default css`
       font-size: 12px;
       margin: 0;
       border: none;
-      }
+    }
     @media screen and (max-width: 500px) {
       height: 36px;
       line-height: 12px;
       font-size: 10px;
       margin: 0;
       border: none;
-      }
+    }
     @media screen and (max-width: 350px) {
       padding: 0 8px;
-      }
+    }
     @media screen and (max-width: 320px) {
-    height: 33px;
-    margin: 0;
-    border: none;
+      height: 33px;
+      margin: 0;
+      border: none;
     }
     &:hover {
       box-shadow: ${boxShadow};
@@ -117,11 +116,11 @@ export default css`
       animation-name: blink;
       animation-duration: 1s;
       animation-iteration-count: infinite;
-      &:nth-child(2){
-        animation-delay: .2s;
+      &:nth-child(2) {
+        animation-delay: 0.2s;
       }
-      &:nth-child(3){
-        animation-delay: .3s;
+      &:nth-child(3) {
+        animation-delay: 0.3s;
       }
       &:last-child {
         margin-right: 0;
@@ -154,7 +153,7 @@ export default css`
     width: 149px;
     height: 33px;
     line-height: 12px;
-    color: #3588F9;
+    color: #3588f9;
     background-color: #ffffff;
     font-size: 10px;
     border-radius: 25px;
