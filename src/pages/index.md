@@ -144,7 +144,7 @@ ourAdvantachesData:
     - image: /img/group-3.svg
       text: We guarantee your projects are ready for launch
       title: Full cycle
-    - image: /img/chat.svg
+    - image: /img/chat-2-.svg
       text: We always stay in touch via any preferable communication channel
       title: Communication
     - image: /img/group-2.svg
