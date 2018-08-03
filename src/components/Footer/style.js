@@ -9,6 +9,46 @@ export default css`
             ${setStyle(flexAlign)}
             line-height: 1.5;
             padding: 5px 50px 0;
+            margin-right: 600px;
+            @media (min-width: 1450px){
+                margin-right: 600px;
+            }
+            @media (max-width: 1440px){
+                margin-right: 0;
+                margin-left: 31%;
+            }
+            @media (max-width: 1180px){
+                margin-right: 0;
+                margin-left: 26%;
+            }
+            @media (max-width: 1100px){
+                margin-right: 0;
+                margin-left: 266px;
+            }
+            @media (max-width: 1050px){
+                margin-right: 0;
+                margin-left: 241px;
+            }
+            @media (max-width: 1024px){
+                margin-right: 0;
+                margin-left: 305px;
+            }
+            @media (max-width: 900px){
+                margin-right: 0;
+                margin-left: 233px;
+            }
+            @media (max-width: 830px){
+                margin-right: 0;
+                margin-left: 207px;
+            }
+            @media (max-width: 720px){
+                margin-right: 0;
+                margin-left: 72px;
+            }
+            @media (max-width: 570px){
+                margin-right: 0;
+                margin-left: 9px;
+            }
         }
         &__contact { 
             ${setStyle(flexColumn)}

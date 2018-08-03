@@ -26,11 +26,11 @@ const Footer = ({ contacts, links }) => (
           ))}
         </div>
       </div>
-      <div className="b-footer__links">
+      {/* <div className="b-footer__links">
         {links.map(link => (
           <CustomLink key={link.title} title={link.title} href={link.href} uppercase inverted />
         ))}
-      </div>
+      </div> */}
     </div>
     <style jsx>
       {style}
