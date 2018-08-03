@@ -25,9 +25,15 @@ export default css`
       min-height: 500px;
       display: flex;
       justify-content: center;
+      @media (max-width: 1200px){
+        min-height: 302px;
+      }
       background-color: ${colors.lightGray};
       &_inverted {
         min-height: 561px;
+        @media (max-width: 1200px){
+        min-height: 367px;
+      }
         background-color: ${colors.white};
       }
       &_reversed {

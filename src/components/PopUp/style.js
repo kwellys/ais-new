@@ -1,6 +1,6 @@
-import closeIcon from 'assets/img/close.svg';
-import css from 'styled-jsx/css';
-import { colors, flexAllAlign, setStyle } from 'utils/style-helper';
+import closeIcon from "assets/img/close.svg";
+import css from "styled-jsx/css";
+import { colors, flexAllAlign, setStyle } from "utils/style-helper";
 
 export default css`
   .b-pop-up {
@@ -42,6 +42,16 @@ export default css`
         border-radius: 0;
         height: 100%;
         width: 100%;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    .b-pop-up {
+      &__box {
+        padding: 20px;
+        padding-top: 83px;
+        overflow: scroll;
+        padding-bottom: 40px;
       }
     }
   }
