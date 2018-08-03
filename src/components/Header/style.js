@@ -28,13 +28,6 @@ export default css`
       justify-content: space-between;
     }
     &__links {
-      padding-left: 180px;
-      @media screen and(max-width: 1100px) {
-        padding-left: 70px;
-      }
-      @media (max-width: 850px) {
-        padding-left: 0;
-      }
       @media (max-width: 700px) {
         display: none;
       }
