@@ -86,7 +86,6 @@ Form.defaultProps = {
 
 function encode(data) {
   const formData = new FormData();
-  console.log(data);
   const res = Object.keys(data).reduce(((prev, val) => {
     return {
       ...prev,
@@ -94,6 +93,7 @@ function encode(data) {
     }
   }),{});
   res['form-name'] = data['form-name'];
+  res['file'] = data['file'];
 
   for (const key of Object.keys(res)) {
     formData.append(key, res[key]);
@@ -111,6 +111,7 @@ class Block extends React.Component {
         name: { invalid: false, value: '', required: true },
         email: { invalid: false, value: '', required: true },
         phone: { invalid: false, value: '' },
+        file: null
       },
       loading: false,
       success: false,
@@ -125,13 +126,16 @@ class Block extends React.Component {
     const { form } = this.state;
     const { setEmailError } = this.props;
     const newForm = Object.keys(form).reduce((total, key) => {
-      if (key === name) {
+      if (key === 'file') {
+        total[key] = values;
+      } else if (key === name) {
         total[key] = { ...values };
       } else {
         total[key] = { ...form[key] };
       }
       return total;
     }, {});
+
     if (name === 'email') {
       setEmailError('Email isn’t correct');
     }
@@ -141,7 +145,6 @@ class Block extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-
     if (this.isFormValid()) {
       const form = event.target;
       //form.submit();
@@ -194,7 +197,6 @@ class Block extends React.Component {
     const isValid = Object.keys(form).filter(
       key => form[key].value === '' && form[key].required,
     );
-
     return isValid.length === 0;
   }
 
