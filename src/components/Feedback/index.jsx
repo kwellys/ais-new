@@ -31,7 +31,7 @@ const Form = ({
           upload={field.type === 'textarea' ? 'file' : null}
         />
       ))}
-      <FileField change={value => change('attachment', value)} name="file" />
+      <FileField change={value => change('file', value)} name="file" />
       <Button title="Submit" type="submit" long loading={loading} success={success} error={error} />
     </form>
     <style jsx>
@@ -93,7 +93,7 @@ function encode(data) {
     }
   }),{});
   res['form-name'] = data['form-name'];
-  res['attachment'] = data['attachment'];
+  res['file'] = data['file'];
   console.log(res)
   for (const key of Object.keys(res)) {
     formData.append(key, res[key]);
@@ -112,7 +112,7 @@ class Block extends React.Component {
         email: { invalid: false, value: '', required: true },
         phone: { invalid: false, value: '' },
         message: '',
-        attachment: null
+        file: null
       },
       loading: false,
       success: false,
