@@ -106,7 +106,7 @@ export class IndexPageTemplate extends Component {
     }
   };
 
-  componentWillMount () {
+  componentDidMount () {
     this.setState(prev => ({ showPopUp: !prev.showPopUp }));
   }
 
