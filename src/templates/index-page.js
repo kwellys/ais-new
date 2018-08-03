@@ -106,9 +106,9 @@ export class IndexPageTemplate extends Component {
     }
   };
 
-  // componentWillMount () {
-  //   this.setState(prev => ({ showPopUp: !prev.showPopUp }));
-  // }
+  componentWillMount () {
+    this.setState(prev => ({ showPopUp: !prev.showPopUp }));
+  }
 
   switchPopUp = () => {
     this.setState(prev => ({ showPopUp: !prev.showPopUp }));
