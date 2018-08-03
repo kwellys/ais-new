@@ -118,6 +118,7 @@ class PopUp extends Component {
     event.preventDefault();
     if (this.isFormValid()) {
       const form = event.target;
+      this.setState({ loading: true })
       //form.submit();
       fetch("/", {
         method: "POST",
@@ -126,7 +127,8 @@ class PopUp extends Component {
           ...this.state.form
         })
       })
-        .then(console.log('done'));
+        .then(this.setState({ loading: false, success: true, sent: true }))
+        .catch(this.setState({ error: true }))
     } else {
       this.setErrorForFields();
     }
