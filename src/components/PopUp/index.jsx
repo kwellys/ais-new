@@ -14,7 +14,7 @@ function encode(data) {
   }),{});
   res['form-name'] = data['form-name'];
   res['file'] = data['file'];
-
+  console.log(res)
   for (const key of Object.keys(res)) {
     formData.append(key, res[key]);
   }
@@ -36,6 +36,7 @@ class PopUp extends Component {
         name: { invalid: false, value: "", required: true },
         email: { invalid: false, value: "", required: true },
         phone: { invalid: false, value: "" },
+        message: '',
         file: null
       },
       loading: false,
@@ -101,13 +102,12 @@ class PopUp extends Component {
   handleChange(name, values) {
     const { form } = this.state;
     const newForm = Object.keys(form).reduce((total, key) => {
-      if (key === 'file') {
+      if (key === name) {
         total[key] = values;
-      } else if (key === name) {
-        total[key] = { ...values };
       } else {
         total[key] = { ...form[key] };
       }
+      console.log(total)
       return total;
     }, {});
 
@@ -118,6 +118,7 @@ class PopUp extends Component {
     event.preventDefault();
     if (this.isFormValid()) {
       const form = event.target;
+      this.setState({ loading: true })
       //form.submit();
       fetch("/", {
         method: "POST",
@@ -126,7 +127,8 @@ class PopUp extends Component {
           ...this.state.form
         })
       })
-        .then(console.log('done'));
+        .then(this.setState({ loading: false, success: true, sent: true }))
+        .catch(this.setState({ error: true }))
     } else {
       this.setErrorForFields();
     }

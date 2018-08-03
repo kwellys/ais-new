@@ -13,7 +13,7 @@ const Form = ({
     <Title title={title} big inverted uppercase />
 
     <form className="feedback-form__form" name={formName} method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit}>
-      <input type="hidden" name="form-name" value="customer-form" />
+      <input type="hidden" name="form-name" value={formName} />
       {fields.map(field => (
         <InputField
           key={field.name}
@@ -94,7 +94,7 @@ function encode(data) {
   }),{});
   res['form-name'] = data['form-name'];
   res['file'] = data['file'];
-
+  console.log(res)
   for (const key of Object.keys(res)) {
     formData.append(key, res[key]);
   }
@@ -111,6 +111,7 @@ class Block extends React.Component {
         name: { invalid: false, value: '', required: true },
         email: { invalid: false, value: '', required: true },
         phone: { invalid: false, value: '' },
+        message: '',
         file: null
       },
       loading: false,
@@ -126,13 +127,12 @@ class Block extends React.Component {
     const { form } = this.state;
     const { setEmailError } = this.props;
     const newForm = Object.keys(form).reduce((total, key) => {
-      if (key === 'file') {
+      if (key === name) {
         total[key] = values;
-      } else if (key === name) {
-        total[key] = { ...values };
       } else {
         total[key] = { ...form[key] };
       }
+      console.log(total)
       return total;
     }, {});
 
