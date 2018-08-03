@@ -10,8 +10,18 @@ export default css`
       @media (max-width: 1200px){
         margin-bottom: 0;
       }
+      @media (max-width: 1024px){
+        margin-bottom: 18px;
+      }
       @media (max-width: 900px){
         margin-bottom: 37px;
+      }
+      @media (max-width: 768px){
+        margin-top: -8px;
+      }
+      @media (max-width: 326px){
+        margin-top: 0;
+        margin-bottom: 24px;
       }
       @media screen and(max-width: 610px) {
         flex-direction: column;

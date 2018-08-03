@@ -9,7 +9,7 @@ export default css`
       margin-bottom: 135px;
     }
     @media (max-width: 1024px){
-      margin-bottom: 90px;
+      margin-bottom: 80px;
     }
     @media (max-width: 768px){
       margin-bottom: 70px;

@@ -8,6 +8,10 @@ export default css`
       width: 100%;
       overflow: hidden;
       margin-bottom: -86px;
+      @media (max-width: 1440px){
+        margin-bottom: -32px;
+        margin-top: -12px;
+      }
       @media (max-width: 1200px){
         margin-bottom: -38px;
       }
@@ -54,7 +58,7 @@ export default css`
   @media (max-width: 1100px) {
     .tech-we-use {
       margin-left: -19px;
-      margin-top: 4px;
+      margin-top: -14px;
       &__wrapper {
         margin-left: -19px;
         margin-top: 4px;
@@ -63,6 +67,19 @@ export default css`
         margin-bottom: 60px;
         margin-right: 60px;
       }
+    }
+  }
+  @media (max-width: 768px){
+    .tech-we-use {
+      margin-left: -19px;
+      margin-top: -21px;
+      margin-bottom: 40px;
+    }
+  }
+  @media (max-width: 320px){
+    .tech-we-use {
+      margin-top: -15px;
+      margin-bottom: -14px;
     }
   }
   @media (max-width: 930px) {

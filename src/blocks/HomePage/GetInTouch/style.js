@@ -12,9 +12,15 @@ export default css`
     width: 100%;
     background-color: ${colors.lightBlue};
     height: 366px;
-    margin-bottom: 137px;
+    margin-bottom: 146px;
     @media (max-width: 1200px){
       margin-bottom: 86px;
+    }
+    @media (max-width: 768px){
+      margin-bottom: 78px;
+    }
+    @media (max-width: 326px){
+      margin-bottom: 65px;
     }
 
   }

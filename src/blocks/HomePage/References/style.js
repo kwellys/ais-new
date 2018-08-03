@@ -6,6 +6,9 @@ import {
 export default css`
   .references {
     ${setStyle(flexJustify)} position: relative;
+    @media (max-width: 768px){
+      margin-bottom: 38px;
+    }
     &__container {
       width: 100%;
     }
@@ -48,6 +51,20 @@ export const card = css`
   .b-card {
     width: 100%;
     ${setStyle(flexJustify)} margin: 92px 0;
+    @media (max-width: 1440px){
+    }
+    @media (max-width: 1024px){
+      margin: 26px 0 56px 0;
+      transform: scale(0.85);
+    }
+    @media (max-width: 768px){
+      margin: 26px 0 56px 0;
+      transform: scale(0.84);
+    }
+    @media (max-width: 328px){
+      margin: 16px 0 29px 0;
+      transform: scale(1.0);
+    }
 
     &__container {
       height: 480.63px;

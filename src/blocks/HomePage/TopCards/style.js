@@ -8,6 +8,12 @@ export default css`
     @media (max-width: 1200px){
       padding-bottom: 57px;
     }
+    @media (max-width: 768px){
+      padding-bottom: 50px;
+    }
+    @media (max-width: 326px){
+      padding-bottom: 62px;
+    }
     &__content {
       display: flex;
       justify-content: center;
@@ -35,8 +41,6 @@ export default css`
 
       }
       @media (max-width: 335px){
-        // max-width: 200px;
-        // box-sizing: border-box;
       }
     }
     &__wrapper {
