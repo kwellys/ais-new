@@ -26,7 +26,7 @@ const SliderCard = ({ slide }) => {
               <Title title={title} noAlign />
             </div>
             <div className="b-card__descr">
-              <Text small noAlign>
+              <Text small noAlign lineHeightNormal>
                 {description}
               </Text>
             </div>

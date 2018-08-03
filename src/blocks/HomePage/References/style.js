@@ -93,6 +93,9 @@ export const card = css`
         height: 39px;
       }
     }
+    &__title {
+      margin-bottom: 7px;
+    }
     &__header {
       ${setStyle(flexAlign)} 
       margin-bottom: 71px;
