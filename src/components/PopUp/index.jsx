@@ -35,7 +35,7 @@ class PopUp extends Component {
       form: {
         name: { invalid: false, value: "", required: true },
         email: { invalid: false, value: "", required: true },
-        phone: { invalid: false, value: "" }
+        phone: { invalid: false, value: "" },
         file: null
       },
       loading: false,
