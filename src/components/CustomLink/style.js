@@ -14,8 +14,11 @@ export default css`
     letter-spacing: 1px;
     font-family: "Montserrat";
     @media (max-width: 1300px){
-        font-size: 8px;
+        font-size: 10px;
         margin-right: 25px;
+    }
+    @media (max-width: 890px){
+        font-size: 8px;
     }
     &:hover {
         border-bottom: 1px solid #fff;

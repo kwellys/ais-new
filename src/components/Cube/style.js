@@ -38,13 +38,17 @@ export default css`
       height: 100%;
     }
     &__img {
-      /* width: 100%; */
       max-width: 110px;
       overflow: hidden;
+      @media (max-width: 800px){
+          max-width: 67px;
+        }
     }
     &__wrapper {
       padding: 20px;
       box-sizing: border-box;
+      display: flex;
+      justify-content: center;
       
       @media (max-width: 440px){
         padding: 9px;

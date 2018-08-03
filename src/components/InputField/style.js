@@ -13,6 +13,9 @@ export const ErrorStyle = css`
         text-align: center;
         top: 100%;
         transform: translate(-50%, 0);
+        @media (max-width: 800px){
+            font-size: 12px;
+        }
     }
 `;
 
@@ -20,11 +23,17 @@ export const FieldStyle = css`
     .input-field {
         ${setStyle(fontFamily)}
         margin-bottom: 30px;
+        @media (max-width: 800px){
+            margin-bottom: 17px;
+        }
         &__label {
             color: ${colors.white};
             display: block;
             line-height: 24px;
             margin-bottom: 5px;
+            @media (max-width: 800px){
+                font-size: 12px;
+            }
         }
     }
 `;
@@ -40,6 +49,10 @@ export const ViewStyle = css`
             padding: 15px;
             width: 100%;
             color: #525252;
+            @media (max-width: 800px){
+                padding: 10px;
+                font-size: 12px;
+            }
             &:focus {
                 outline: none;
             }

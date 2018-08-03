@@ -1,54 +1,58 @@
-import RocketImage from 'assets/img/rocket.png';
-import css from 'styled-jsx/css';
-import { colors, fontFamily, setStyle } from 'utils/style-helper';
+import RocketImage from "assets/img/rocket.png";
+import css from "styled-jsx/css";
+import { colors, fontFamily, setStyle } from "utils/style-helper";
 
 export const BlockStyle = css`
-    .feedback {
-        background-color: ${colors.lightBlue};
-        &__container {
-            display: flex;
-            margin: 0 auto;
-            max-width: 1600px;
-            @media (max-width: 768px){
+  .feedback {
+    background-color: ${colors.lightBlue};
+    &__container {
+      display: flex;
+      margin: 0 auto;
+      max-width: 1600px;
 
-            }
-            &-left {
-                background: url(${RocketImage}) no-repeat bottom right;
-                flex: 1 0 0;
-            }
-            &-right {
-                flex: 1 0 0;
-                padding: 30px 45px 30px 0;
-            }
+      &-left {
+        background: url(${RocketImage}) no-repeat bottom right;
+        @media (max-width: 800px) {
+          background-size: 115%;
         }
-        &__content {
-            max-width: 540px;
-        }
+        flex: 1 0 0;
+      }
+      &-right {
+        flex: 1 0 0;
+        padding: 30px 45px 30px 0;
+      }
     }
-    @media (max-width: 768px) {
-        .feedback {
-            &__container {
-                &-left {
-                    display: none;
-                }
-                &-right {
-                    padding-left: 20px;
-                    padding-right: 20px;
-                }
-            }
-            &__content {
-                max-width: 97%;
-            }
-        }
+    &__content {
+      max-width: 540px;
     }
+  }
+  @media (max-width: 740px) {
+    .feedback {
+      &__container {
+        &-left {
+          display: none;
+        }
+        &-right {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      &__content {
+        max-width: 97%;
+      }
+    }
+  }
 `;
 
 export const FormStyle = css`
-    .feedback-form {
-        &__form {
-            margin-top: 30px;
-        }
+  .feedback-form {
+    &__form {
+      margin-top: 30px;
+      @media (max-width: 800px){
+          margin-top: 15px;
+      }
     }
+  }
 `;
 
 export const SentStyle = css`
