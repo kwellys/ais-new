@@ -32,21 +32,23 @@ export default css`
                 z-index: -1;
             }
             &-info {
-                font-family: Montserrat;
+                font-family: 'Montserrat';
                 font-size: 16px;
                 line-height: 27px;
                 padding-bottom: 8px;
                 text-align: center;
+                color: #525252;
             }
             &-image {
                 border-radius: 4px;
                 max-width: 100%;
             }
             &-role {
-                font-family: Montserrat;
+                font-family: 'Montserrat';
                 font-size: 16px;
                 line-height: 27px;
                 text-align: center;
+                color: #525252;
             }
         }
     }

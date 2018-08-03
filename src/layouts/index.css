@@ -96,11 +96,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .swiper-button-next-ref {
-  right: 18%;
+  right: 17%;
 }
 
 .swiper-button-prev-ref {
-  left: 18%;
+  left: 17%;
 }
 
 .swiper-button-prev-ref.swiper-button-disabled,

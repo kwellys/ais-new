@@ -39,6 +39,7 @@ export const ViewStyle = css`
             font-size: 14px;
             padding: 15px;
             width: 100%;
+            color: #525252;
             &:focus {
                 outline: none;
             }

@@ -6,7 +6,7 @@ export default css`
     margin-bottom: 0;
     width: 174px;
     height: 30px;
-    padding: 0 0 10px 20px;
+    /* padding: 0 0 10px 20px; */
     margin-left: 30px;
     @media (max-width: 1024px){
         width: 85px;
