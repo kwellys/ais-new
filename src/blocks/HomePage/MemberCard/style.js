@@ -9,6 +9,13 @@ export default css`
         @media (max-width: 1200px){
             padding-bottom: 85px;
         }
+        @media (max-width: 768px){
+            padding-bottom: 75px;
+        }
+        @media (max-width: 326px){
+            margin-top: -15px;
+            padding-bottom: 61px;
+        }
         &__wrapper {
           display: flex;
           flex-wrap: wrap;

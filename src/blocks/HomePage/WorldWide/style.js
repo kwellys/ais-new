@@ -8,6 +8,10 @@ export default css`
     @media (max-width: 900px) {
       margin-bottom: 77px;
     }
+    @media (max-width: 326px) {
+      margin-top: -20px;
+      margin-bottom: 48px;
+    }
     ${setStyle(flexJustify)} 
     &__container {
       background: url(${Img}) no-repeat;
@@ -29,9 +33,17 @@ export default css`
       @media (max-width: 1130px) {
         transform: scale(0.68);
       }
+      @media (max-width: 1024px){
+        margin-top: -118px;
+        margin-bottom: -42px;
+      }
       @media (max-width: 900px) {
-        transform: scale(0.58);
+        transform: scale(0.57);
         /* margin-left: 30%; */
+      }
+      @media (max-width: 768px){
+        margin-top: -157px;
+        margin-bottom: -163px;
       }
       @media (max-width: 600px){
         margin-left: -52%;

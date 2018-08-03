@@ -10,6 +10,9 @@ export default css`
       @media (max-width: 1200px) {
         padding-bottom: 50px;
       }
+      @media (max-width: 768px) {
+        padding-bottom: 38px;
+      }
     }
     &__container {
       ${setStyle(flexJustify)}
@@ -17,6 +20,10 @@ export default css`
     &__content {
       max-width: 1300px;
       width: 100%;
+      margin-top: -38px;
+      @media (max-width: 320px){
+        margin-top: -31px;
+      }
     }
     &__title {
       width: 100%;
