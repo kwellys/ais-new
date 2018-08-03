@@ -7,12 +7,12 @@ import Button from '../Button';
 import { BlockStyle, FormStyle, SentStyle } from './style';
 
 const Form = ({
-                change, fields, submit, title, fieldInfo, loading, success, error,
+                change, fields, submit, title, fieldInfo, loading, success, error, formName
               }) => (
   <div className="feedback-form">
     <Title title={title} big inverted uppercase />
 
-    <form className="feedback-form__form" name="customer-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit}>
+    <form className="feedback-form__form" name={formName} method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit}>
       <input type="hidden" name="form-name" value="customer-form" />
       {fields.map(field => (
         <InputField
@@ -153,8 +153,6 @@ class Block extends React.Component {
     } else {
       this.setErrorForFields();
     }
-
-    // TODO Validate and send feedback data
   }
 
 
@@ -218,6 +216,7 @@ class Block extends React.Component {
                 loading={loading}
                 success={success}
                 error={error}
+                formName="customer-form"
               />
             </div>
           </div>

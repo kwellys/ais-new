@@ -36,7 +36,7 @@ import {
 
 export class IndexPageTemplate extends Component {
   state = {
-    showPopUp: false,
+    showPopUp: true,
     links: [
       { title: "services", href: "/services" },
       { title: "expertise", href: "/" },
@@ -106,6 +106,10 @@ export class IndexPageTemplate extends Component {
     }
   };
 
+  componentWillMount () {
+    this.setState(prev => ({ showPopUp: !prev.showPopUp }));
+  }
+
   switchPopUp = () => {
     this.setState(prev => ({ showPopUp: !prev.showPopUp }));
   };
@@ -143,7 +147,6 @@ export class IndexPageTemplate extends Component {
 
   render() {
     const {
-      title,
       promo,
       cards,
       clientsData,
