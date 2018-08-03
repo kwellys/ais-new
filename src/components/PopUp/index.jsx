@@ -97,8 +97,13 @@ class PopUp extends Component {
     event.preventDefault();
 
     if (this.isFormValid()) {
+<<<<<<< HEAD
       console.log("Need to send");
       this.simulateSendForm();
+=======
+      const form = event.target;
+      form.submit();
+>>>>>>> origin/master
     } else {
       this.setErrorForFields();
     }
@@ -140,6 +145,7 @@ class PopUp extends Component {
           loading={loading}
           success={success}
           error={error}
+          formName='modal-form'
         />
       );
     };
