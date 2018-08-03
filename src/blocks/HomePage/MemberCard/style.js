@@ -14,7 +14,7 @@ export default css`
         }
         @media (max-width: 326px){
             margin-top: -15px;
-            padding-bottom: 61px;
+            padding-bottom: 69px;
         }
         &__wrapper {
           display: flex;
