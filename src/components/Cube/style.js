@@ -38,7 +38,7 @@ export default css`
       height: 100%;
     }
     &__img {
-      width: 100%;
+      /* width: 100%; */
       max-width: 110px;
       overflow: hidden;
     }
@@ -62,7 +62,7 @@ export default css`
     }
     &_one-img {
       .b-cube__img {
-        max-width: 67px;
+        max-width: 100%;
         overflow: hidden;
         @media screen and(max-width: 1101px) {
           max-width: 39px;
