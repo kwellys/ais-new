@@ -146,6 +146,7 @@ class Block extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     if (this.isFormValid()) {
+      this.setState({ loading: true });
       const form = event.target;
       //form.submit();
       fetch("/", {
@@ -155,9 +156,10 @@ class Block extends React.Component {
           ...this.state.form
         })
       })
-        .then(console.log('done'));
+        .then(this.setState({ loading: false, success: true }))
+        .catch()
     } else {
-      this.setErrorForFields();
+      this.setErrorForFields(this.setState({ loading: false, error: true }));
     }
   }
 
@@ -167,7 +169,6 @@ class Block extends React.Component {
     const { setEmailError } = this.props;
 
     setEmailError('Enter email');
-
 
     const newForm = Object.keys(form).reduce((total, key) => {
       if (form[key].value === '' && form[key].required) {

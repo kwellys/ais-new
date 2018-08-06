@@ -144,7 +144,7 @@ class PopUp extends Component {
         const text = popup.sent.text.replace(/\[numberSec\]/, counter);
         if (!startedInterval) {
           const inverval = setInterval(() => {
-            if (this.state.counter === 0) {
+            if (this.state.counter === 1 ) {
               clearInterval(inverval);
               onClose();
             }
