@@ -48,7 +48,8 @@ export const ViewStyle = css`
             font-size: 14px;
             padding: 15px;
             width: 100%;
-            color: #525252;
+            ${setStyle(fontFamily)}
+            color: ${colors.textColor};
             @media (max-width: 800px){
                 padding: 10px;
                 font-size: 12px;
@@ -64,6 +65,9 @@ export const ViewStyle = css`
         &__textarea {
             resize: none;
         }
+    }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: ${colors.textColor} !important;
     }
 `;
 

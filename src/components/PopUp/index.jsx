@@ -182,6 +182,18 @@ class PopUp extends Component {
             "overflow: hidden;padding-right: 15px;";
           document.querySelector(".b-header__content").style =
             "padding-right: 15px;";
+          document.querySelector(".rocketchat-widget").style = `
+        position: fixed; 
+        width: 320px; 
+        height: 30px; 
+        border-top-left-radius: 5px; 
+        border-top-right-radius: 5px; 
+        bottom: 0px;
+        right: 50px;
+        z-index: 12345;
+        left: auto;
+        padding-right: 50px;
+        `;  
         }
       }
 
@@ -194,6 +206,16 @@ class PopUp extends Component {
                 onClick={() => {
                   document.getElementsByTagName("body")[0].style = "";
                   document.querySelector(".b-header__content").style = "";
+                  document.querySelector(".rocketchat-widget").style = `
+                  position: fixed; 
+                  width: 320px; 
+                  height: 30px; 
+                  border-top-left-radius: 5px; 
+                  border-top-right-radius: 5px; 
+                  bottom: 0px;
+                  right: 50px;
+                  z-index: 12345;
+                  left: auto;`
 
                   this.setState({ sent: false });
 
