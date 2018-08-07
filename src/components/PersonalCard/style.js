@@ -18,6 +18,7 @@ export default css`
                 background-color: ${colors.lightGray};
                 border-radius: 4px;
                 margin: 25px 25px 50px 25px;
+                max-width: 100%;
                 @media (max-width: 1280px){
                     transform: scale(0.86);
                 }
@@ -147,6 +148,7 @@ export default css`
             &-image {
                 border-radius: 4px;
                 max-width: 100%;
+                display: block;
             }
             &-role {
                 font-family: 'Montserrat';
