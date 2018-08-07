@@ -90,6 +90,15 @@ class PopUp extends Component {
     if (e.target.classList.value.indexOf("b-pop-up__content") !== -1) {
       document.getElementsByTagName("body")[0].style = "";
       document.querySelector(".b-header__content").style = "";
+      document.querySelector(".rocketchat-widget").style = `
+                  position: fixed; 
+                  width: 320px; 
+                  height: 30px; 
+                  border-top-left-radius: 5px; 
+                  border-top-right-radius: 5px; 
+                  bottom: 0px;
+                  right: 50px;
+                  z-index: 12345;`
 
       this.setState({ sent: false });
 
@@ -144,7 +153,7 @@ class PopUp extends Component {
         const text = popup.sent.text.replace(/\[numberSec\]/, counter);
         if (!startedInterval) {
           const inverval = setInterval(() => {
-            if (this.state.counter === 0) {
+            if (this.state.counter === 1 ) {
               clearInterval(inverval);
               onClose();
             }
@@ -182,6 +191,16 @@ class PopUp extends Component {
             "overflow: hidden;padding-right: 15px;";
           document.querySelector(".b-header__content").style =
             "padding-right: 15px;";
+          document.querySelector(".rocketchat-widget").style = `
+        position: fixed; 
+        width: 320px; 
+        height: 30px; 
+        border-top-left-radius: 5px; 
+        border-top-right-radius: 5px; 
+        bottom: 0px;
+        right: 65px;
+        z-index: 12345;
+        `;  
         }
       }
 
@@ -194,6 +213,15 @@ class PopUp extends Component {
                 onClick={() => {
                   document.getElementsByTagName("body")[0].style = "";
                   document.querySelector(".b-header__content").style = "";
+                  document.querySelector(".rocketchat-widget").style = `
+                  position: fixed; 
+                  width: 320px; 
+                  height: 30px; 
+                  border-top-left-radius: 5px; 
+                  border-top-right-radius: 5px; 
+                  bottom: 0px;
+                  right: 50px;
+                  z-index: 12345;`
 
                   this.setState({ sent: false });
 

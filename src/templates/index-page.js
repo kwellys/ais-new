@@ -13,6 +13,7 @@ import References from "../blocks/HomePage/References";
 import OurAdvantages from "../blocks/HomePage/OurAdvantages";
 import WorldWide from "../blocks/HomePage/WorldWide";
 import MemberCard from "../blocks/HomePage/MemberCard";
+import Latest from "../blocks/HomePage/Latest";
 
 //Questionable
 import Header from "../components/Header";
@@ -31,7 +32,12 @@ import {
   tecnologyImage6,
   tecnologyImage7,
   tecnologyImage8,
-  tecnologyImage9
+  tecnologyImage9,
+  Image7,
+  Image8,
+  Image9,
+  Image10,
+  Image11,
 } from "utils/images";
 
 export class IndexPageTemplate extends Component {
@@ -103,7 +109,17 @@ export class IndexPageTemplate extends Component {
       logoSass: tecnologyImage10,
       logoHTML: tecnologyImage3,
       logoVue: tecnologyImage9
-    }
+    },
+    latest: {
+      title: 'Latest Projects',
+      title2: 'Media Project',
+      link2: '/',
+      link2Title: 'show',
+      image1: Image8,
+      image2: Image9,
+      image3: Image10,
+      image4: Image11,
+    },
   };
 
   componentWillMount () {
@@ -157,7 +173,7 @@ export class IndexPageTemplate extends Component {
       worldWide,
       personalCards
     } = this.props;
-    const { feedback, contacts, links, showPopUp, popup } = this.state;
+    const { feedback, contacts, links, showPopUp, popup, latest } = this.state;
     const mainClass = classname({ blur: showPopUp });
     return (
       <Fragment>
@@ -178,6 +194,7 @@ export class IndexPageTemplate extends Component {
           />
           <OurClients clientsData={clientsData} />
           <OurExperience expirience={expirienceData} />
+          <Latest latest={latest} />
           <GetInTouch
             getInTouchData={getInTouchData}
             onClick={this.switchPopUp}

@@ -8,7 +8,9 @@ import style from './style';
 const Footer = ({ contacts, links }) => (
   <div className="b-footer">
     <div className="b-footer__content">
+      <div className="b-footer__content-logo-wrapper">
       <Logo inverted />
+      </div>
       <div className="b-footer__contacts">
         <div className="b-footer__contact">
           <span>
