@@ -1,4 +1,5 @@
-import defaultLogo from 'assets/img/ais_novation_white.svg';
+// import defaultLogo from 'assets/img/ais_novation_white.svg';
+import defaultLogo from 'assets/img/logo.svg';
 import invertedLogo from 'assets/img/ais_novation_inverted.svg';
 import classname from 'classname';
 import PropTypes from 'prop-types';

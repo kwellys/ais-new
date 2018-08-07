@@ -11,13 +11,19 @@ export default css`
     @media (max-width: 1024px){
         width: 85px;
         height: 28px;
-        padding: 0 0 2px 20px;
+        padding: 0 0 0 20px;
+    }
+    @media (max-width: 881px){
+        width: 85px;
+        height: 28px;
+        padding: 3px 0 0 20px;
     }
     @media (max-width: 700px){
         padding: 0;
         margin-left: 20px;
         width: 112px;
-        height: 16px;
+        // height: 16px;
+        height: 22px;
     }
 }
 
