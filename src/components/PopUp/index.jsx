@@ -90,6 +90,15 @@ class PopUp extends Component {
     if (e.target.classList.value.indexOf("b-pop-up__content") !== -1) {
       document.getElementsByTagName("body")[0].style = "";
       document.querySelector(".b-header__content").style = "";
+      document.querySelector(".rocketchat-widget").style = `
+                  position: fixed; 
+                  width: 320px; 
+                  height: 30px; 
+                  border-top-left-radius: 5px; 
+                  border-top-right-radius: 5px; 
+                  bottom: 0px;
+                  right: 50px;
+                  z-index: 12345;`
 
       this.setState({ sent: false });
 
@@ -189,10 +198,8 @@ class PopUp extends Component {
         border-top-left-radius: 5px; 
         border-top-right-radius: 5px; 
         bottom: 0px;
-        right: 50px;
+        right: 65px;
         z-index: 12345;
-        left: auto;
-        padding-right: 50px;
         `;  
         }
       }
@@ -214,8 +221,7 @@ class PopUp extends Component {
                   border-top-right-radius: 5px; 
                   bottom: 0px;
                   right: 50px;
-                  z-index: 12345;
-                  left: auto;`
+                  z-index: 12345;`
 
                   this.setState({ sent: false });
 
