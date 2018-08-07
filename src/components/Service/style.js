@@ -57,7 +57,7 @@ export default css`
         left: 11px;
         height: 15%;
         width: 13%;
-        background: blue;
+        background: #3588F9;
         transform: skew(0deg, 30deg);
       }
       .chevron:after {
@@ -67,7 +67,7 @@ export default css`
         right: 9px;
         height: 17%;
         width: 26%;
-        background: blue;
+        background: #3588F9;
         transform: skew(0deg, -45deg);
       }
     }
