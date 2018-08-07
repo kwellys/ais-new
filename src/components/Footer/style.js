@@ -8,66 +8,54 @@ export default css`
         &__contacts {
             ${setStyle(flexAlign)}
             line-height: 1.5;
-            padding: 5px 50px 0;
-            margin-right: 600px;
-            @media (min-width: 1450px){
-                margin-right: 600px;
-            }
-            @media (max-width: 1440px){
-                margin-right: 0;
-                margin-left: 31%;
-            }
-            @media (max-width: 1180px){
-                margin-right: 0;
-                margin-left: 26%;
-            }
-            @media (max-width: 1100px){
-                margin-right: 0;
-                margin-left: 266px;
-            }
-            @media (max-width: 1050px){
-                margin-right: 0;
-                margin-left: 241px;
-            }
-            @media (max-width: 1024px){
-                margin-right: 0;
-                margin-left: 305px;
-            }
-            @media (max-width: 900px){
-                margin-right: 0;
-                margin-left: 233px;
-            }
-            @media (max-width: 830px){
-                margin-right: 0;
-                margin-left: 207px;
-            }
-            @media (max-width: 720px){
-                margin-right: 0;
-                margin-left: 72px;
-            }
-            @media (max-width: 570px){
-                margin-right: 0;
-                margin-left: 9px;
+            padding: 5px 0 0;
+            @media (max-width: 500px) {
+                width: 100%;
             }
         }
         &__contact { 
             ${setStyle(flexColumn)}
             color: ${colors.lightBlue};
-            flex: 1 0 50%;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 1px;
-            min-width: 240px;
+            min-width: 300px;
+            flex-basis: 50%;
+            transition: min-width 0.3s;
+            @media (max-width: 1190px) {
+                min-width: 270px;
+            }
+            @media (max-width: 1078px) {
+                min-width: 258px;
+                font-size: 10px;
+            }
+            @media (max-width: 996px) {
+                min-width: 238px;
+            }
+            @media (max-width: 900px) {
+                min-width: 228px;
+                font-size: 8px;
+            }
+            @media (max-width: 800px) {
+                min-width: 202px;
+            }
+            @media (max-width: 768px) {
+                min-width: 184px;
+            }
             & + & {
                 margin-left: 10px;
             }
         }
         &__content {
-            ${setStyle(flexAlign, flexSpaceBetween, fontFamily)}
+            ${setStyle(flexAlign, fontFamily)}
             padding: 40px 0 45px;
+            width: 100%;
             @media screen and(max-width: 500px) {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+            &-logo-wrapper {
+                width: 49%;
             }
         }
         &__links {
@@ -91,16 +79,14 @@ export default css`
                 align-items: flex-start;
             }
             &__contact {
-                font-size: 8px;
-                min-width: 160px;
             }
         }
     }
     @media (max-width: 768px) {
         .b-footer {
             &__contacts {
-                padding-left: 20px;
-                padding-right: 20px;
+                // padding-left: 20px;
+                // padding-right: 20px;
             }
         }
     }
@@ -108,6 +94,7 @@ export default css`
         .b-footer {
             &__contact {
                 min-width: 0;
+                padding-left: 28px;
             }
         }
     }
