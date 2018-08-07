@@ -13,7 +13,7 @@ export default css`
                 width: 100%;
             }
         }
-        &__contact { 
+        &__contact {
             ${setStyle(flexColumn)}
             color: ${colors.lightBlue};
             font-size: 12px;
@@ -44,6 +44,15 @@ export default css`
             }
             & + & {
                 margin-left: 10px;
+            }
+            &-phone {
+                color: ${colors.lightBlue};
+                text-decoration: none;
+                &:hover {
+                    border-bottom: 1px solid ${colors.lightBlue};
+                    transition: all 0.5s;
+                }
+                
             }
         }
         &__content {
@@ -85,8 +94,6 @@ export default css`
     @media (max-width: 768px) {
         .b-footer {
             &__contacts {
-                // padding-left: 20px;
-                // padding-right: 20px;
             }
         }
     }
