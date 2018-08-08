@@ -10,7 +10,7 @@ export default css`
   .b-header {
     ${setStyle(flexJustify)} width: 100%;
     position: fixed;
-    height: 60px;
+    height: 70px;
     transition: all 0.5s ease-out;
     z-index: 30;
     @media screen and(max-width: 700px) {
@@ -75,7 +75,7 @@ export default css`
 
   .scrolled {
     background-color: #66a7ff;
-    height: 60px;
+    height: 70px;
     z-index: 30;
     transition: all 0.5s ease-in-out;
     @media (max-width: 700px) {
