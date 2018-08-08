@@ -5,20 +5,20 @@ topHome:
   description: >-
     Комплексные решения по разработке программного обеспечения и поддержке
     проектов
-  image: /img/exp2.png
+  image: /img/group-29.svg
   title: Услуги
 expirience:
   expirienceArray:
     - descr: Прод
       href: /
-      image: /img/exp1.png
-      inverted: true
+      image: /img/group-26.svg
+      inverted: false
       more: true
-      reversed: false
+      reversed: true
       title: Веб-разработкаа
     - descr: Проведение тестов и прочего
       href: /
-      image: /img/exp3.png
+      image: /img/group-27.svg
       inverted: true
       reversed: true
       title: Тестирование
@@ -46,6 +46,7 @@ expirience:
     - descr: >-
         Выбирайте удобную для вас модель оплаты: за фактические рабочие часы,
         фиксированную сумму в месяц или за объем работ по тарифу.
+      image: /img/group-22.svg
       inverted: true
       reversed: true
       title: Модель оплаты гибкая или фиксированная
