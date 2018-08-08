@@ -77,7 +77,7 @@ export const PageStyle = css`
       color: #ffffff;
       font-size: 24px;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.01e;
       line-height: normal;
       text-align: center;
