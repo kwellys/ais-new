@@ -15,7 +15,16 @@ export default css`
       padding-bottom: 89px;
     }
     @media (max-width: 900px) {
+      padding-bottom: 87px;
+      }
+    @media (max-width: 768px) {
+      padding-bottom: 80px;
+      }
+    @media (max-width: 756px) {
       padding-bottom: 339px;
+      }
+    @media (max-width: 660px) {
+      padding-bottom: 312px;
       }
 
     &__container {
