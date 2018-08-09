@@ -6,14 +6,13 @@ import style from './style';
 const PersonalCard = ({ image, title, role }) => (
   <div className="personal">
     <div className="personal__container">
-      <div className="personal__container-square" />
-      <div className="personal__container-photo">
-        <img src={image} className="personal__container-image" alt="Personal Card Info" />
+      <div className="personal__photo">
+        <img src={image} className="personal__image" alt="Personal Card Info" />
       </div>
-      <div className="personal__container-info">
+      <div className="personal__info">
         {title}
       </div>
-      <div className="personal__container-role">
+      <div className="personal__role">
         {role}
       </div>
     </div>

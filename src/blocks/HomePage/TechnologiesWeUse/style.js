@@ -105,6 +105,14 @@ export default css`
       }
     }
   }
+  @media (max-width: 800px) {
+    .tech-we-use {
+      &__wrapper {
+        margin-top: 98px;
+      }
+    }
+  }
+
   @media (max-width: 768px){
     .tech-we-use {
       &__wrapper {

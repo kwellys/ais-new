@@ -9,7 +9,7 @@ export default css`
     text-decoration: none;
     font-style: normal;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 15px;
     letter-spacing: 1px;
     font-family: "Montserrat";
