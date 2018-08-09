@@ -114,4 +114,5 @@ export default css`
             padding: 0;
         }
     }
+}
 `;
