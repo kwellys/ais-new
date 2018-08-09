@@ -3,20 +3,20 @@ import { colors, flexAllAlign, flexJustify, setStyle } from '../../utils/style-h
 
 export default css`
   .b-cube {
-    width: 125.97px;
-    height: 125.97px;
+    min-width: 125.97px;
+    min-height: 125.97px;
     background: ${colors.white};
     box-shadow: 0 2px 44px rgba(23, 128, 224, 0.271031);
     border-radius: 15px;
     transform: rotate(45deg);
     transition: all 0.3s;
     @media (max-width: 1100px){
-      width: 89.59px;
-      height: 89.59px;
+      min-width: 89.59px;
+      min-height: 89.59px;
     }
     @media (max-width: 800px){
-      width: 67.23px;
-      height: 67.23px;
+      min-width: 67.23px;
+      min-height: 67.23px;
     }
     &_no-rotate {
       transform: rotate(0deg);
@@ -40,8 +40,14 @@ export default css`
     &__img {
       max-width: 110px;
       overflow: hidden;
-      @media (max-width: 800px){
-          max-width: 67px;
+      @media (max-width: 1100px){
+        max-width: 76px;
+      }
+      @media (max-width: 810px){
+          max-width: 52px;
+        }
+      @media (max-width: 720px){
+          max-width: 46px;
         }
     }
     &__wrapper {
@@ -77,46 +83,36 @@ export default css`
       }
     }
     &_big {
-      width: 252.63px;
-      height: 252.63px;
+      min-width: 252.63px;
+      min-height: 252.63px;
     }
     &_inverted {
       background-color: ${colors.lightBlue};
     }
   }
-  @media (max-width: 992px) {
+  @media (max-width: 800px) {
     .b-cube {
-      width: 95.97px;
-      height: 95.97px;
-      &_big {
-        width: 222.63px;
-        height: 222.63px;
+        &_inverted {
+          min-width: 71.87px;
+          min-height: 71.87px;
       }
-    }
-  }
-  @media (max-width: 768px) {
-    .b-cube {
-      width: 65.97px;
-      height: 65.97px;
+
       &_big {
-        width: 162.63px;
-        height: 162.63px;
-      }
-      &_one-img .b-cube__img {
-        max-width: 70%;
+        min-width: 142px;
+        min-height: 142px;
       }
     }
   }
   @media (max-width: 576px) {
     .b-cube {
         &_inverted {
-          width: 43.87px;
-          height: 43.87px;
+          min-width: 43.87px;
+          min-height: 43.87px;
       }
 
       &_big {
-        width: 90px;
-        height: 90px;
+        min-width: 90px;
+        min-height: 90px;
       }
     }
   }
