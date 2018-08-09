@@ -1,10 +1,10 @@
-import css from 'styled-jsx/css';
+import css from "styled-jsx/css";
 import {
   colors,
   setStyle,
   flexColumn,
-  flexAlign,
-} from '../../utils/style-helper';
+  flexAlign
+} from "../../utils/style-helper";
 
 export default css`
   .cursor {
@@ -14,17 +14,20 @@ export default css`
     height: 63px;
     overflow: hidden;
     &:hover {
-        z-index: 10;
-        overflow: visible;
-        width: initial;
-        height: initial;
-        .company {
-            opacity: 1;
-            transition: opasity 0.3s ease-in;
-        }
+      z-index: 10;
+      overflow: visible;
+      width: initial;
+      height: initial;
+      .mapMaker {
+        filter: brightness(75%);
+      }
+      .company {
+        opacity: 1;
+        transition: opasity 0.3s ease-in;
+      }
     }
     .mapMaker {
-        z-index: -1;
+      z-index: -1;
     }
     .company {
       width: 364px;

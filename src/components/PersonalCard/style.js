@@ -81,6 +81,10 @@ export default css`
             color: #525252;
             @media (max-width: 1100px){
                 width: 155px;
+            &-image {
+                border-radius: 4px;
+                max-width: 100%;
+                display: block;
             }
             @media (max-width: 600px){
                 font-size: 12px;
@@ -110,4 +114,5 @@ export default css`
             padding: 0;
         }
     }
+}
 `;

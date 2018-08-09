@@ -19,7 +19,7 @@ const Cursor = ({ singleMarker }) => {
               {singleMarker.location}
             </Text>
           </span>
-          <a className="company__info-link" href={`http://${singleMarker.linkName}`}>
+          <a className="company__info-link" href={`${singleMarker.linkName}`}>
             {singleMarker.linkName}
           </a>
         </div>
