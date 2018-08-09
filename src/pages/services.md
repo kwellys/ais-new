@@ -11,7 +11,7 @@ expirience:
   expirienceArray:
     - descr: "Создание информационных систем \Lи веб-приложений для корпоративных клиентов, стартап-компаний и разработчиков мобильных приложений."
       href: /
-      image: /img/group-26.svg
+      image: /img/frame.png
       inverted: false
       more: true
       reversed: true
@@ -20,7 +20,7 @@ expirience:
         Проведение тестов и разработка программ по автоматизации тестирования на
         собственных проектах. Анализ качества сторонних веб-приложений.
       href: /
-      image: /img/group-27.svg
+      image: /img/frame-1.png
       inverted: true
       reversed: true
       title: Тестирование
@@ -28,26 +28,26 @@ expirience:
         Настройка систем непрерывной интеграции и развертывания. Постоянный
         контроль над процессом и работа с облачными сервисами.
       href: ''
-      image: /img/group-25.svg
+      image: /img/frame-2.png
       reversed: true
       title: DevOps
     - descr: >-
         Новационный подход к разработке программного обеспечения. Соединение
         опыта прошлого и новых технологий: блокчейна, машинного обучения.
-      image: /img/group-24.svg
+      image: /img/frame-3.png
       inverted: true
       reversed: true
       title: "Разработка ПО\L по новым технологиям"
     - descr: >
         Реализация проектов по модели аутсорсинга. Подбор ресурсов и решений,
         контроль над процессом и тестирование результатов разработки.
-      image: /img/group-23.svg
+      image: /img/frame-4.png
       reversed: true
       title: "Аутсорсинг проектов \Lв сфере IT"
     - descr: >-
         Выбирайте удобную для вас модель оплаты: за фактические рабочие часы,
         фиксированную сумму в месяц или за объем работ по тарифу.
-      image: /img/group-2-5-.png
+      image: /img/frame-5.png
       inverted: true
       reversed: true
       title: Модель оплаты гибкая или фиксированная
