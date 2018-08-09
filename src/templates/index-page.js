@@ -33,11 +33,22 @@ import {
   tecnologyImage7,
   tecnologyImage8,
   tecnologyImage9,
+  tecnologyImage11X2,
+  tecnologyImage1X2,
+  tecnologyImage2X2,
+  tecnologyImage3X2,
+  tecnologyImage4X2,
+  tecnologyImage5X2,
+  tecnologyImage6X2,
+  tecnologyImage7X2,
+  tecnologyImage8X2,
+  tecnologyImage10X2,
+  tecnologyImage9X2,
   Image7,
   Image8,
   Image9,
   Image10,
-  Image11,
+  Image11
 } from "utils/images";
 
 export class IndexPageTemplate extends Component {
@@ -98,31 +109,31 @@ export class IndexPageTemplate extends Component {
     servicesData: this.props.servicesData,
     technologiesWeUseData: {
       title: "TECHNOLOGIES WE USE",
-      logoAspNet: tecnologyImage1,
-      logoNodeJS: tecnologyImage6,
-      logoMongo: tecnologyImage4,
-      logoMySql: tecnologyImage5,
+      logoAspNet: { x1: tecnologyImage1, x2: tecnologyImage1X2 },
+      logoNodeJS: { x1: tecnologyImage6, x2: tecnologyImage6X2 },
+      logoMongo: { x1: tecnologyImage4, x2: tecnologyImage4X2 },
+      logoMySql: { x1: tecnologyImage5, x2: tecnologyImage5X2 },
       logoPHP: tecnologyImage7,
-      logoReact: tecnologyImage8,
-      logoAngular: tecnologyImage11,
-      logoGit: tecnologyImage2,
+      logoReact: { x1: tecnologyImage8, x2: tecnologyImage8X2 },
+      logoAngular: { x1: tecnologyImage11, x2: tecnologyImage11X2 },
+      logoGit: { x1: tecnologyImage2, x2: tecnologyImage2X2 },
       logoSass: tecnologyImage10,
-      logoHTML: tecnologyImage3,
-      logoVue: tecnologyImage9
+      logoHTML: { x1: tecnologyImage3, x2: tecnologyImage3X2 },
+      logoVue: { x1: tecnologyImage9, x2: tecnologyImage9X2 }
     },
     latest: {
-      title: 'Latest Projects',
-      title2: 'Media Project',
-      link2: '/',
-      link2Title: 'show',
+      title: "Latest Projects",
+      title2: "Media Project",
+      link2: "/",
+      link2Title: "show",
       image1: Image8,
       image2: Image9,
       image3: Image10,
-      image4: Image11,
-    },
+      image4: Image11
+    }
   };
 
-  componentWillMount () {
+  componentWillMount() {
     this.setState(prev => ({ showPopUp: !prev.showPopUp }));
   }
 

@@ -42,6 +42,11 @@ export const ViewStyle = css`
     .input-view {
         position: relative;
         &__field {
+            /* Remove First */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
             border: 2px solid ${colors.white};
             border-radius: 4px;
             box-sizing: border-box;

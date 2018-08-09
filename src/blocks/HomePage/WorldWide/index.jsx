@@ -2,12 +2,10 @@ import Cursor from '../../../components/Cursor';
 import DefaultLayout from '../../../layouts/Default';
 import PropTypes from 'prop-types';
 import React from 'react';
-import dragscroll from './dragscroll';
+import dragscroll from './dragscroll'; // need to have dragscrollToCenter on env
 
 import style from './style';
 
-
-// if (window !== undefined) { require('dragscroll'); }// need to have dragscrollToCenter on env
 
 const scrollToCenter = () => {
   const a = document.querySelector('.world-wide__wrapper');

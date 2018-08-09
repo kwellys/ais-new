@@ -358,6 +358,10 @@ array-each@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/array-each/-/array-each-1.0.1.tgz#a794af0c05ab1752846ee753a1f211a05ba0c44f"
 
+array-equal@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/array-equal/-/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
+
 array-filter@~0.0.0:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/array-filter/-/array-filter-0.0.1.tgz#7da8cf2e26628ed732803581fd21f67cacd2eeec"
@@ -5572,6 +5576,10 @@ ignore@^3.3.5:
   version "3.3.10"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
 
+image-exists@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/image-exists/-/image-exists-1.1.0.tgz#ba49cccbaddca8cbbf10f89cafd4d1c8ecfd38d0"
+
 imagemin-gifsicle@^5.1.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/imagemin-gifsicle/-/imagemin-gifsicle-5.2.0.tgz#3781524c457612ef04916af34241a2b42bfcb40a"
@@ -6149,6 +6157,10 @@ is-relative@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-relative/-/is-relative-1.0.0.tgz#a1bb6935ce8c5dba1e8b9754b9b2dcc020e2260d"
   dependencies:
     is-unc-path "^1.0.0"
+
+is-retina@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/is-retina/-/is-retina-1.0.3.tgz#d7401b286bea2ae37f62477588de504d0b8647e3"
 
 is-retry-allowed@^1.0.0:
   version "1.1.0"
@@ -9433,6 +9445,16 @@ react-redux@^4.0.0, react-redux@^4.4.0:
     lodash "^4.2.0"
     loose-envify "^1.1.0"
     prop-types "^15.5.4"
+
+react-retina-image@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/react-retina-image/-/react-retina-image-2.0.5.tgz#8f92efbbd454fa688d63f35e5a21eff1ab3a062f"
+  dependencies:
+    array-equal "^1.0.0"
+    image-exists "^1.1.0"
+    is-retina "^1.0.3"
+    object-assign "^4.1.0"
+    prop-types "^15.5.6"
 
 react-router-dom@^4.1.1, react-router-dom@^4.2.2:
   version "4.3.1"

@@ -108,6 +108,7 @@ export default css`
         &_inverted {
           min-width: 43.87px;
           min-height: 43.87px;
+          border-radius: 7px;
       }
 
       &_big {

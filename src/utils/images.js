@@ -18,6 +18,7 @@ import clientImage3 from "assets/img/Group-3.png";
 import ourAdvantachesImg3 from "assets/img/Group-3.svg";
 import ourAdvantachesImg6 from "assets/img/Group.svg";
 import getInTouchImage from "assets/img/Group2(3).svg";
+
 import tecnologyImage11 from "assets/img/logo-angular.svg";
 import tecnologyImage1 from "assets/img/logo-asp.net.svg";
 import tecnologyImage2 from "assets/img/logo-git.svg";
@@ -29,6 +30,17 @@ import tecnologyImage7 from "assets/img/logo-php.svg";
 import tecnologyImage8 from "assets/img/logo-react.svg";
 import tecnologyImage10 from "assets/img/logo-sass.svg";
 import tecnologyImage9 from "assets/img/logo-vue.svg";
+
+import tecnologyImage11X2 from "assets/img/logo-angular@x2.svg";
+import tecnologyImage1X2 from "assets/img/logo-asp.net@x2.svg";
+import tecnologyImage2X2 from "assets/img/logo-git@x2.svg";
+import tecnologyImage3X2 from "assets/img/logo-html@x2.svg";
+import tecnologyImage4X2 from "assets/img/logo-mongo@x2.svg";
+import tecnologyImage5X2 from "assets/img/logo-mysql@x2.svg";
+import tecnologyImage6X2 from "assets/img/logo-node@x2.svg";
+import tecnologyImage8X2 from "assets/img/logo-react@x2.svg";
+import tecnologyImage9X2 from "assets/img/logo-vue@x2.svg";
+
 import mapMarker from "assets/img/map_marker.svg";
 import avatar from "assets/img/MaskGroup.png";
 import clientImage4 from "assets/img/meitan.png";
@@ -104,5 +116,14 @@ export {
   workCard3,
   workCard4,
   workCard5,
-  workCard6
+  workCard6,
+  tecnologyImage11X2,
+  tecnologyImage1X2,
+  tecnologyImage2X2,
+  tecnologyImage3X2,
+  tecnologyImage4X2,
+  tecnologyImage5X2,
+  tecnologyImage6X2,
+  tecnologyImage8X2,
+  tecnologyImage9X2
 };
