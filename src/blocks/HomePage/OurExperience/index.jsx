@@ -6,10 +6,10 @@ import React from "react";
 
 import style from "./style";
 
-const OurExperience = ({ divided, expirience }) => {
+const OurExperience = ({ divided, expirience, homepage }) => {
   const experienceClasses = classname("our-experience__wrapper", {
     "our-experience__wrapper-divided": divided
-  });
+  }, {"our-experience__wrapper-homepage": homepage});
 
   return (
     <div>
@@ -40,11 +40,13 @@ OurExperience.propTypes = {
   expirience: PropTypes.shape({
     title: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.object)
-  })
+  }),
+  homepage: PropTypes.bool,
 };
 OurExperience.defaultProps = {
   divided: false,
-  expirience: [{}]
+  expirience: [{}],
+  homepage: false,
 };
 
 export default OurExperience;

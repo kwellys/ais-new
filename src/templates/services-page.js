@@ -104,7 +104,7 @@ export class ServicesPageTemplate extends Component {
         <div className={mainClass}>
           <Header links={links} onClick={this.switchPopUp} />
           <TopHomePage {...topHome}/>
-          <OurExperience request='Сделать запрос' title={null} expirience={expirience} />
+          <OurExperience request='Сделать запрос' title={null} expirience={expirience} homepage />
           <Feedback
             title={feedback.title}
             fields={feedback.fields}
