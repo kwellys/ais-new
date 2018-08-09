@@ -28,6 +28,7 @@ export default css`
       justify-content: space-between;
     }
     &__links {
+      display: flex;
       @media (max-width: 700px) {
         display: none;
       }

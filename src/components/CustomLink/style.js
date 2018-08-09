@@ -2,17 +2,28 @@ import css from 'styled-jsx/css';
 import { colors } from '../../utils/style-helper';
 
 export default css`
+
 .link {
-    color: ${colors.white};
-    border-bottom: 1px solid transparent;
     margin-right: 49px;
-    text-decoration: none;
-    font-style: normal;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
-    letter-spacing: 1px;
-    font-family: "Montserrat";
+    :global(.active) {
+        span {
+            text-decoration: underline;
+        }
+    }
+    span {
+        color: ${colors.white};
+        border-bottom: 1px solid transparent;
+    
+        text-decoration: none;
+        font-style: normal;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 1px;
+        font-family: "Montserrat";
+    }
+
+
     @media (max-width: 1300px){
         font-size: 10px;
         margin-right: 25px;
@@ -34,7 +45,9 @@ export default css`
         }
     }
     &-uppercase {
-        text-transform: uppercase;
+        span {
+            text-transform: uppercase;
+        }
     }
 }
 `;
