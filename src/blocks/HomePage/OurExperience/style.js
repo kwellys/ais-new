@@ -19,6 +19,9 @@ export default css`
           margin-bottom: 85px;
         }
       }
+      &-homepage {
+        padding-bottom: 0;
+      }
     }
   }
 `;

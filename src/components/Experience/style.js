@@ -16,7 +16,7 @@ export default css`
       max-width: 1470px;
       overflow: hidden;
       display: flex;
-      padding: 0 45px;
+      padding: 60px 45px;
       &_inverted {
         flex-direction: row-reverse;
       }
@@ -50,11 +50,12 @@ export default css`
       justify-content: center;
       flex-direction: column;
       &_inverted {
-        padding-left: 30%;
+        padding-left: 15%;
       }
     }
     &__list {
       margin-bottom: 29px;
+      max-width: 410px;
       &_indent {
         padding-right: 21%;
       }
@@ -63,7 +64,7 @@ export default css`
       margin-bottom: 20px;
     }
     &__image {
-      width: 90%;
+      width: 100%;
       max-width: 690.11px;
       overflow: hidden;
       &-wrapper {
