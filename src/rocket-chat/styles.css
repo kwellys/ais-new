@@ -17,6 +17,11 @@ div.livechat-room.widget-open .title {
     border-top-left-radius: inherit;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    display: flex;
+    align-items: center;
+}
+div.livechat-room.widget-open .title h1 {
+    display: block;
 }
 div.livechat-room .header .picture {
     padding: 0;
