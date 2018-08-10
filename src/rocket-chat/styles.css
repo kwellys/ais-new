@@ -1,252 +1,259 @@
 /* styles for rocket-chat online */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-
-div.livechat-room .title { 
-    flex: 1 0 55px;
-    width: 55px;
-    border-radius: 50%;
+div.livechat-room .title {
+  flex: 1 0 55px;
+  width: 55px;
+  border-radius: 50%;
 }
 div.livechat-room {
-    align-items: center;
-} 
+  align-items: center;
+}
 div.livechat-room.widget-open .title {
-    width: 100%;
-    flex: 1 0 35px;
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  flex: 1 0 35px;
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  align-items: center;
 }
 div.livechat-room.widget-open .title h1 {
-    display: block;
+  display: block;
 }
 div.livechat-room .header .picture {
-    padding: 0;
+  padding: 0;
 }
-div.livechat-room .header .picture img{
-    width: 50px;
-    height: 50px;
-    border-radius: 24px;
+div.livechat-room .header .picture img {
+  width: 50px;
+  height: 50px;
+  border-radius: 24px;
 }
 
 div.livechat-room .header {
-    flex: 1 0 72px;
-    padding: 13px 30px;
-    box-shadow: unset;
-    border-left: 1px solid #e7e7e7;
-    border-right: 1px solid #e7e7e7;
-    width: 100%;
+  flex: 1 0 72px;
+  padding: 13px 30px;
+  box-shadow: unset;
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  width: 100%;
 }
 div.livechat-room .header .info li {
-
 }
-div.livechat-room .header .info li:nth-child(2){
-    display: none;
+div.livechat-room .header .info li:nth-child(2) {
+  display: none;
 }
 
 div.livechat-room .header .info h2 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 14px;
-    color: #525252;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 14px;
+  color: #525252;
 }
 div.livechat-room .header .info {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 div.livechat-room .header {
-    border-bottom: 1px solid #D9E6FF;
+  border-bottom: 1px solid #d9e6ff;
 }
 div.livechat-room .messages .wrapper .message .thumb {
-    display: none;
+  display: none;
 }
 div.livechat-room .messages .wrapper .message .content {
-    margin-left: 0;
+  margin-left: 0;
 }
 div.livechat-room .messages .wrapper .message.new-day:before {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 12px;
-    text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 12px;
+  text-align: center;
 
-    color: #BDBDBD;
+  color: #bdbdbd;
 }
 div.livechat-room .messages .wrapper .message.new-day .content:after {
-    display: none;
+  display: none;
 }
 div.livechat-room .messages .wrapper .message.own .content {
-    background: #62A9FC;
-    border-bottom-right-radius: unset;
-    border-bottom-left-radius: 12px;
+  background: #62a9fc;
+  border-bottom-right-radius: unset;
+  border-bottom-left-radius: 12px;
 }
 div.livechat-room .messages .wrapper .message .content {
-    background-color: #EDF3FF;
-    border: none;
-    padding: 13px 10px 10px 21px;
-    background: #EDF3FF;
-    border-bottom-left-radius: unset;
-    border-radius: 12px;
+  background-color: #edf3ff;
+  border: none;
+  padding: 13px 10px 10px 21px;
+  background: #edf3ff;
+  border-bottom-left-radius: unset;
+  border-radius: 12px;
 }
 div.livechat-room .messages .wrapper .message .user {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 12px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 12px;
 
-    color: #525252;
-    margin-bottom: 16px;
+  color: #525252;
+  margin-bottom: 16px;
 }
 div.livechat-room .messages .wrapper .message .body {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 27px;
-    font-size: 14px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27px;
+  font-size: 14px;
 
-    color: #525252;
+  color: #525252;
 }
 div.livechat-room .messages .wrapper .message[data-username*="guest-"] .user,
 div.livechat-room .messages .wrapper .message[data-username*="guest-"] .body {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 div.livechat-room .messages .wrapper .message[data-username*="guest-"] .body {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 27px;
-    font-size: 14px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27px;
+  font-size: 14px;
 }
-div.livechat-room .messages .wrapper .message.own .content:before, 
+div.livechat-room .messages .wrapper .message.own .content:before,
 div.livechat-room .messages .wrapper .message .content:before {
-    display: none;
+  display: none;
 }
 
 div.livechat-room .messages .wrapper .message .info {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 22px;
-    font-size: 10px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+  font-size: 10px;
 
-    color: #636363;
+  color: #636363;
 }
 div.livechat-room .footer .message-bar .input-wrapper textarea {
-    height: 50px!important;
-    border: unset;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 27px;
-    font-size: 16px;
+  height: 50px !important;
+  border: unset;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27px;
+  font-size: 16px;
 
-    color: #818181;
+  color: #818181;
 }
 div.livechat-room .title h1 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 18px;
-    display: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 18px;
+  display: none;
 
-    color: #FFFFFF;
+  color: #ffffff;
 }
 div.livechat-room .footer .options-menu,
 p.powered-by {
-    display: none;
+  display: none;
 }
 div.livechat-room .footer .toggle-options {
-    display: none;
+  display: none;
 }
 button.button {
-    padding: 12px 45px;
-    background: #5EA7FA;
-    border-radius: 25px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    font-size: 14px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 40px;
+  padding: 12px 45px;
+  background: #5ea7fa;
+  border-radius: 25px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 40px;
 
-    color: #FFFFFF;
+  color: #ffffff;
 }
-div.livechat-form, 
-div.livechat-form input, 
+div.livechat-form,
+div.livechat-form input,
 div.livechat-form select {
-    background: #FFFFFF;
-    border: 1px solid #D9E6FF;
-    box-sizing: border-box;
-    border-radius: 4px;
-    height: 40px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 22px;
-    font-size: 12px;
-    letter-spacing: -0.0241176em;
-    margin-bottom: 21px;
+  background: #ffffff;
+  border: 1px solid #d9e6ff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 40px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+  font-size: 12px;
+  letter-spacing: -0.0241176em;
+  margin-bottom: 21px;
 
-    color: #525252;
+  color: #525252;
 }
 div.livechat-form {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-div.livechat-room .offline form input, 
+div.livechat-room .offline form input,
 div.livechat-room .offline form textarea {
-    background: #FFFFFF;
-    border: 1px solid #62A9FC;
-    box-sizing: border-box;
-    border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #62a9fc;
+  box-sizing: border-box;
+  border-radius: 4px;
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 22px;
-    font-size: 12px;
-    letter-spacing: -0.0241176em;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+  font-size: 12px;
+  letter-spacing: -0.0241176em;
 
-    color: #525252;
+  color: #525252;
 }
 div.livechat-room .offline form textarea {
-    height: 139px;
+  height: 139px;
 }
 
 p.livechat-room .offline .offline-message {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 27px;
-    font-size: 16px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27px;
+  font-size: 16px;
 
-    color: #525252;
+  color: #525252;
 }
 button.button:before {
-    display: none;
+  display: none;
 }
 div.livechat-room .messages .wrapper .message[data-username*="guest-"] .info {
-    color: #D9E6FF;
+  color: #d9e6ff;
 }
 
 div.livechat-room .title .toolbar {
-    display: none;
+  display: none;
 }
 div.livechat-room.widget-open .title .toolbar {
-    display: block;
+  display: block;
 }
 div.livechat-room .offline {
-    width: 100%;
+  width: 100%;
 }
 div.livechat-room .footer {
-    width: 100%;
+  width: 100%;
+}
+div.livechat-room.widget-close .title {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.livechat-room.widget-open .rocket-logo {
+    display: none;
 }
