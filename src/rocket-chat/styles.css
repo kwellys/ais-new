@@ -259,10 +259,10 @@ div.livechat-room.widget-close .title::after {
     animation-fill-mode: forwards;  
     content: "";
     position: absolute;
-    top: -110%;
-    left: -210%;
-    width: 200%;
-    height: 200%;
+    top: 32%;
+    left: 19%;
+    width: 28%;
+    height: 15%;
     opacity: 0;
     transform: rotate(45deg);
     
@@ -280,7 +280,7 @@ div.livechat-room.widget-close .title::after {
     10% {
       opacity: 1;
       top: -30%;
-      left: -30%;
+      left: 50%;
       transition-property: left, top, opacity;
       transition-duration: 0.7s, 0.7s, 0.15s;
       transition-timing-function: ease;
@@ -288,7 +288,7 @@ div.livechat-room.widget-close .title::after {
     100% {
       opacity: 0;
       top: -30%;
-      left: -30%;
+      left: 50%;
       transition-property: left, top, opacity;
     }
   }
