@@ -37,11 +37,16 @@ export default css`
     }
     &:last-child {
         margin-right: 0;
+        border-bottom: 0;
     }
     &-inverted {
-        color: ${colors.lightBlue};
+        max-width: max-content;
+        span {
+            color: ${colors.lightBlue};
         &:hover {
             border-bottom-color: ${colors.lightBlue};
+            text-decoration: none;
+        }
         }
     }
     &-uppercase {
