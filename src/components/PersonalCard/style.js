@@ -20,6 +20,7 @@ export default css`
             border-radius: 4px;
             margin: 25px 25px 50px 25px;
             position: relative;
+            max-height: 222px;
             &:before {
                 display: block;
                 content: ' ';
