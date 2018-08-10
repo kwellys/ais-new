@@ -261,7 +261,7 @@ div.livechat-room.widget-close .title::after {
   content: "";
   position: absolute;
   opacity: 0;
-  top: 20%;
+  top: -37%;
   left: -210%;
   width: 45%;
   height: 169%;
@@ -281,7 +281,7 @@ div.livechat-room.widget-close .title::after {
   10% {
     opacity: 1;
     /* top: 127%; */
-    left: 127%;
+    left: 150%;
     transition-property: left, top, opacity;
     transition-duration: 0.7s, 0.7s, 0.15s;
     transition-timing-function: ease;
@@ -289,7 +289,7 @@ div.livechat-room.widget-close .title::after {
   100% {
     opacity: 0;
     /* top: 127%; */
-    left: 127%;
+    left: 150%;
     transition-property: left, top, opacity;
   }
 }
