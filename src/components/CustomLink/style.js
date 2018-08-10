@@ -32,7 +32,6 @@ export default css`
         }
     }
 
-
     @media (max-width: 1300px){
         margin-right: 25px;
     }
@@ -44,17 +43,15 @@ export default css`
     }
     &:hover {
         border-bottom: 1px solid #fff;
-        transition: all 0.5s;
     }
     &:last-child {
         margin-right: 0;
-        border-bottom: 0;
     }
     &-inverted {
         max-width: max-content;
         span {
             color: ${colors.lightBlue};
-            font-weight: 600;
+            font-weight: 400;
         &:hover {
             border-bottom-color: ${colors.lightBlue};
             text-decoration: none;
