@@ -37,16 +37,14 @@ export default css`
     @media (max-width: 880px) {
       font-size: 10px;
       height: 24px;
+      padding: 0 12px;
     }
     @media screen and (max-width: 600px) {
-      height: 40px;
       line-height: 14px;
-      font-size: 12px;
       margin: 0;
       border: none;
     }
     @media screen and (max-width: 500px) {
-      height: 36px;
       line-height: 12px;
       font-size: 10px;
       margin: 0;
