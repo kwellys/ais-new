@@ -220,14 +220,17 @@ html, body {
 }
 .rocketchat-widget {
   /* transition: all 0.3s!important; */
+  transition: height, 0.1s!important;
 }
 .rocketchat-widget[data-state="opened"] {
   width: 375px!important;
   height: 600px!important;
+  bottom: 0px!important;
 }
 .rocketchat-widget[data-state="closed"] {
   width: 375px!important;
   height: 55px!important;
+  bottom: 50px!important;
 }
 @media (max-width: 550px){
   .rocketchat-widget[data-state="closed"] {
