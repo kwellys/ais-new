@@ -283,7 +283,7 @@ div.livechat-room.widget-close .title::after {
     /* top: 127%; */
     left: 150%;
     transition-property: left, top, opacity;
-    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-duration: 2s, 2s, 0.15s;
     transition-timing-function: ease;
   }
   100% {
@@ -293,7 +293,7 @@ div.livechat-room.widget-close .title::after {
     transition-property: left, top, opacity;
   }
 }
-@media only screen and (max-device-width: 550px) {
+@media (max-device-width: 550px) {
   div.livechat-room.widget-close {
     align-items: flex-end;
     padding: 0 20px;
