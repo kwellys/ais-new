@@ -260,12 +260,12 @@ div.livechat-room.widget-close .title::after {
   animation-fill-mode: forwards;
   content: "";
   position: absolute;
-  top: 32%;
-  left: 19%;
-  width: 28%;
-  height: 15%;
   opacity: 0;
-  transform: rotate(45deg);
+  top: -32%;;
+  left: -210%;
+  width: 45%;
+  height: 169%;
+  transform: rotate(-45deg);
 
   background: rgba(255, 255, 255, 0.13);
   background: linear-gradient(
@@ -280,16 +280,16 @@ div.livechat-room.widget-close .title::after {
 @keyframes shine {
   10% {
     opacity: 1;
-    top: -30%;
-    left: -30%;
+    top: 127%;
+    left: 127%;
     transition-property: left, top, opacity;
     transition-duration: 0.7s, 0.7s, 0.15s;
     transition-timing-function: ease;
   }
   100% {
     opacity: 0;
-    top: -30%;
-    left: -30%;
+    top: 127%;
+    left: 127%;
     transition-property: left, top, opacity;
   }
 }
