@@ -254,12 +254,12 @@ div.livechat-room .footer {
 div.livechat-room.widget-close .title {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
 }
 div.livechat-room.widget-close .title::after {
-  animation: shine 5s ease-in-out infinite;
-  animation-fill-mode: forwards;
+  animation: shine 6s ease-in-out infinite;
   content: "";
   position: absolute;
   opacity: 0;
@@ -293,7 +293,7 @@ div.livechat-room.widget-close .title::after {
     transition-property: left, top, opacity;
   }
 }
-@media (max-device-width: 550px) {
+@media (max-device-width: 800px) {
   div.livechat-room.widget-close {
     align-items: flex-end;
     padding: 0 20px;
