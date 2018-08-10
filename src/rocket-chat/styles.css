@@ -201,6 +201,7 @@ div.livechat-form select {
 }
 div.livechat-form {
   margin-bottom: 0;
+  width: 100%;
 }
 div.livechat-room .offline form input,
 div.livechat-room .offline form textarea {
@@ -254,9 +255,10 @@ div.livechat-room.widget-close .title {
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 div.livechat-room.widget-close .title::after {
-  animation: shine 2s ease-in-out infinite;
+  animation: shine 5s ease-in-out infinite;
   animation-fill-mode: forwards;
   content: "";
   position: absolute;
@@ -280,7 +282,6 @@ div.livechat-room.widget-close .title::after {
 @keyframes shine {
   10% {
     opacity: 1;
-    /* top: 127%; */
     left: 150%;
     transition-property: left, top, opacity;
     transition-duration: 2s, 2s, 0.15s;
@@ -288,7 +289,6 @@ div.livechat-room.widget-close .title::after {
   }
   100% {
     opacity: 0;
-    /* top: 127%; */
     left: 150%;
     transition-property: left, top, opacity;
   }
