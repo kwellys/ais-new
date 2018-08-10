@@ -56,10 +56,10 @@ export class IndexPageTemplate extends Component {
     showPopUp: true,
     links: [
       { title: "services", href: "/services" },
-      { title: "expertise", href: "/" },
-      { title: "technologies", href: "/" },
+      { title: "expertise", href: "/expertise" },
+      { title: "technologies", href: "/technologies" },
       { title: "work", href: "/work" },
-      { title: "company", href: "/" }
+      { title: "company", href: "/company" }
     ],
     contacts: {
       address: ["220004, Minsk city", "Amuratorskaya st. 4b, office 24"],
