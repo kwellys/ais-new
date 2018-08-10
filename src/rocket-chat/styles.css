@@ -255,7 +255,7 @@ div.livechat-room.widget-close .title {
   align-items: center;
 }
 div.livechat-room.widget-close .title::after {
-    animation: shine 2s ease-in-out  infinite;
+    animation: shine 2s ease-in-out infinite;
     animation-fill-mode: forwards;  
     content: "";
     position: absolute;
@@ -282,7 +282,7 @@ div.livechat-room.widget-close .title::after {
       top: -30%;
       left: 50%;
       transition-property: left, top, opacity;
-      transition-duration: 0.7s, 0.7s, 0.15s;
+      transition-duration: 1.5s, 1.5s, 0.5s;
       transition-timing-function: ease;
     }
     100% {
