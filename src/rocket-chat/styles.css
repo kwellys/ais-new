@@ -33,6 +33,7 @@ div.livechat-room .header {
     box-shadow: unset;
     border-left: 1px solid #e7e7e7;
     border-right: 1px solid #e7e7e7;
+    width: 100%;
 }
 div.livechat-room .header .info li {
 
@@ -234,4 +235,10 @@ div.livechat-room .messages .wrapper .message[data-username*="guest-"] .info {
 
 div.livechat-room .title .toolbar {
     display: none;
+}
+div.livechat-room .offline {
+    width: 100%;
+}
+div.livechat-room .footer {
+    width: 100%;
 }
