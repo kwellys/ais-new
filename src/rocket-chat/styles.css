@@ -261,8 +261,8 @@ div.livechat-room.widget-close .title {
 div.livechat-room.widget-close .title::after {
   animation-name: shine;
   animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-delay: 0s;
+  animation-duration: 1.5s;
+  animation-delay: 5s;
   content: "";
   position: absolute;
   opacity: 0;
