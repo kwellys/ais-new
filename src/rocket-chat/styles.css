@@ -259,7 +259,10 @@ div.livechat-room.widget-close .title {
   overflow: hidden;
 }
 div.livechat-room.widget-close .title::after {
-  animation: shine 6s ease-in-out infinite;
+  animation-name: shine;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-delay: 0s;
   content: "";
   position: absolute;
   opacity: 0;
@@ -283,14 +286,10 @@ div.livechat-room.widget-close .title::after {
   10% {
     opacity: 1;
     left: 150%;
-    transition-property: left, top, opacity;
-    transition-duration: 2s, 2s, 0.15s;
-    transition-timing-function: ease;
   }
   100% {
     opacity: 0;
     left: 150%;
-    transition-property: left, top, opacity;
   }
 }
 @media (max-device-width: 800px) {
