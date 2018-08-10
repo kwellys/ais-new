@@ -289,7 +289,7 @@ div.livechat-room.widget-close .title::after {
   }
   100% {
     opacity: 0;
-    left: 150%;
+    left: -210%;
   }
 }
 @media (max-device-width: 800px) {
