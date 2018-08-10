@@ -261,7 +261,7 @@ div.livechat-room.widget-close .title::after {
   content: "";
   position: absolute;
   opacity: 0;
-  top: -32%;;
+  top: -32%;
   left: -210%;
   width: 45%;
   height: 169%;
@@ -291,6 +291,12 @@ div.livechat-room.widget-close .title::after {
     top: 127%;
     left: 127%;
     transition-property: left, top, opacity;
+  }
+}
+@media only screen and (max-device-width: 550px) {
+  div.livechat-room.widget-close {
+    align-items: flex-end;
+    padding: 0 20px;
   }
 }
 .livechat-room.widget-open .rocket-logo {
