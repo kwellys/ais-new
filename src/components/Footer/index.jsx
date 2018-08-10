@@ -17,7 +17,7 @@ const Footer = ({ contacts, links }) => (
             <CustomLink title={contacts.email} href={`mailto:${contacts.email}`} inverted />
           </span>
           <span>
-            <a className="b-footer__contact-phone" href={`callto:${contacts.phone}`}>{contacts.phone}</a>
+            <a className="b-footer__contact-phone" href={`tel:${contacts.phone}`}>{contacts.phone}</a>
           </span>
         </div>
         <div className="b-footer__contact">

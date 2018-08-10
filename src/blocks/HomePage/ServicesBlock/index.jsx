@@ -14,7 +14,7 @@ const ServicesBlock = ({ servicesData, windowWidth, onClick }) => (
         <div className="servicesWrapper__content">
           {servicesData.servicesArr.map((service, index) => (
             <div className="servicesWrapper__content-inner" key={service.title}>
-              {windowWidth < 700 ? (
+              {windowWidth < 701 ? (
                 <ServiceMobile
                   title={service.title}
                   description={service.description}
