@@ -241,6 +241,9 @@ div.livechat-room .messages .wrapper .message[data-username*="guest-"] .info {
 div.livechat-room .title .toolbar {
     display: none;
 }
+div.livechat-room.widget-open .title .toolbar {
+    display: block;
+}
 div.livechat-room .offline {
     width: 100%;
 }

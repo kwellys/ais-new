@@ -21,6 +21,9 @@
 
   widgetLoaded(widget);
   function widget() {
+    $(".title").append(
+      '<div class="rocket-logo"><img src="https://new.aisnovations.com/rocket-chat/images/icon.svg" /></div>'
+    );
     var isOpen = false;
     $(".livechat-room").addClass("widget-close");
 
