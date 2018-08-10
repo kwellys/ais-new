@@ -7,6 +7,7 @@ export const ImageStyle = css`
     &__image {
       box-sizing: border-box;
       padding: 75px 30px 75px 0;
+      min-height: 500px;
       &_img {
         max-width: 100%;
       }
