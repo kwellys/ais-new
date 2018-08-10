@@ -270,7 +270,7 @@ div.livechat-room.widget-close .title::after {
   left: -210%;
   width: 45%;
   height: 169%;
-  transform: rotate(-45deg);
+  transform: rotate(-224deg);
 
   background: rgba(255, 255, 255, 0.13);
   background: linear-gradient(
@@ -285,11 +285,11 @@ div.livechat-room.widget-close .title::after {
 @keyframes shine {
   10% {
     opacity: 1;
-    left: 150%;
+    left: -91%;
   }
   100% {
     opacity: 0;
-    left: -210%;
+    left: 131%;
   }
 }
 @media (max-device-width: 800px) {
