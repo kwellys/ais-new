@@ -16,7 +16,7 @@ const TopCards = ({ cards }) => {
       680: {
         centeredSlides: true,
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 20,
       },
     },
     centeredSlides: false,
