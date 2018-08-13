@@ -43,7 +43,7 @@
     "react-slick": "^0.23.1",
     "react-slider-swiper": "^2.0.6",
     "react-window-size": "^1.2.0",
-    "styled-jsx": "^2.2.7",
+    "styled-jsx": "^3.0.2",
     "styled-jsx-plugin-sass": "^0.2.4",
     "uuid": "^3.2.1",
     "validator": "^10.4.0"
