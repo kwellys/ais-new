@@ -28,7 +28,7 @@ export default css`
     margin-right: 30px;
     border: none;
     box-shadow: 0px 2px 44px rgba(23, 128, 224, 0.271031);
-    ${flexAllAlign}
+    ${setStyle(flexAllAlign)}
     @media (max-width: 1300px) {
       padding: 0 14px;
       height: 27px;
