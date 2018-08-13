@@ -14,7 +14,7 @@ export default css`
         }
         @media (max-width: 326px){
             margin-top: -15px;
-            padding-bottom: 69px;
+            padding-bottom: 43px;
         }
         &__wrapper {
           display: flex;
@@ -23,6 +23,9 @@ export default css`
           margin: -15px;
           max-width: 1300px;
           width: 100%;
+          @media (max-width: 326px){
+            margin: 0;
+        }
         }
     }
 `;

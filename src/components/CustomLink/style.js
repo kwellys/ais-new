@@ -7,7 +7,9 @@ export default css`
     margin-right: 49px;
     :global(.active) {
         span {
-            text-decoration: underline;
+            // text-decoration: underline;
+            border-bottom: 1px solid #fff;
+            // margin-bottom: 1px;
         }
     }
     span {
@@ -21,6 +23,9 @@ export default css`
         line-height: 15px;
         letter-spacing: 1px;
         font-family: "Montserrat";
+        &:hover {
+            border-bottom: 1px solid #fff;
+        }
         @media (max-width: 1300px){
             font-size: 10px;
         }
@@ -32,7 +37,6 @@ export default css`
         }
     }
 
-
     @media (max-width: 1300px){
         margin-right: 25px;
     }
@@ -42,19 +46,14 @@ export default css`
     @media (max-width: 890px){
         margin-right: 16px;
     }
-    &:hover {
-        border-bottom: 1px solid #fff;
-        transition: all 0.5s;
-    }
     &:last-child {
         margin-right: 0;
-        border-bottom: 0;
     }
     &-inverted {
         max-width: max-content;
         span {
             color: ${colors.lightBlue};
-            font-weight: 600;
+            font-weight: 400;
         &:hover {
             border-bottom-color: ${colors.lightBlue};
             text-decoration: none;

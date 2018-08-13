@@ -44,7 +44,7 @@ export default css`
       transition: all 0.3s;
       @media screen and(max-width: 700px) {
         display: block;
-        margin-left: 276px;
+        margin-left: 274px;
       }
       @media screen and(max-width: 630px) {
         margin-left: 246px;

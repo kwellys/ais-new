@@ -20,6 +20,7 @@ export default css`
             border-radius: 4px;
             margin: 25px 25px 50px 25px;
             position: relative;
+            max-height: 222px;
             &:before {
                 display: block;
                 content: ' ';
@@ -92,28 +93,20 @@ export default css`
         }
     }
     @media (max-width: 1280px) {
-        .personal {
             flex-basis: 25%;
             width: 25%;
         }
-    }
     @media (max-width: 1100px) {
-        .personal {
             flex-basis: 25%;
             width: 25%;
         }
-    }
     @media (max-width: 690px) {
-        .personal {
             flex-basis: 50%;
             width: 50%;
         }
-    }
     @media (max-width: 550px) {
-        .personal {
             padding: 0;
         }
-    }
 }
 
 `;

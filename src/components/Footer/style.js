@@ -17,7 +17,7 @@ export default css`
             ${setStyle(flexColumn)}
             color: ${colors.lightBlue};
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: 1px;
             min-width: 300px;
             flex-basis: 50%;
